@@ -13,161 +13,186 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ================= 2. UI/UX Pro Max - CSS 魔改區 =================
+# ================= 2. UI/UX Pro Max - CSS 魔改區（Modern SaaS Analytics Dashboard） =================
 st.markdown("""
 <style>
-    /* 引入 Google Fonts: Inter (現代科技感字體) */
+    /* 引入 Google Fonts: Inter (現代 SaaS 常用字體) */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-    /* 全站基礎設定：深藍儀表板背景 */
+    /* 全站基礎設定：高對比淺色 SaaS 風格，適合長時間閱讀 */
     html, body, [class*="css"] {
         font-family: 'Inter', sans-serif;
-        background-color: #020617; /* 深夜藍 */
-        color: #e5e7eb;
+        background: radial-gradient(circle at top left, #e5f0ff 0%, #f9fafb 40%, #eef2ff 100%);
+        color: #111827;           /* 高對比深灰文字 */
+        font-size: 18px;
+        line-height: 1.6;
     }
 
-    /* 頂部 Header 漸層背景卡片：深藍 x 泰皇金 */
+    /* 頂部 Hero 區：SaaS Landing Hero（左文案右數據） */
     .header-container {
-        background: radial-gradient(circle at top left, #fbbf24 0%, #0f172a 45%, #020617 100%);
-        padding: 32px 30px;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 64, 175, 0.98));
+        padding: 26px 28px;
         border-radius: 18px;
         color: #f9fafb;
-        box-shadow: 0 18px 45px rgba(0,0,0,0.6);
-        margin-bottom: 26px;
-        border: 1px solid rgba(248, 250, 252, 0.08);
+        margin-bottom: 18px;
+        border: 1px solid rgba(191, 219, 254, 0.6);
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.75);
+        position: relative;
+        overflow: hidden;
     }
     .header-title {
-        font-size: 40px;
         font-weight: 800;
         margin: 0;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        background: linear-gradient(to right, #fef9c3, #facc15, #eab308);
+        letter-spacing: 0.04em;
+        background: linear-gradient(to right, #facc15, #fef9c3);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
     .header-subtitle {
-        font-size: 15px;
-        color: #c7d2fe;
-        margin-top: 10px;
+        color: #e5e7eb;
+        margin-top: 8px;
         font-weight: 400;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
+        letter-spacing: 0.02em;
+    }
+    .header-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.72);
+        border: 1px solid rgba(251, 191, 36, 0.7);
+        color: #fef9c3;
+        margin-bottom: 8px;
+    }
+    .header-badge-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: #22c55e;
+        box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.35);
     }
 
-    /* 主操作卡片：深藍玻璃卡片 */
+    /* 主操作卡片：Glassmorphism Filter Card */
     .control-card {
-        background: radial-gradient(circle at top left, rgba(248, 250, 252, 0.04), rgba(15, 23, 42, 0.96));
-        padding: 24px 26px;
-        border-radius: 18px;
-        box-shadow: 0 16px 40px rgba(0,0,0,0.7);
-        border: 1px solid rgba(148, 163, 184, 0.45);
-        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.72);
         backdrop-filter: blur(18px);
+        padding: 18px 20px;
+        border-radius: 18px;
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        margin-bottom: 25px;
     }
 
-    /* 自訂輸入框美化：深藍邊框 + 金色聚焦 */
+    /* 自訂輸入框：清晰邊界 + 大面積可點擊 */
     .stTextInput > div > div > input {
         border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        background-color: rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(148, 163, 184, 0.9);
+        background-color: rgba(255,255,255,0.9);
         padding: 10px 18px;
-        font-size: 15px;
-        color: #e5e7eb;
+        color: #111827;
         transition: all 0.2s ease;
     }
     .stTextInput > div > div > input::placeholder {
-        color: rgba(148, 163, 184, 0.8);
+        color: rgba(156, 163, 175, 0.95);
     }
     .stTextInput > div > div > input:focus {
-        border-color: #facc15;
-        box-shadow: 0 0 0 1px rgba(250, 204, 21, 0.65);
+        border-color: #2563eb;
+        box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.45);
     }
 
-    /* Pro Max 按鈕：深藍 x 金色 */
+    /* 主要按鈕：SaaS CTA Button */
     .stButton > button {
-        background: linear-gradient(135deg, #0f172a 0%, #1d283a 35%, #facc15 100%);
-        color: #020617;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 40%, #facc15 100%);
+        color: #f9fafb;
         border: none;
         padding: 12px 24px;
         border-radius: 999px;
         font-weight: 700;
-        font-size: 15px;
         width: 100%;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        box-shadow: 0 14px 32px rgba(15, 23, 42, 0.9);
+        box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35);
         transition: transform 0.08s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
     }
     .stButton > button:hover {
         filter: brightness(1.08);
-        box-shadow: 0 18px 40px rgba(15, 23, 42, 1);
+        box-shadow: 0 20px 55px rgba(37, 99, 235, 0.45);
         transform: translateY(-1px);
-        color: #020617;
+        color: #f9fafb;
     }
     .stButton > button:active {
         transform: translateY(1px);
-        box-shadow: 0 10px 20px rgba(15, 23, 42, 0.9);
+        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
     }
 
-    /* Radio Button 儀表板膠囊樣式 */
+    /* Radio Button：時間範圍膠囊列（高對比、易點擊） */
     .stRadio > div {
-        background: rgba(15, 23, 42, 0.9);
-        padding: 10px;
+        background: rgba(255,255,255,0.85);
+        padding: 8px 10px;
         border-radius: 999px;
         display: flex;
         justify-content: space-between;
-        border: 1px solid rgba(148, 163, 184, 0.7);
+        border: 1px solid rgba(148, 163, 184, 0.9);
     }
 
-    /* st.metric 儀表板卡片樣式 */
+    /* st.metric 儀表板卡片樣式：Glass Stats Cards */
     div[data-testid="stMetric"] {
-        background: radial-gradient(circle at top left, rgba(250, 204, 21, 0.22), rgba(15, 23, 42, 0.98));
-        padding: 16px 18px;
-        border-radius: 16px;
-        border: 1px solid rgba(250, 204, 21, 0.55);
-        box-shadow: 0 16px 40px rgba(0,0,0,0.8);
-        color: #e5e7eb;
+        background: rgba(255,255,255,0.92);
+        backdrop-filter: blur(14px);
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(209, 213, 219, 0.9);
+        box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+        color: #111827;
     }
     div[data-testid="stMetric"] > label {
-        color: rgba(226, 232, 240, 0.9);
-        font-size: 0.75rem;
+        color: rgba(107, 114, 128, 0.95);
         text-transform: uppercase;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.10em;
     }
     div[data-testid="stMetric"] > div {
         color: #facc15;
-        font-size: 1.4rem;
         font-weight: 800;
     }
 
-    /* 結果代碼區塊美化：深藍框 + 光暈 */
+    /* 結果代碼區塊：類報告閱讀器，清楚分段 */
     .stCode {
-        border-radius: 16px;
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.95);
-        background-color: #020617;
+        border-radius: 12px;
+        border: 1px solid rgba(209, 213, 219, 0.95);
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+        background-color: #f9fafb;
+        line-height: 1.7;
     }
 
-    /* 新聞卡片樣式：深藍卡片 + 金色左框 */
+    /* 新聞卡片樣式：清晰的列表閱讀 + Glassmorphism */
     .news-card {
-        background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
-        padding: 18px 20px;
-        margin-bottom: 14px;
-        border-radius: 14px;
+        background: rgba(255,255,255,0.9);
+        backdrop-filter: blur(10px);
+        padding: 14px 16px;
+        margin-bottom: 8px;
+        border-radius: 12px;
         border-left: 4px solid #facc15;
-        box-shadow: 0 14px 30px rgba(0,0,0,0.8);
-        transition: transform 0.18s ease-out, border-color 0.18s ease-out, box-shadow 0.18s ease-out;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        transition: background 0.15s ease-out, border-color 0.15s ease-out, transform 0.1s ease-out;
     }
     .news-card:hover {
-        transform: translateX(4px) translateY(-1px);
+        background: #f3f4ff;
         border-left-color: #fde68a;
-        box-shadow: 0 18px 40px rgba(0,0,0,1);
+        transform: translateY(-1px);
     }
-    .news-date { font-size: 11px; color: #9ca3af; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.12em; }
-    .news-source { font-weight: 700; color: #facc15; font-size: 12px; }
-    .news-title { font-size: 17px; font-weight: 600; color: #e5e7eb; text-decoration: none; display:block; margin-top:4px;}
-    .news-title:hover { color: #fde68a; text-decoration: underline; }
+    .news-date { color: #6b7280; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.10em; }
+    .news-source { font-weight: 600; color: #2563eb; margin-right: 6px; }
+    .news-title { font-weight: 500; color: #111827; text-decoration: none; display:block; margin-top:2px;}
+    .news-title:hover { color: #1d4ed8; text-decoration: underline; }
+
+    /* 統一字體大小（避免大小不一） */
+    body, html, p, div, span, a, label, code, pre,
+    .header-title, .header-subtitle, .header-badge,
+    .news-date, .news-source, .news-title,
+    .stButton > button, input, textarea {
+        font-size: 18px !important;
+    }
 
     /* 隱藏預設 Footer / MainMenu */
     #MainMenu {visibility: hidden;}
@@ -320,9 +345,15 @@ with tab1:
     # 使用 Container 建立白色卡片區塊
     with st.container():
         st.markdown('<div class="control-card">', unsafe_allow_html=True)
+        # 先顯示戰情模式說明，讓使用者一進來就理解邏輯
+        st.markdown(
+            "##### 戰情模式說明\n"
+            "- 未輸入關鍵字時：系統會自動進行 **泰國整體 + PCB + 台泰關係** 的廣度掃描。\n"
+            "- 有輸入關鍵字時：啟用 **深度鑽研模式**，專注追蹤單一公司或主題。"
+        )
         st.markdown("### 🎯 戰情儀表板設定")
         
-        # 1. 兩欄排版：左側輸入、右側說明
+        # 1. 兩欄排版：左側輸入、右側預留未來可擴充區塊
         left_col, right_col = st.columns([2, 1])
         with left_col:
             custom_keyword = st.text_input(
@@ -331,11 +362,7 @@ with tab1:
                 help="若輸入此欄，系統將切換為「深度鑽研模式」，只搜尋此關鍵字。"
             )
         with right_col:
-            st.markdown(
-                "##### 戰情模式說明\n"
-                "- 未輸入時：系統自動進行 **泰國整體 + PCB + 台泰關係** 的廣度掃描。\n"
-                "- 有輸入關鍵字：啟用 **深度鑽研模式**，專注追蹤單一主題。"
-            )
+            st.markdown("")  # 目前不顯示內容，保留版面結構
         
         # 2. 時間選擇
         st.write("⏱️ 選擇時間區間：")

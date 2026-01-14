@@ -21,14 +21,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ================= 爬蟲核心邏輯 (智慧切換版) =================
+# ================= 爬蟲核心邏輯 =================
 
 def get_rss_sources(days, custom_keyword=None):
-    """
-    智慧切換邏輯：
-    1. 若有輸入自訂關鍵字 -> 只回傳該關鍵字的來源 (深度模式)
-    2. 若無輸入 -> 回傳預設三大來源 (廣度模式)
-    """
     sources = []
     
     # === 模式 A：深度鑽研 (只搜自訂) ===
@@ -59,16 +54,16 @@ def get_rss_sources(days, custom_keyword=None):
     return sources
 
 def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
-    """根據模式生成對應的 Prompt"""
     status_text = st.empty() 
     progress_bar = st.progress(0)
     
-    # 取得來源列表 (程式會自動判斷要拿哪一種)
     sources = get_rss_sources(days_int, custom_keyword)
     
-    # === 動態生成 AI 指令 (根據是否有關鍵字) ===
+    # 準備用來存檔的清單
+    news_items_for_json = []
+
+    # === 生成 AI 指令 ===
     if custom_keyword and custom_keyword.strip():
-        # [指令 A] 針對特定主題分析
         instruction_prompt = f"""
 請扮演一位資深的「產業分析師」。
 以下是我針對關鍵字【{custom_keyword}】抓取的{days_label}新聞資料。
@@ -88,7 +83,6 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
 (若新聞內容與該關鍵字關聯度低，請明確指出「雜訊過多，無實質進展」。)
 """
     else:
-        # [指令 B] 原本的三大方向分析
         instruction_prompt = f"""
 請扮演一位資深的「東南亞產經分析師」。
 以下是我透過程式抓取的【{days_label} 泰國 PCB 與電子產業新聞資料庫】。
@@ -108,7 +102,6 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
    - 指出台商的機會與風險。
 """
 
-    # 組合最終 Prompt
     output_text = f"""
 {instruction_prompt}
 
@@ -128,7 +121,6 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
             
             if len(feed.entries) > 0:
                 output_text += f"\n## 【{source['name']}】\n"
-                # 自訂模式抓多一點(30)，預設模式抓適量(15-20)
                 limit = 30 if custom_keyword else (15 if days_int <= 3 else 25)
                 
                 for entry in feed.entries[:limit]: 
@@ -137,7 +129,18 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
                     
                     source_name = entry.source.title if 'source' in entry else "Google News"
                     pub_date = entry.published if 'published' in entry else ""
+                    
+                    # 1. 寫入 Prompt 文字串
                     output_text += f"- [{pub_date}] [{source_name}] {entry.title}\n  連結: {entry.link}\n"
+                    
+                    # 2. 同時加入存檔清單 (新增功能)
+                    news_items_for_json.append({
+                        "title": entry.title,
+                        "link": entry.link,
+                        "date": pub_date,
+                        "source": source_name,
+                        "category": source['name']
+                    })
             else:
                 output_text += f"\n## 【{source['name']}】\n(無相關新聞)\n"
 
@@ -148,7 +151,20 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
         time.sleep(0.5)
 
     output_text += "\n========= 資料結束 ========="
-    status_text.text("✅ 抓取完成！請點擊下方區塊右上角的複製按鈕。")
+    
+    # === 關鍵修改：將抓到的新聞存入 JSON 檔案 ===
+    try:
+        with open('news_data.json', 'w', encoding='utf-8') as f:
+            json.dump({
+                "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                "news_list": news_items_for_json
+            }, f, ensure_ascii=False, indent=4)
+        print("✅ 歷史資料已儲存")
+    except Exception as e:
+        print(f"❌ 存檔失敗: {e}")
+    # ==========================================
+
+    status_text.text("✅ 抓取完成！資料已存入歷史庫。")
     time.sleep(1)
     status_text.empty()
     progress_bar.empty()
@@ -165,7 +181,6 @@ tab1, tab2 = st.tabs(["🤖 ChatGPT 懶人包 (生成器)", "📊 歷史新聞�
 with tab1:
     st.markdown("### 🚀 一鍵生成 ChatGPT 分析指令")
     
-    # 1. 時間選擇
     st.write("請選擇新聞抓取區間：")
     time_options = {
         "1 天 (24h)": 1,
@@ -182,7 +197,6 @@ with tab1:
     )
     days_int = time_options[selected_label]
 
-    # 2. 自訂搜尋關鍵字
     st.markdown("---")
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -196,7 +210,6 @@ with tab1:
 
     st.markdown("---")
     
-    # 按鈕文字會根據模式改變
     btn_text = f"開始搜尋: {custom_keyword}" if custom_keyword else f"開始抓取預設三大新聞 ({selected_label})"
     
     if st.button(btn_text, type="primary"):
@@ -208,10 +221,14 @@ with tab1:
 # --- Tab 2 ---
 with tab2:
     st.markdown("### 📂 本地資料庫檢視")
+    # 加入一個重新整理按鈕，方便確認最新存檔
+    if st.button("🔄 重新整理列表"):
+        st.rerun()
+
     if os.path.exists('news_data.json'):
         with open('news_data.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         st.write(f"上次更新: {data.get('timestamp', '未知')}")
         st.json(data.get('news_list', []))
     else:
-        st.warning("目前沒有歷史存檔。")
+        st.warning("目前沒有歷史存檔，請先到【生成器】分頁執行一次搜尋。")

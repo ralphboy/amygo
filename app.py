@@ -180,33 +180,40 @@ with tab1:
     c_left, c_right = st.columns([1, 3], gap="medium")
     
     with c_left:
-        st.markdown("##### ⚙️ 設定操作") # 簡化標題
+        st.markdown("##### ⚙️ 設定操作")
         
-        # 1. 時間選擇 (改為 4x2 按鈕網格，追求對稱美感)
+        # 1. 時間選擇 (改為 4x2 按鈕網格)
         if 'days_int' not in st.session_state:
-            st.session_state['days_int'] = 1 # 預設 24H
+            st.session_state['days_int'] = 1 
+        
+        # [狀態管理] 初始化搜尋狀態
+        if 'search_type' not in st.session_state:
+            st.session_state['search_type'] = None
+        if 'search_keyword' not in st.session_state:
+            st.session_state['search_keyword'] = ""
 
-        # 定義選項：標籤 vs 天數
+        # [Callback] 設定搜尋模式
+        def set_search(mode, keyword=""):
+            st.session_state['search_type'] = mode
+            st.session_state['search_keyword'] = keyword
+
+        # 定義選項
         time_opts_row1 = [("24H", 1), ("3天", 3), ("1週", 7), ("2週", 14)]
         time_opts_row2 = [("1月", 30), ("2月", 60), ("3月", 90), ("6月", 180)]
-        
-        # 建立反查表給 Prompt 使用
         all_opts = dict(time_opts_row1 + time_opts_row2)
         days_int = st.session_state['days_int']
-        # 找出對應的 label，若無則預設顯示天數
         selected_label = next((k for k, v in all_opts.items() if v == days_int), f"{days_int}天")
 
         # Row 1
         r1_cols = st.columns(4)
         for idx, (lbl, val) in enumerate(time_opts_row1):
             with r1_cols[idx]:
-                # 若被選中則亮色
                 b_type = "primary" if days_int == val else "secondary"
                 if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
                     st.session_state['days_int'] = val
                     st.rerun()
 
-        # Row 2 (更緊湊，減少垂直間距)
+        # Row 2
         r2_cols = st.columns(4)
         for idx, (lbl, val) in enumerate(time_opts_row2):
             with r2_cols[idx]:
@@ -215,54 +222,68 @@ with tab1:
                     st.session_state['days_int'] = val
                     st.rerun()
 
-        st.write("") # 輕微間距代替 ---
+        st.write("") 
 
-        # 2. 三大主題按鈕 (移除 caption，直接顯示)
-        btn_macro = st.button("泰國政經情勢", use_container_width=True)
-        btn_industry = st.button("電子產業趨勢", use_container_width=True)
-        btn_vip = st.button("重點台商動態", use_container_width=True)
+        # 2. 三大主題按鈕 (使用 callback 觸發)
+        st.button("泰國政經情勢", use_container_width=True, on_click=set_search, args=("macro",))
+        st.button("電子產業趨勢", use_container_width=True, on_click=set_search, args=("industry",))
+        st.button("重點台商動態", use_container_width=True, on_click=set_search, args=("vip",))
         
-        st.write("") # 輕微間距代替 ---
+        st.write("") 
         
-        # 3. 自訂搜尋
-        custom_keyword = st.text_input("深度追蹤", placeholder="輸入關鍵字 (如: Delta)")
-        btn_custom = st.button(f"🔍 搜尋", type="primary", use_container_width=True) if custom_keyword else None
+        # 3. 自訂搜尋 (支援 Enter 觸發)
+        def handle_custom_search():
+            kw = st.session_state.kw_input
+            if kw:
+                set_search("custom", kw)
+
+        st.text_input("深度追蹤", placeholder="輸入關鍵字 (如: Delta)", key="kw_input", on_change=handle_custom_search)
+        
+        # 即使 Enter 可觸發，保留按鈕以防萬一 (UI 回饋)
+        # 根據是否有輸入內容決定是否顯示/啟用按鈕
+        kw_val = st.session_state.get("kw_input", "")
+        if kw_val:
+            st.button(f"🔍 搜尋: {kw_val}", type="primary", use_container_width=True, on_click=handle_custom_search)
 
     # 右側：顯示結果區域
     with c_right:
-        # 預設顯示歡迎詞或說明
-        if not (btn_macro or btn_industry or btn_vip or (btn_custom and custom_keyword)):
-            st.info("👈 請從左側選擇掃描主題，或輸入關鍵字進行搜尋。")
+        s_type = st.session_state.get('search_type')
+        s_kw = st.session_state.get('search_keyword')
+
+        # 尚未搜尋時的歡迎畫面
+        if not s_type:
+            st.info("👈 請從左側選擇掃描主題，或輸入關鍵字並按下 Enter 搜尋。")
             st.markdown("""
             #### 💡 提示
-            * **宏觀戰情**：涵蓋泰國政經、政策與台泰關係。
-            * **產業戰情**：專注 PCB、伺服器與電子製造供應鏈。
-            * **台商戰情**：鎖定 10 大重點台商 (鴻海、台達電、廣達等) 動態。
+            * **泰國政經情勢**：涵蓋泰國政經、政策與台泰關係。
+            * **電子產業趨勢**：專注 PCB、伺服器與電子製造供應鏈。
+            * **重點台商動態**：鎖定 10 大重點台商 (鴻海、台達電、廣達等) 動態。
             """)
         
-        # 邏輯執行
-        if btn_custom and custom_keyword:
-            st.markdown(f"#### 🔍 搜尋結果: {custom_keyword}")
-            with st.spinner("正在全網搜索..."):
-                prompt = generate_chatgpt_prompt(selected_label, days_int, "custom", custom_keyword)
+        # 根據狀態執行邏輯
+        elif s_type == "custom" and s_kw:
+            st.markdown(f"#### 🔍 搜尋結果: {s_kw}")
+            with st.spinner(f"正在全網搜索 {s_kw}..."):
+                # 這裡調用生成函數，由於是基於 State，切換時間時會自動重跑這段
+                prompt = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
                 st.success("生成完成！")
                 st.code(prompt, language="markdown")
                 
-        elif btn_macro:
+        elif s_type == "macro":
             st.markdown("#### 🇹🇭 宏觀戰情報告")
             with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
                 prompt = generate_chatgpt_prompt(selected_label, days_int, "macro")
                 st.success("生成完成！")
                 st.code(prompt, language="markdown")
                 
-        elif btn_industry:
+        elif s_type == "industry":
             st.markdown("#### 🔌 產業戰情報告")
             with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
                 prompt = generate_chatgpt_prompt(selected_label, days_int, "industry")
                 st.success("生成完成！")
                 st.code(prompt, language="markdown") 
                 
-        elif btn_vip:
+        elif s_type == "vip":
             st.markdown("#### 🏢 台商戰情報告")
             with st.spinner("正在掃描重點台商動態..."):
                 prompt = generate_chatgpt_prompt(selected_label, days_int, "vip")

@@ -187,12 +187,12 @@ def display_results(prompt, news_list):
     st.success("搜尋完成！")
     
     # 區塊 1: AI Prompt
-    st.markdown("##### 📋 1. AI 分析指令")
+    st.markdown("##### 1. AI 分析指令")
     with st.expander("點擊展開", expanded=False):
         st.code(prompt, language="markdown")
         
     # 區塊 2: 新聞卡片
-    st.markdown("##### 📰 2. 相關新聞速覽")
+    st.markdown("##### 2. 相關新聞速覽")
     if news_list:
         for news in news_list:
             cat = news.get('category', '一般')

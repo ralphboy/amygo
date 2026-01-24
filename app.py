@@ -277,7 +277,7 @@ with tab1:
         st.markdown('<div class="caption-text mobile-hidden" style="font-size:0.8em; color:gray; margin-bottom:4px;">1. 時間範圍</div>', unsafe_allow_html=True)
         # 使用 pills (如果版本支援) 或 radio
         # 為了確保緊湊，這裡使用 pills 樣式
-        date_selection = st.pills("Time", list(DATE_MAP.keys()), default="24H", label_visibility="collapsed", key="pills_date")
+        date_selection = st.pills("Time", list(DATE_MAP.keys()), default="1天", label_visibility="collapsed", key="pills_date")
         
         # 當 pills 改變時更新 days_int, 但只有在觸發搜尋時才真正重新抓取? 
         # 原本邏輯是點擊按鈕直接 rerun。與 pills 互動會直接 rerun。

@@ -152,7 +152,7 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
         instruction_prompt = f"""
 請扮演一位資深的「東南亞產經分析師」。
 以下是我透過程式抓取的【{days_label} 泰國 PCB 與電子產業新聞資料庫】。
-請針對：1.泰國整體新聞 2.PCB電子製造 3.台泰關係 進行深度分析。
+請針對：1.泰國整體新聞 2.PCB電子製造 3.台泰關係 4.重點台商動態 進行深度分析。
 """
 
     output_text = f"""

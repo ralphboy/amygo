@@ -13,61 +13,8 @@ st.set_page_config(
 )
 
 # ================= CSS 美化 (左側導航版) =================
-st.markdown("""
-<style>
-    /* 標題樣式 */
-    .big-font { font-size: 28px !important; font-weight: 800; color: #1a1a1a; margin-bottom: 20px !important; }
-    
-    /* 調整垂直間距，讓畫面緊湊 */
-    .block-container { padding-top: 1rem !important; padding-bottom: 2rem !important; }
-    
-    /* 左側按鈕區專用樣式 */
-    .stButton>button {
-        width: 100%;
-        border-radius: 8px;
-        height: 3.5em;
-        font-weight: 600;
-        border: 1px solid #e0e0e0;
-        text-align: left; /* 讓文字靠左，像選單 */
-        padding-left: 20px;
-        transition: all 0.2s;
-        margin-bottom: 8px;
-    }
-    .stButton>button:hover {
-        border-color: #d93025;
-        color: #d93025;
-        background-color: #fff5f5;
-        padding-left: 25px; /* 滑鼠移過去稍微右移，增加互動感 */
-    }
-    
-    /* 新聞卡片樣式 */
-    .news-card {
-        background-color: white;
-        padding: 12px;
-        border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        margin-bottom: 8px;
-        border-left: 4px solid #d93025;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .news-title {
-        font-size: 16px;
-        font-weight: 700;
-        color: #1a1a1a;
-        text-decoration: none;
-        display: block;
-        margin-bottom: 4px;
-    }
-    .news-meta { font-size: 13px; color: #666; }
-    .news-tag {
-        background-color: #f0f0f0;
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-size: 11px;
-        margin-left: 8px;
-        color: #555;
-    }
 </style>
+""", unsafe_allow_html=True)
 """, unsafe_allow_html=True)
 
 # ================= 爬蟲核心邏輯 =================

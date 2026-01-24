@@ -82,7 +82,9 @@ def get_rss_sources(days, custom_keyword=None):
         '"Gold Circuit Electronics"', 
         '"Dynamic Holding"', 
         '"Tripod Technology"', 
-        '"Unitech"'
+        '"Unitech"',
+        '"Foxconn"',
+        '"Inventec"'
     ]
     # 組合搜尋字串: Thailand AND (A OR B OR C ...)
     vip_query = "+OR+".join(vip_companies)

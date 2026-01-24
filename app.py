@@ -54,6 +54,13 @@ CUSTOM_CSS = """
         padding-top: 5px !important;
         padding-bottom: 5px !important;
     }
+
+    /* 手機版隱藏特定元素 (max-width: 768px matches most tablets/phones) */
+    @media (max-width: 768px) {
+        .mobile-hidden {
+            display: none !important;
+        }
+    }
 </style>
 """
 
@@ -242,7 +249,8 @@ with tab1:
     c_left, c_right = st.columns([1, 3], gap="medium")
     
     with c_left:
-        st.markdown("##### ⚙️ 設定操作")
+        # 使用自訂 HTML 加入 class 以便 CSS 控制隱藏
+        st.markdown('<h5 class="mobile-hidden">⚙️ 設定操作</h5>', unsafe_allow_html=True)
         
         # [狀態管理] 初始化
         if 'days_int' not in st.session_state: st.session_state['days_int'] = 1 
@@ -257,7 +265,8 @@ with tab1:
             st.session_state['search_keyword'] = keyword
 
         # 1. 時間選擇 (單行顯示)
-        st.caption("1. 時間範圍")
+        # 1. 時間選擇 (單行顯示)
+        st.markdown('<div class="caption-text mobile-hidden" style="font-size:0.8em; color:gray; margin-bottom:4px;">1. 時間範圍</div>', unsafe_allow_html=True)
         # 使用 pills (如果版本支援) 或 radio
         # 為了確保緊湊，這裡使用 pills 樣式
         date_selection = st.pills("Time", list(DATE_MAP.keys()), default="24H", label_visibility="collapsed", key="pills_date")
@@ -270,7 +279,8 @@ with tab1:
         st.write("") 
 
         # 2. 主題選擇 (單行顯示)
-        st.caption("2. 分析主題")
+        # 2. 主題選擇 (單行顯示)
+        st.markdown('<div class="caption-text mobile-hidden" style="font-size:0.8em; color:gray; margin-bottom:4px;">2. 分析主題</div>', unsafe_allow_html=True)
         
         # 使用 columns 模擬橫排按鈕 (因為 pills 點擊無法帶入 args，需配合 if check)
         # 或者直接用 pills 選擇主題
@@ -295,7 +305,7 @@ with tab1:
                 st.session_state['pills_topic'] = None # 清除主題選取
                 set_search("custom", kw)
 
-        st.caption("3. 關鍵字")
+        st.markdown('<div class="caption-text mobile-hidden" style="font-size:0.8em; color:gray; margin-bottom:4px;">3. 關鍵字</div>', unsafe_allow_html=True)
         c_in, c_btn = st.columns([3, 1], gap="small")
         with c_in:
             st.text_input("Keywords", placeholder="輸入關鍵字 (如: Delta)", key="kw_input", on_change=handle_custom_search, label_visibility="collapsed")

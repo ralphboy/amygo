@@ -212,92 +212,92 @@ st.markdown('<div class="big-font">ThaiNews.Ai 🇹🇭 戰情室</div>', unsafe
 
 tab1, tab2 = st.tabs(["🤖 生成器", "📊 歷史庫"])
 
-with tab1:
-    # 版面核心：左控右顯
-    c_left, c_right = st.columns([1, 3], gap="medium")
+with st.sidebar:
+    st.image("https://cdn-icons-png.flaticon.com/512/197/197484.png", width=50) # 泰國國旗圖標或類似
+    st.markdown("## ⚙️ 戰情室設定")
     
-    with c_left:
-        st.markdown("##### ⚙️ 設定操作")
+    # 1. 時間選擇
+    if 'days_int' not in st.session_state:
+        st.session_state['days_int'] = 1 
+    
+    # [狀態管理] 初始化
+    if 'search_type' not in st.session_state:
+        st.session_state['search_type'] = None
+    if 'search_keyword' not in st.session_state:
+        st.session_state['search_keyword'] = ""
+
+    def set_search(mode, keyword=""):
+        st.session_state['search_type'] = mode
+        st.session_state['search_keyword'] = keyword
+
+    # 時間選項
+    st.caption("1. 選擇時間範圍")
+    time_opts_row1 = [("24H", 1), ("3天", 3), ("1週", 7), ("2週", 14)]
+    time_opts_row2 = [("1月", 30), ("2月", 60), ("3月", 90), ("6月", 180)]
+    all_opts = dict(time_opts_row1 + time_opts_row2)
+    days_int = st.session_state['days_int']
+    selected_label = next((k for k, v in all_opts.items() if v == days_int), f"{days_int}天")
+
+    r1_cols = st.columns(4)
+    for idx, (lbl, val) in enumerate(time_opts_row1):
+        with r1_cols[idx]:
+            b_type = "primary" if days_int == val else "secondary"
+            if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
+                st.session_state['days_int'] = val
+                st.rerun()
+
+    r2_cols = st.columns(4)
+    for idx, (lbl, val) in enumerate(time_opts_row2):
+        with r2_cols[idx]:
+            b_type = "primary" if days_int == val else "secondary"
+            if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
+                st.session_state['days_int'] = val
+                st.rerun()
+
+    st.markdown("---")
+
+    # 主題掃描
+    st.caption("2. 選擇掃描主題")
+    st.button("泰國政經情勢", use_container_width=True, on_click=set_search, args=("macro",))
+    st.button("電子產業趨勢", use_container_width=True, on_click=set_search, args=("industry",))
+    st.button("重點台商動態", use_container_width=True, on_click=set_search, args=("vip",))
+    
+    st.markdown("---")
+    
+    # 自訂搜尋
+    st.caption("3. 深度關鍵字追蹤")
+    def handle_custom_search():
+        kw = st.session_state.kw_input
+        if kw:
+            set_search("custom", kw)
+
+    st.text_input("輸入關鍵字 (如: Delta)", key="kw_input", on_change=handle_custom_search)
+    kw_val = st.session_state.get("kw_input", "")
+    if kw_val:
+        st.button(f"🔍 搜尋: {kw_val}", type="primary", use_container_width=True, on_click=handle_custom_search)
+
+# ================= 右側主畫面 =================
+with tab1:
+    # 移除原本的 columns 佈局，直接使用全寬
+    s_type = st.session_state.get('search_type')
+    s_kw = st.session_state.get('search_keyword')
+
+    # 尚未搜尋時的歡迎畫面
+    if not s_type:
+        st.info("👈 請開啟左側選單 (Sidebar)，選擇掃描主題或輸入關鍵字。")
+        st.markdown("""
+        #### 歡迎來到 ThaiNews.Ai 🇹🇭
         
-        # 1. 時間選擇 (改為 4x2 按鈕網格)
-        if 'days_int' not in st.session_state:
-            st.session_state['days_int'] = 1 
+        這是一個專為 **泰國市場分析** 打造的 AI 戰情室。
+        為了優化手機體驗，我們將操作面板移至左上角的選單中。
         
-        # [狀態管理] 初始化搜尋狀態
-        if 'search_type' not in st.session_state:
-            st.session_state['search_type'] = None
-        if 'search_keyword' not in st.session_state:
-            st.session_state['search_keyword'] = ""
-
-        # [Callback] 設定搜尋模式
-        def set_search(mode, keyword=""):
-            st.session_state['search_type'] = mode
-            st.session_state['search_keyword'] = keyword
-
-        # 定義選項
-        time_opts_row1 = [("24H", 1), ("3天", 3), ("1週", 7), ("2週", 14)]
-        time_opts_row2 = [("1月", 30), ("2月", 60), ("3月", 90), ("6月", 180)]
-        all_opts = dict(time_opts_row1 + time_opts_row2)
-        days_int = st.session_state['days_int']
-        selected_label = next((k for k, v in all_opts.items() if v == days_int), f"{days_int}天")
-
-        # Row 1
-        r1_cols = st.columns(4)
-        for idx, (lbl, val) in enumerate(time_opts_row1):
-            with r1_cols[idx]:
-                b_type = "primary" if days_int == val else "secondary"
-                if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
-                    st.session_state['days_int'] = val
-                    st.rerun()
-
-        # Row 2
-        r2_cols = st.columns(4)
-        for idx, (lbl, val) in enumerate(time_opts_row2):
-            with r2_cols[idx]:
-                b_type = "primary" if days_int == val else "secondary"
-                if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
-                    st.session_state['days_int'] = val
-                    st.rerun()
-
-        st.write("") 
-
-        # 2. 三大主題按鈕 (使用 callback 觸發)
-        st.button("泰國政經情勢", use_container_width=True, on_click=set_search, args=("macro",))
-        st.button("電子產業趨勢", use_container_width=True, on_click=set_search, args=("industry",))
-        st.button("重點台商動態", use_container_width=True, on_click=set_search, args=("vip",))
-        
-        st.write("") 
-        
-        # 3. 自訂搜尋 (支援 Enter 觸發)
-        def handle_custom_search():
-            kw = st.session_state.kw_input
-            if kw:
-                set_search("custom", kw)
-
-        st.text_input("深度追蹤", placeholder="輸入關鍵字 (如: Delta)", key="kw_input", on_change=handle_custom_search)
-        
-        # 即使 Enter 可觸發，保留按鈕以防萬一 (UI 回饋)
-        # 根據是否有輸入內容決定是否顯示/啟用按鈕
-        kw_val = st.session_state.get("kw_input", "")
-        if kw_val:
-            st.button(f"🔍 搜尋: {kw_val}", type="primary", use_container_width=True, on_click=handle_custom_search)
-
-    # 右側：顯示結果區域
-    with c_right:
-        s_type = st.session_state.get('search_type')
-        s_kw = st.session_state.get('search_keyword')
-
-        # 尚未搜尋時的歡迎畫面
-        if not s_type:
-            st.info("👈 請從左側選擇掃描主題，或輸入關鍵字並按下 Enter 搜尋。")
-            st.markdown("""
-            #### 💡 提示
-            * **泰國政經情勢**：涵蓋泰國政經、政策與台泰關係。
-            * **電子產業趨勢**：專注 PCB、伺服器與電子製造供應鏈。
-            * **重點台商動態**：鎖定 10 大重點台商 (鴻海、台達電、廣達等) 動態。
-            """)
-        
-        # 根據狀態執行邏輯
+        **功能介紹：**
+        *   **泰國政經情勢**：快速掌握大選、政策與雙邊關係。
+        *   **電子產業趨勢**：專注 PCB 與電子製造供應鏈情報。
+        *   **重點台商動態**：追蹤由台灣前往泰國佈局的指標企業。
+        """)
+    
+    # 根據狀態執行邏輯
         elif s_type == "custom" and s_kw:
             st.markdown(f"#### 🔍 搜尋結果: {s_kw}")
             with st.spinner(f"正在全網搜索 {s_kw}..."):

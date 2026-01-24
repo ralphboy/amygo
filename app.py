@@ -218,9 +218,9 @@ with tab1:
         st.write("") # 輕微間距代替 ---
 
         # 2. 三大主題按鈕 (移除 caption，直接顯示)
-        btn_macro = st.button("🇹🇭 1. 宏觀戰情", use_container_width=True)
-        btn_industry = st.button("🔌 2. 產業戰情", use_container_width=True)
-        btn_vip = st.button("🏢 3. 台商戰情", use_container_width=True)
+        btn_macro = st.button("泰國政經情勢", use_container_width=True)
+        btn_industry = st.button("電子產業趨勢", use_container_width=True)
+        btn_vip = st.button("重點台商動態", use_container_width=True)
         
         st.write("") # 輕微間距代替 ---
         

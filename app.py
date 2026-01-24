@@ -254,15 +254,11 @@ with st.sidebar:
                 st.session_state['days_int'] = val
                 st.rerun()
 
-    st.markdown("---")
-
     # 主題掃描
     st.caption("2. 選擇掃描主題")
     st.button("泰國政經情勢", use_container_width=True, on_click=set_search, args=("macro",))
     st.button("電子產業趨勢", use_container_width=True, on_click=set_search, args=("industry",))
     st.button("重點台商動態", use_container_width=True, on_click=set_search, args=("vip",))
-    
-    st.markdown("---")
     
     # 自訂搜尋
     st.caption("3. 深度關鍵字追蹤")

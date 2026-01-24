@@ -182,10 +182,38 @@ with tab1:
     with c_left:
         st.markdown("##### ⚙️ 設定操作") # 簡化標題
         
-        # 1. 時間選擇 (更緊湊)
-        time_options = { "24H": 1, "3天": 3, "1週": 7, "2週": 14, "1月": 30 }
-        selected_label = st.radio("時間區間", options=list(time_options.keys()), horizontal=True, label_visibility="collapsed")
-        days_int = time_options[selected_label]
+        # 1. 時間選擇 (改為 4x2 按鈕網格，追求對稱美感)
+        if 'days_int' not in st.session_state:
+            st.session_state['days_int'] = 1 # 預設 24H
+
+        # 定義選項：標籤 vs 天數
+        time_opts_row1 = [("24H", 1), ("3天", 3), ("1週", 7), ("2週", 14)]
+        time_opts_row2 = [("1月", 30), ("2月", 60), ("3月", 90), ("6月", 180)]
+        
+        # 建立反查表給 Prompt 使用
+        all_opts = dict(time_opts_row1 + time_opts_row2)
+        days_int = st.session_state['days_int']
+        # 找出對應的 label，若無則預設顯示天數
+        selected_label = next((k for k, v in all_opts.items() if v == days_int), f"{days_int}天")
+
+        # Row 1
+        r1_cols = st.columns(4)
+        for idx, (lbl, val) in enumerate(time_opts_row1):
+            with r1_cols[idx]:
+                # 若被選中則亮色
+                b_type = "primary" if days_int == val else "secondary"
+                if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
+                    st.session_state['days_int'] = val
+                    st.rerun()
+
+        # Row 2 (更緊湊，減少垂直間距)
+        r2_cols = st.columns(4)
+        for idx, (lbl, val) in enumerate(time_opts_row2):
+            with r2_cols[idx]:
+                b_type = "primary" if days_int == val else "secondary"
+                if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
+                    st.session_state['days_int'] = val
+                    st.rerun()
 
         st.write("") # 輕微間距代替 ---
 

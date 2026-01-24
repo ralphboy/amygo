@@ -188,7 +188,7 @@ def display_results(prompt, news_list):
     
     # 區塊 1: AI Prompt
     st.markdown("##### 📋 1. AI 分析指令")
-    with st.expander("點擊展開 ➡️ 複製代碼", expanded=False):
+    with st.expander("點擊展開", expanded=False):
         st.code(prompt, language="markdown")
         
     st.markdown("---")

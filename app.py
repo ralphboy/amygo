@@ -265,7 +265,7 @@ with tab1:
         if 'search_type' not in st.session_state: st.session_state['search_type'] = None
         if 'search_keyword' not in st.session_state: st.session_state['search_keyword'] = ""
         # 紀錄 pills 的選擇狀態
-        if 'pills_date' not in st.session_state: st.session_state['pills_date'] = "24H"
+        if 'pills_date' not in st.session_state: st.session_state['pills_date'] = "1天"
         
         # [Helper] 設定搜尋模式
         def set_search(mode, keyword=""):

@@ -325,7 +325,7 @@ with tab1:
 
         # 尚未搜尋時的歡迎畫面
         if not s_type:
-            st.info("👈 請從左側選擇掃描主題，或輸入關鍵字並按下 Enter 搜尋。")
+
             st.markdown("""
             #### 歡迎來到 ThaiNews.Ai 🇹🇭
             * **泰國政經情勢**：涵蓋泰國政經、政策與台泰關係。

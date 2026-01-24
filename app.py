@@ -260,7 +260,7 @@ with tab1:
 
     st.markdown("---")
     
-    btn_text = f"開始搜尋: {custom_keyword}" if custom_keyword else f"開始抓取預設三大新聞 ({selected_label})"
+    btn_text = f"開始搜尋: {custom_keyword}" if custom_keyword else f"開始抓取預設四大新聞 ({selected_label}) - 中英雙語版"
     
     if st.button(btn_text, type="primary"):
         with st.spinner(f"正在全網搜索..."):

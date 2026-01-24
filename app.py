@@ -57,8 +57,15 @@ CUSTOM_CSS = """
 
     /* 手機版隱藏特定元素 (max-width: 768px matches most tablets/phones) */
     @media (max-width: 768px) {
-        .mobile-hidden {
             display: none !important;
+        }
+        /* 進一步減少手機版垂直間距 */
+        div[data-testid="column"] {
+            gap: 0.2rem !important;
+        }
+        /* 減少各區塊間距 */
+        .block-container {
+             padding-top: 2rem !important;
         }
     }
 </style>
@@ -274,9 +281,7 @@ with tab1:
         # 當 pills 改變時更新 days_int, 但只有在觸發搜尋時才真正重新抓取? 
         # 原本邏輯是點擊按鈕直接 rerun。與 pills 互動會直接 rerun。
         if date_selection:
-            st.session_state['days_int'] = DATE_MAP[date_selection]
-
-        st.write("") 
+            st.session_state['days_int'] = DATE_MAP[date_selection] 
 
         # 2. 主題選擇 (單行顯示)
         # 2. 主題選擇 (單行顯示)
@@ -294,9 +299,7 @@ with tab1:
             if st.session_state.get('last_topic') != topic_selection:
                 st.session_state['last_topic'] = topic_selection # 防止無限迴圈
                 set_search(target_mode)
-                st.rerun()
-
-        st.write("") 
+                st.rerun() 
         
         # 3. 自訂搜尋 (同一行)
         def handle_custom_search():

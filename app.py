@@ -65,8 +65,12 @@ def get_rss_sources(days, custom_keyword=None, category_mode=None):
     if custom_keyword and custom_keyword.strip():
         clean_keyword = custom_keyword.strip().replace(" ", "+")
         sources.append({
-            "name": f"🔍 深度追蹤: {custom_keyword}",
+            "name": f"🔍 深度追蹤: {custom_keyword} (EN)",
             "url": f"https://news.google.com/rss/search?q={clean_keyword}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+        })
+        sources.append({
+            "name": f"🔍 深度追蹤: {custom_keyword} (中文)",
+            "url": f"https://news.google.com/rss/search?q={clean_keyword}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
         })
         return sources
 

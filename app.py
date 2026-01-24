@@ -136,7 +136,10 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
             feed = feedparser.parse(source['url'])
             if len(feed.entries) > 0:
                 output_text += f"\n## 【{source['name']}】\n"
-                limit = 30 
+                
+                # 若是自訂搜尋則不設限 (抓取所有回傳結果)，否則限制 30 篇以免 Prompt 太長
+                limit = len(feed.entries) if search_mode == "custom" else 30
+                
                 for entry in feed.entries[:limit]: 
                     if entry.title in seen_titles: continue
                     seen_titles.add(entry.title)

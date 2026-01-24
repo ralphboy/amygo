@@ -295,29 +295,29 @@ with tab1:
             """)
         
         # 根據狀態執行邏輯
-    elif s_type == "custom" and s_kw:
-        st.markdown(f"##### 🔍 搜尋結果: {s_kw}")
-        with st.spinner(f"正在全網搜索 {s_kw}..."):
-            prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
-            display_results(prompt, news_list)
-            
-    elif s_type == "macro":
-        st.markdown("##### 🇹🇭 泰國政經情勢")
-        with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
-            prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "macro")
-            display_results(prompt, news_list)
-            
-    elif s_type == "industry":
-        st.markdown("##### 🔌 電子產業趨勢")
-        with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
-            prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "industry")
-            display_results(prompt, news_list)
-            
-    elif s_type == "vip":
-        st.markdown("##### 🏢 重點台商動態")
-        with st.spinner("正在掃描重點台商動態..."):
-            prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "vip")
-            display_results(prompt, news_list)
+        elif s_type == "custom" and s_kw:
+            st.markdown(f"##### 🔍 搜尋結果: {s_kw}")
+            with st.spinner(f"正在全網搜索 {s_kw}..."):
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
+                display_results(prompt, news_list)
+                
+        elif s_type == "macro":
+            st.markdown("##### 🇹🇭 泰國政經情勢")
+            with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "macro")
+                display_results(prompt, news_list)
+                
+        elif s_type == "industry":
+            st.markdown("##### 🔌 電子產業趨勢")
+            with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "industry")
+                display_results(prompt, news_list)
+                
+        elif s_type == "vip":
+            st.markdown("##### 🏢 重點台商動態")
+            with st.spinner("正在掃描重點台商動態..."):
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "vip")
+                display_results(prompt, news_list)
 
 with tab2:
     if st.button("🔄 刷新列表"): st.rerun()

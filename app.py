@@ -182,7 +182,7 @@ def display_results(prompt, news_list):
     st.success("搜尋完成！")
     
     # 區塊 1: AI Prompt
-    with st.expander("📋 1. AI 分析指令 (點擊展開後複製)", expanded=False):
+    with st.expander("📋 1. AI 分析指令 (點擊展開 ➡️ 複製代碼)", expanded=False):
         st.caption("請點擊右上的 Copy 按鈕，貼給 ChatGPT 分析")
         st.code(prompt, language="markdown")
         

@@ -17,6 +17,11 @@ st.markdown("""
 <style>
     .big-font { font-size: 28px !important; font-weight: 800; color: #1a1a1a; margin-bottom: 20px !important; }
     
+    /* 緊湊化調整 */
+    div[data-testid="stVerticalBlock"] > div {
+        gap: 0.5rem !important; /* 全局縮小垂直間距 */
+    }
+    
     .news-card {
         background-color: white;
         padding: 12px;
@@ -175,26 +180,24 @@ with tab1:
     c_left, c_right = st.columns([1, 3], gap="medium")
     
     with c_left:
-        st.markdown("##### ⚙️ 設定與操作")
+        st.markdown("##### ⚙️ 設定操作") # 簡化標題
         
-        # 1. 時間選擇
+        # 1. 時間選擇 (更緊湊)
         time_options = { "24H": 1, "3天": 3, "1週": 7, "2週": 14, "1月": 30 }
         selected_label = st.radio("時間區間", options=list(time_options.keys()), horizontal=True, label_visibility="collapsed")
         days_int = time_options[selected_label]
 
-        st.markdown("---")
+        st.write("") # 輕微間距代替 ---
 
-        # 2. 三大主題按鈕 (直排)
-        st.caption("主題掃描")
+        # 2. 三大主題按鈕 (移除 caption，直接顯示)
         btn_macro = st.button("🇹🇭 1. 宏觀戰情", use_container_width=True)
         btn_industry = st.button("🔌 2. 產業戰情", use_container_width=True)
         btn_vip = st.button("🏢 3. 台商戰情", use_container_width=True)
         
-        st.markdown("---")
+        st.write("") # 輕微間距代替 ---
         
         # 3. 自訂搜尋
-        st.caption("深度追蹤")
-        custom_keyword = st.text_input("關鍵字 (選填)", placeholder="例如: Delta")
+        custom_keyword = st.text_input("深度追蹤", placeholder="輸入關鍵字 (如: Delta)")
         btn_custom = st.button(f"🔍 搜尋", type="primary", use_container_width=True) if custom_keyword else None
 
     # 右側：顯示結果區域

@@ -78,7 +78,7 @@ def get_rss_sources(days, custom_keyword=None):
         '"Gold Circuit Electronics"', '"Dynamic Holding"', '"Tripod Technology"', 
         '"Unitech"', '"Foxconn"', '"Inventec"'
     ]
-    vip_query_en = "+OR+".join(vip_companies_en)
+    vip_query_en = "+OR+".join([c.replace(" ", "+") for c in vip_companies_en])
 
     # VIP 台商清單 (中文)
     vip_companies_cn = [
@@ -86,7 +86,7 @@ def get_rss_sources(days, custom_keyword=None):
         '"金像電"', '"定穎"', '"健鼎"', 
         '"燿華"', '"鴻海"', '"英業達"'
     ]
-    vip_query_cn = "+OR+".join(vip_companies_cn)
+    vip_query_cn = "+OR+".join([c.replace(" ", "+") for c in vip_companies_cn])
     
     sources.extend([
         # 1. 泰國整體

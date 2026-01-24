@@ -5,15 +5,10 @@ from datetime import datetime, timedelta
 import json
 import os
 
-# ================= 頁面設定 =================
-st.set_page_config(
-    page_title="ThaiNews.Ai | 戰情室", 
-    page_icon="🇹🇭", 
-    layout="wide"
-)
+# ================= 常數設定 =================
 
-# ================= CSS 美化 (左側導航版) =================
-st.markdown("""
+# CSS 美化樣式
+CUSTOM_CSS = """
 <style>
     .big-font { font-size: 28px !important; font-weight: 800; color: #1a1a1a; margin-bottom: 20px !important; }
     
@@ -60,7 +55,42 @@ st.markdown("""
         padding-bottom: 5px !important;
     }
 </style>
-""", unsafe_allow_html=True)
+"""
+
+# VIP 公司清單
+VIP_COMPANIES_EN = [
+    '"Delta Electronics"', '"Zhen Ding"', '"Unimicron"', '"Compeq"', 
+    '"Gold Circuit Electronics"', '"Dynamic Holding"', '"Tripod Technology"', 
+    '"Unitech"', '"Foxconn"', '"Inventec"'
+]
+
+VIP_COMPANIES_CN = [
+    '"台達電"', '"臻鼎"', '"欣興"', '"華通"', 
+    '"金像電"', '"定穎"', '"健鼎"', 
+    '"燿華"', '"鴻海"', '"英業達"'
+]
+
+# 選項與設定映射
+DATE_MAP = {
+    "24H": 1, "3天": 3, "1週": 7, "2週": 14,
+    "1月": 30, "2月": 60, "3月": 90, "6月": 180
+}
+
+TOPIC_MAP = {
+    "泰國政經": "macro",
+    "電子產業": "industry",
+    "重點台商": "vip"
+}
+
+# ================= 頁面設定 =================
+st.set_page_config(
+    page_title="ThaiNews.Ai | 戰情室", 
+    page_icon="🇹🇭", 
+    layout="wide"
+)
+
+# ================= CSS 美化 (左側導航版) =================
+st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
 # ================= 爬蟲核心邏輯 =================
 
@@ -79,19 +109,8 @@ def get_rss_sources(days, mode="all", custom_keyword=None):
         })
         return sources
 
-    vip_companies_en = [
-        '"Delta Electronics"', '"Zhen Ding"', '"Unimicron"', '"Compeq"', 
-        '"Gold Circuit Electronics"', '"Dynamic Holding"', '"Tripod Technology"', 
-        '"Unitech"', '"Foxconn"', '"Inventec"'
-    ]
-    vip_query_en = "+OR+".join([c.replace(" ", "+") for c in vip_companies_en])
-
-    vip_companies_cn = [
-        '"台達電"', '"臻鼎"', '"欣興"', '"華通"', 
-        '"金像電"', '"定穎"', '"健鼎"', 
-        '"燿華"', '"鴻海"', '"英業達"'
-    ]
-    vip_query_cn = "+OR+".join([c.replace(" ", "+") for c in vip_companies_cn])
+    vip_query_en = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_EN])
+    vip_query_cn = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_CN])
     
     if mode == "macro":
         sources.extend([
@@ -239,37 +258,28 @@ with tab1:
 
         # 1. 時間選擇 (單行顯示)
         st.caption("1. 時間範圍")
-        date_map = {
-            "24H": 1, "3天": 3, "1週": 7, "2週": 14,
-            "1月": 30, "2月": 60, "3月": 90, "6月": 180
-        }
         # 使用 pills (如果版本支援) 或 radio
         # 為了確保緊湊，這裡使用 pills 樣式
-        date_selection = st.pills("Time", list(date_map.keys()), default="24H", label_visibility="collapsed", key="pills_date")
+        date_selection = st.pills("Time", list(DATE_MAP.keys()), default="24H", label_visibility="collapsed", key="pills_date")
         
         # 當 pills 改變時更新 days_int, 但只有在觸發搜尋時才真正重新抓取? 
         # 原本邏輯是點擊按鈕直接 rerun。與 pills 互動會直接 rerun。
         if date_selection:
-            st.session_state['days_int'] = date_map[date_selection]
+            st.session_state['days_int'] = DATE_MAP[date_selection]
 
         st.write("") 
 
         # 2. 主題選擇 (單行顯示)
         st.caption("2. 分析主題")
-        topic_map = {
-            "泰國政經": "macro",
-            "電子產業": "industry",
-            "重點台商": "vip"
-        }
         
         # 使用 columns 模擬橫排按鈕 (因為 pills 點擊無法帶入 args，需配合 if check)
         # 或者直接用 pills 選擇主題
-        topic_selection = st.pills("Topic", list(topic_map.keys()), label_visibility="collapsed", selection_mode="single", key="pills_topic")
+        topic_selection = st.pills("Topic", list(TOPIC_MAP.keys()), label_visibility="collapsed", selection_mode="single", key="pills_topic")
         
         # 監聽 pills 變化觸發搜尋
         if topic_selection:
             # 避免重複觸發
-            target_mode = topic_map[topic_selection]
+            target_mode = TOPIC_MAP[topic_selection]
             # 若當前不是此模式，或想要強制刷新 (通常 pills 點擊就是想切換)
             if st.session_state.get('last_topic') != topic_selection:
                 st.session_state['last_topic'] = topic_selection # 防止無限迴圈
@@ -295,11 +305,7 @@ with tab1:
     # 右側：顯示結果區域
     with c_right:
         days_int = st.session_state['days_int']
-        date_map_rev = {
-            "24H": 1, "3天": 3, "1週": 7, "2週": 14,
-            "1月": 30, "2月": 60, "3月": 90, "6月": 180
-        }
-        selected_label = next((k for k, v in date_map_rev.items() if v == days_int), f"{days_int}天")
+        selected_label = next((k for k, v in DATE_MAP.items() if v == days_int), f"{days_int}天")
         
         s_type = st.session_state.get('search_type')
         s_kw = st.session_state.get('search_keyword')

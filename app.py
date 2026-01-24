@@ -5,7 +5,14 @@ from datetime import datetime
 import json
 import os
 
-# ================= 常數設定 =================
+# ================= 1. 頁面設定 (必須放第一行) =================
+st.set_page_config(
+    page_title="ThaiNews.Ai | 戰情室", 
+    page_icon="🇹🇭", 
+    layout="wide"
+)
+
+# ================= 2. 常數與 CSS 設定 =================
 
 # CSS 美化樣式
 CUSTOM_CSS = """
@@ -14,7 +21,7 @@ CUSTOM_CSS = """
     
     /* 緊湊化調整 */
     div[data-testid="stVerticalBlock"] > div {
-        gap: 0.5rem !important; /* 全局縮小垂直間距 */
+        gap: 0.5rem !important;
     }
     
     .news-card {
@@ -44,30 +51,15 @@ CUSTOM_CSS = """
         color: #555;
     }
     
-    /* 隱藏標題旁的連結符號 (Anchor Link) */
+    /* 隱藏預設連結符號 */
     .stMarkdown h1 a, .stMarkdown h2 a, .stMarkdown h3 a, .stMarkdown h4 a, .stMarkdown h5 a {
         display: none !important;
     }
     
-    /* 縮小成功訊息 (st.success) 的高度 */
-    .stAlert {
-        padding-top: 5px !important;
-        padding-bottom: 5px !important;
-    }
-
-    /* 手機版隱藏特定元素 (max-width: 768px matches most tablets/phones) */
+    /* 手機版適配 */
     @media (max-width: 768px) {
-        .mobile-hidden {
-            display: none !important;
-        }
-        /* 進一步減少手機版垂直間距 */
-        div[data-testid="column"] {
-            gap: 0.2rem !important;
-        }
-        /* 減少各區塊間距 */
-        .block-container {
-            padding-top: 2rem !important;
-        }
+        .mobile-hidden { display: none !important; }
+        .block-container { padding-top: 2rem !important; }
     }
 </style>
 """
@@ -85,7 +77,11 @@ VIP_COMPANIES_CN = [
     '"燿華"', '"鴻海"', '"英業達"'
 ]
 
-# 選項與設定映射
+# 預先計算好查詢字串 (避免在函式內重複計算)
+VIP_QUERY_EN = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_EN])
+VIP_QUERY_CN = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_CN])
+
+# 選項映射
 DATE_MAP = {
     "1天": 1, "3天": 3, "1週": 7, "2週": 14,
     "1月": 30, "3月": 90, "6月": 180
@@ -97,21 +93,19 @@ TOPIC_MAP = {
     "重點台商": "vip"
 }
 
-# ================= 頁面設定 =================
-st.set_page_config(
-    page_title="ThaiNews.Ai | 戰情室", 
-    page_icon="🇹🇭", 
-    layout="wide"
-)
-
-# ================= CSS 美化 (左側導航版) =================
+# 套用 CSS
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
-# ================= 爬蟲核心邏輯 =================
+# ================= 3. 爬蟲核心邏輯 =================
 
 def get_rss_sources(days, mode="all", custom_keyword=None):
+    """
+    產生 RSS 來源列表
+    :param days: 天數 (int) -> 這裡就是 traceback 報錯的地方，必須確保參數名為 days
+    """
     sources = []
     
+    # 自訂搜尋模式
     if mode == "custom" and custom_keyword:
         clean_keyword = custom_keyword.strip().replace(" ", "+")
         sources.append({
@@ -124,9 +118,7 @@ def get_rss_sources(days, mode="all", custom_keyword=None):
         })
         return sources
 
-    vip_query_en = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_EN])
-    vip_query_cn = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_CN])
-    
+    # 預設模式
     if mode == "macro":
         sources.extend([
             {"name": "🇹🇭 泰國整體 (中)", "url": f"https://news.google.com/rss/search?q=泰國+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
@@ -140,9 +132,10 @@ def get_rss_sources(days, mode="all", custom_keyword=None):
             {"name": "🔌 PCB製造 (EN)", "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+%22Electronics+Manufacturing%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"}
         ])
     elif mode == "vip":
+        # 使用全域變數 VIP_QUERY_CN/EN
         sources.extend([
-            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q=泰國+OR+{vip_query_cn}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+{vip_query_en}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"}
+            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q=泰國+OR+{VIP_QUERY_CN}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+{VIP_QUERY_EN}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"}
         ])
     
     return sources
@@ -151,6 +144,7 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
     status_text = st.empty() 
     progress_bar = st.progress(0)
     
+    # 呼叫 get_rss_sources，並傳入 days_int 作為 days 參數
     sources = get_rss_sources(days_int, search_mode, custom_keyword)
     news_items_for_json = []
 
@@ -182,7 +176,7 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
             if len(feed.entries) > 0:
                 output_text += f"\n## 【{source['name']}】\n"
                 
-                # 若是自訂搜尋則不設限 (抓取所有回傳結果)，否則限制 30 篇以免 Prompt 太長
+                # 自訂搜尋不設限，預設限制 30 篇
                 limit = len(feed.entries) if search_mode == "custom" else 30
                 
                 for entry in feed.entries[:limit]: 
@@ -222,21 +216,15 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
     return output_text, news_items_for_json
 
 def display_results(prompt, news_list):
-    """顯示搜尋結果的共用函數：分為 AI 指令區 與 新聞列表區"""
-    
-    # st.success("搜尋完成！")
-    
-    # 區塊 1: AI Prompt
+    """顯示搜尋結果的共用函數"""
     st.markdown("##### 1. AI 分析指令")
-    with st.expander("點擊展開", expanded=False):
+    with st.expander("點擊展開查看 Prompt", expanded=False):
         st.code(prompt, language="markdown")
         
-    # 區塊 2: 新聞卡片
     st.markdown("##### 2. 相關新聞速覽")
     if news_list:
         for news in news_list:
             cat = news.get('category', '一般')
-            # 使用與 Tab 2 相同的卡片樣式
             st.markdown(f'''
             <div class="news-card">
                 <a href="{news['link']}" target="_blank" class="news-title">{news['title']}</a>
@@ -246,7 +234,7 @@ def display_results(prompt, news_list):
     else:
         st.warning("查無新聞資料。")
 
-# ================= 網頁主程式 =================
+# ================= 4. 網頁主程式 =================
 
 st.markdown('<div class="big-font">ThaiNews.Ai 🇹🇭 戰情室</div>', unsafe_allow_html=True)
 
@@ -257,62 +245,62 @@ with tab1:
     c_left, c_right = st.columns([1, 3], gap="medium")
     
     with c_left:
-        # 使用自訂 HTML 加入 class 以便 CSS 控制隱藏
         st.markdown('<h5 class="mobile-hidden">⚙️ 設定操作</h5>', unsafe_allow_html=True)
         
-        # [狀態管理] 初始化
+        # [狀態管理]
         if 'days_int' not in st.session_state: st.session_state['days_int'] = 1 
         if 'search_type' not in st.session_state: st.session_state['search_type'] = None
         if 'search_keyword' not in st.session_state: st.session_state['search_keyword'] = ""
-        # 紀錄 pills 的選擇狀態
-        if 'pills_date' not in st.session_state: st.session_state['pills_date'] = "1天"
+        if 'last_topic' not in st.session_state: st.session_state['last_topic'] = None
         
         # [Helper] 設定搜尋模式
         def set_search(mode, keyword=""):
             st.session_state['search_type'] = mode
             st.session_state['search_keyword'] = keyword
 
-        # 1. 時間選擇 (單行顯示)
-        # 1. 時間選擇 (單行顯示)
-        st.markdown('<div class="caption-text mobile-hidden" style="font-size:0.8em; color:gray; margin-bottom:4px;">1. 時間範圍</div>', unsafe_allow_html=True)
-        # 使用 pills (如果版本支援) 或 radio
-        # 為了確保緊湊，這裡使用 pills 樣式
-        date_selection = st.pills("Time", list(DATE_MAP.keys()), default="1天", label_visibility="collapsed", key="pills_date")
-        
-        # 當 pills 改變時更新 days_int, 但只有在觸發搜尋時才真正重新抓取? 
-        # 原本邏輯是點擊按鈕直接 rerun。與 pills 互動會直接 rerun。
+        # 1. 時間選擇
+        st.caption("1. 時間範圍")
+        # 注意: st.pills 需要 Streamlit 1.40.0+
+        try:
+            date_selection = st.pills("Time", list(DATE_MAP.keys()), default="1天", label_visibility="collapsed", key="pills_date")
+        except AttributeError:
+            st.error("請更新 Streamlit 版本至 1.40+ 以使用 Pills 元件，或改用 Radio。")
+            date_selection = st.radio("Time", list(DATE_MAP.keys()), horizontal=True, label_visibility="collapsed")
+            
         if date_selection:
             st.session_state['days_int'] = DATE_MAP[date_selection] 
 
-        # 2. 主題選擇 (單行顯示)
-        # 2. 主題選擇 (單行顯示)
-        st.markdown('<div class="caption-text mobile-hidden" style="font-size:0.8em; color:gray; margin-bottom:4px;">2. 分析主題</div>', unsafe_allow_html=True)
+        # 2. 主題選擇
+        st.caption("2. 分析主題")
+        try:
+            topic_selection = st.pills("Topic", list(TOPIC_MAP.keys()), label_visibility="collapsed", selection_mode="single", key="pills_topic")
+        except AttributeError:
+            topic_selection = st.radio("Topic", ["(請選擇)"] + list(TOPIC_MAP.keys()), label_visibility="collapsed")
+            if topic_selection == "(請選擇)": topic_selection = None
         
-        # 使用 columns 模擬橫排按鈕 (因為 pills 點擊無法帶入 args，需配合 if check)
-        # 或者直接用 pills 選擇主題
-        topic_selection = st.pills("Topic", list(TOPIC_MAP.keys()), label_visibility="collapsed", selection_mode="single", key="pills_topic")
-        
-        # 監聽 pills 變化觸發搜尋
         if topic_selection:
-            # 避免重複觸發
             target_mode = TOPIC_MAP[topic_selection]
-            # 若當前不是此模式，或想要強制刷新 (通常 pills 點擊就是想切換)
             if st.session_state.get('last_topic') != topic_selection:
-                st.session_state['last_topic'] = topic_selection # 防止無限迴圈
+                st.session_state['last_topic'] = topic_selection 
                 set_search(target_mode)
                 st.rerun() 
         
-        # 3. 自訂搜尋 (同一行)
+        # 3. 自訂搜尋
+        st.caption("3. 關鍵字")
         def handle_custom_search():
             kw = st.session_state.kw_input
             if kw:
-                st.session_state['pills_topic'] = None # 清除主題選取
+                # 清除主題選取 (如果使用 pills)
+                try:
+                    st.session_state['pills_topic'] = None 
+                except:
+                    pass
+                st.session_state['last_topic'] = None
                 set_search("custom", kw)
 
-        st.markdown('<div class="caption-text mobile-hidden" style="font-size:0.8em; color:gray; margin-bottom:4px;">3. 關鍵字</div>', unsafe_allow_html=True)
         c_in, c_btn = st.columns([3, 1], gap="small")
         with c_in:
-            st.text_input("Keywords", placeholder="輸入關鍵字 (如: Delta)", key="kw_input", on_change=handle_custom_search, label_visibility="collapsed")
+            st.text_input("Keywords", placeholder="輸入關鍵字", key="kw_input", on_change=handle_custom_search, label_visibility="collapsed")
         with c_btn:
             st.button("🔍", type="primary", use_container_width=True, on_click=handle_custom_search)
 
@@ -326,41 +314,44 @@ with tab1:
 
         # 尚未搜尋時的歡迎畫面
         if not s_type:
-
+            st.info("👈 請從左側選擇主題或輸入關鍵字開始。")
             st.markdown("""
-            #### 歡迎來到 ThaiNews.Ai 🇹🇭
-            * **泰國政經情勢**：涵蓋泰國政經、政策與台泰關係。
-            * **電子產業趨勢**：專注 PCB、伺服器與電子製造供應鏈。
-            * **重點台商動態**：鎖定 10 大重點台商 (鴻海、台達電、廣達等) 動態。
-            """)
+            <div style="background:#f8f9fa; padding:15px; border-radius:10px; color:#555;">
+                <strong>💡 系統說明：</strong><br>
+                1. <b>泰國政經</b>：政經局勢與台泰關係。<br>
+                2. <b>電子產業</b>：PCB、伺服器與電子製造。<br>
+                3. <b>重點台商</b>：鎖定 10 大指標台廠動態。
+            </div>
+            """, unsafe_allow_html=True)
         
-        # 根據狀態執行邏輯
-        if s_type == "custom" and s_kw:
-            # st.markdown(f"##### 🔍 搜尋結果: {s_kw}")
-            with st.spinner(f"正在全網搜索 {s_kw}..."):
-                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
-                display_results(prompt, news_list)
-                
-        elif s_type == "macro":
-            # st.markdown("##### 🇹🇭 泰國政經情勢")
-            with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
-                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "macro")
-                display_results(prompt, news_list)
-                
-        elif s_type == "industry":
-            # st.markdown("##### 🔌 電子產業趨勢")
-            with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
-                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "industry")
-                display_results(prompt, news_list)
-                
-        elif s_type == "vip":
-            # st.markdown("##### 🏢 重點台商動態")
-            with st.spinner("正在掃描重點台商動態..."):
-                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "vip")
-                display_results(prompt, news_list)
+        # 執行搜尋
+        else:
+            if s_type == "custom" and s_kw:
+                with st.spinner(f"正在全網搜索 {s_kw}..."):
+                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
+                    display_results(prompt, news_list)
+                    
+            elif s_type == "macro":
+                with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
+                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "macro")
+                    display_results(prompt, news_list)
+                    
+            elif s_type == "industry":
+                with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
+                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "industry")
+                    display_results(prompt, news_list)
+                    
+            elif s_type == "vip":
+                with st.spinner("正在掃描重點台商動態..."):
+                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "vip")
+                    display_results(prompt, news_list)
 
 with tab2:
-    if st.button("🔄 刷新列表"): st.rerun()
+    col_head_1, col_head_2 = st.columns([3, 1])
+    with col_head_1:
+        st.markdown("### 📂 歷史新聞資料庫")
+    with col_head_2:
+        if st.button("🔄 刷新列表"): st.rerun()
     
     if os.path.exists('news_data.json'):
         with open('news_data.json', 'r', encoding='utf-8') as f:
@@ -369,7 +360,7 @@ with tab2:
         news_list = data.get('news_list', [])
         st.caption(f"📅 上次更新: {data.get('timestamp', '未知')} (共 {len(news_list)} 則)")
 
-        search_query = st.text_input("🔍 搜尋歷史...", placeholder="關鍵字")
+        search_query = st.text_input("🔍 搜尋歷史...", placeholder="請輸入標題關鍵字")
         if search_query:
             news_list = [n for n in news_list if search_query.lower() in n['title'].lower()]
 
@@ -383,6 +374,6 @@ with tab2:
                 </div>
                 """, unsafe_allow_html=True)
         else:
-            st.warning("無資料")
+            st.warning("無符合資料")
     else:
-        st.info("尚無紀錄")
+        st.info("尚無歷史紀錄，請先在生成器執行搜尋。")

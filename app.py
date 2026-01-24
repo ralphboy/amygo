@@ -195,73 +195,72 @@ st.markdown('<div class="big-font">ThaiNews.Ai 🇹🇭 戰情室</div>', unsafe
 tab1, tab2 = st.tabs(["🤖 生成器", "📊 歷史庫"])
 
 with tab1:
-    # --- 頂部設定區 (全寬) ---
-    col_top_1, col_top_2 = st.columns([2, 3])
-    with col_top_1:
+    # 版面核心：左控右顯
+    c_left, c_right = st.columns([1, 3], gap="medium")
+    
+    with c_left:
+        st.markdown("##### ⚙️ 設定與操作")
+        
+        # 1. 時間選擇
         time_options = { "24H": 1, "3天": 3, "1週": 7, "2週": 14, "1月": 30 }
         selected_label = st.radio("時間區間", options=list(time_options.keys()), horizontal=True, label_visibility="collapsed")
         days_int = time_options[selected_label]
-    with col_top_2:
-        custom_keyword = st.text_input("🔍 自訂搜尋 (選填)", placeholder="例如: Delta, CP Group...", label_visibility="collapsed")
-    
-    st.markdown("<hr style='margin: 10px 0;'>", unsafe_allow_html=True) # 細分隔線
 
-    # --- 核心佈局：左導航 (1) vs 右內容 (3) ---
-    col_left, col_right = st.columns([1, 3], gap="medium")
+        st.markdown("---")
 
-    # [左側] 按鈕選單區
-    with col_left:
-        st.caption("👇 選擇情報主題")
+        # 2. 三大主題按鈕 (直排)
+        st.caption("主題掃描")
+        btn_macro = st.button("🇹🇭 1. 宏觀戰情", use_container_width=True)
+        btn_industry = st.button("🔌 2. 產業戰情", use_container_width=True)
+        btn_vip = st.button("🏢 3. 台商戰情", use_container_width=True)
         
-        # 如果有輸入自訂關鍵字，就顯示自訂搜尋按鈕
-        if custom_keyword.strip():
-            btn_custom = st.button(f"🔍 搜尋: {custom_keyword}", type="primary")
-        else:
-            btn_custom = False
+        st.markdown("---")
+        
+        # 3. 自訂搜尋
+        st.caption("深度追蹤")
+        custom_keyword = st.text_input("關鍵字 (選填)", placeholder="例如: Delta")
+        btn_custom = st.button(f"🔍 搜尋", type="primary", use_container_width=True) if custom_keyword else None
 
-        btn_macro = st.button("🇹🇭 1. 宏觀戰情")
-        btn_industry = st.button("🔌 2. 產業戰情")
-        btn_vip = st.button("🏢 3. 台商戰情")
-
-    # [右側] 內容顯示區
-    with col_right:
-        # 根據按下的按鈕觸發邏輯
-        if btn_custom:
-            with st.spinner(f"正在全網搜索 {custom_keyword}..."):
+    # 右側：顯示結果區域
+    with c_right:
+        # 預設顯示歡迎詞或說明
+        if not (btn_macro or btn_industry or btn_vip or (btn_custom and custom_keyword)):
+            st.info("👈 請從左側選擇掃描主題，或輸入關鍵字進行搜尋。")
+            st.markdown("""
+            #### 💡 提示
+            * **宏觀戰情**：涵蓋泰國政經、政策與台泰關係。
+            * **產業戰情**：專注 PCB、伺服器與電子製造供應鏈。
+            * **台商戰情**：鎖定 10 大重點台商 (鴻海、台達電、廣達等) 動態。
+            """)
+        
+        # 邏輯執行
+        if btn_custom and custom_keyword:
+            st.markdown(f"#### 🔍 搜尋結果: {custom_keyword}")
+            with st.spinner("正在全網搜索..."):
                 prompt = generate_chatgpt_prompt(selected_label, days_int, "custom", custom_keyword)
-                st.success(f"🎉 [{custom_keyword}] 報告生成成功！")
+                st.success("生成完成！")
                 st.code(prompt, language="markdown")
                 
         elif btn_macro:
-            with st.spinner("正在掃描 泰國政經與台泰關係..."):
+            st.markdown("#### 🇹🇭 宏觀戰情報告")
+            with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
                 prompt = generate_chatgpt_prompt(selected_label, days_int, "macro")
-                st.success("🎉 宏觀報告生成成功！")
+                st.success("生成完成！")
                 st.code(prompt, language="markdown")
                 
         elif btn_industry:
-            with st.spinner("正在掃描 PCB 供應鏈動態..."):
+            st.markdown("#### 🔌 產業戰情報告")
+            with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
                 prompt = generate_chatgpt_prompt(selected_label, days_int, "industry")
-                st.success("🎉 產業報告生成成功！")
-                st.code(prompt, language="markdown")
+                st.success("生成完成！")
+                st.code(prompt, language="markdown") 
                 
         elif btn_vip:
-            with st.spinner("正在掃描 重點台商清單..."):
+            st.markdown("#### 🏢 台商戰情報告")
+            with st.spinner("正在掃描重點台商動態..."):
                 prompt = generate_chatgpt_prompt(selected_label, days_int, "vip")
-                st.success("🎉 台商報告生成成功！")
+                st.success("生成完成！")
                 st.code(prompt, language="markdown")
-        else:
-            # 預設顯示畫面 (還沒按按鈕時)
-            st.info("👈 請點擊左側按鈕開始生成情報。")
-            st.markdown(
-                """
-                <div style="color: #666; font-size: 14px;">
-                <b>操作說明：</b><br>
-                1. 在上方選擇 <b>時間區間</b>。<br>
-                2. (選填) 輸入 <b>公司名稱</b> 可進行自訂搜尋。<br>
-                3. 點擊 <b>左側主題按鈕</b>，AI 將自動抓取並生成分析指令。
-                </div>
-                """, unsafe_allow_html=True
-            )
 
 with tab2:
     if st.button("🔄 刷新列表"): st.rerun()

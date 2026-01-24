@@ -138,7 +138,6 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
     
     sources = get_rss_sources(days_int, custom_keyword)
     
-    # 準備存檔清單
     news_items_for_json = []
 
     # === 生成 Prompt ===
@@ -151,7 +150,7 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
     else:
         instruction_prompt = f"""
 請扮演一位資深的「東南亞產經分析師」。
-以下是我透過程式抓取的【{days_label} 泰國 PCB 與電子產業新聞資料庫】。
+以下是我透過程式抓取的【{days_label} 泰國 PCB 與電子產業新聞資料庫】（包含英文與中文雙語來源）。
 請針對：1.泰國整體新聞 2.PCB電子製造 3.台泰關係 4.重點台商動態 進行深度分析。
 """
 
@@ -174,7 +173,12 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
             
             if len(feed.entries) > 0:
                 output_text += f"\n## 【{source['name']}】\n"
-                limit = 30 if custom_keyword else (15 if days_int <= 3 else 25)
+                
+                # [優化] 因為現在有 8 個來源，限制每個來源抓取的數量，避免 Prompt 太長
+                if custom_keyword:
+                    limit = 30 # 自訂搜尋只有一個來源，可以抓多一點
+                else:
+                    limit = 12 # 廣度搜尋有8個來源，每個抓12則已經很多了 (共96則)
                 
                 for entry in feed.entries[:limit]: 
                     if entry.title in seen_titles: continue
@@ -205,7 +209,7 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
 
     output_text += "\n========= 資料結束 ========="
     
-    # === 儲存至 JSON (覆寫模式，保存最新一次搜尋) ===
+    # === 儲存至 JSON ===
     try:
         with open('news_data.json', 'w', encoding='utf-8') as f:
             json.dump({
@@ -298,15 +302,18 @@ with tab2:
         else:
             filtered_list = news_list
 
-        # 4. 卡片顯示 (美化版)
+        # 4. 卡片顯示 (美化版 + 防呆)
         if len(filtered_list) > 0:
             for news in filtered_list:
+                # [修正] 使用 .get() 防止舊資料報錯
+                category_label = news.get('category', '歷史新聞')
+                
                 st.markdown(f"""
                 <div class="news-card">
                     <a href="{news['link']}" target="_blank" class="news-title">{news['title']}</a>
                     <div class="news-meta">
                         {news['date']} • {news['source']}
-                        <span class="news-tag">{news['category']}</span>
+                        <span class="news-tag">{category_label}</span>
                     </div>
                 </div>
                 """, unsafe_allow_html=True)

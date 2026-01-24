@@ -1,0 +1,86 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>每週買進策略回測</title>
+        <style>
+            body { font-family: -apple-system, sans-serif; padding: 40px; background: #f4f4f9; }
+            .container { max-width: 1000px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+            h1 { text-align: center; color: #333; }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            th { background: #5e63b6; color: white; padding: 12px; }
+            td { padding: 12px; border-bottom: 1px solid #eee; text-align: center; }
+            tr:hover { background-color: #f1f1f1; }
+            .winner { color: #d0021b; font-weight: bold; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📅 每週 $2,500 買進策略比較</h1>
+            <p style="text-align:center">回測起始年份: 2007 | 標的差異分析</p>
+            <table class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>股票名稱</th>
+      <th>投資年數</th>
+      <th>週一報酬率</th>
+      <th>週三報酬率</th>
+      <th>週五報酬率</th>
+      <th>最佳買點</th>
+      <th>差異幅度</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>台積電</td>
+      <td>19.0 年</td>
+      <td>+1956.35%</td>
+      <td>+1955.88%</td>
+      <td>+1954.71%</td>
+      <td>週一</td>
+      <td>1.64%</td>
+    </tr>
+    <tr>
+      <td>鴻海</td>
+      <td>19.0 年</td>
+      <td>+284.71%</td>
+      <td>+284.24%</td>
+      <td>+284.48%</td>
+      <td>週一</td>
+      <td>0.47%</td>
+    </tr>
+    <tr>
+      <td>台達電</td>
+      <td>19.0 年</td>
+      <td>+1061.08%</td>
+      <td>+1061.02%</td>
+      <td>+1059.85%</td>
+      <td>週一</td>
+      <td>1.22%</td>
+    </tr>
+    <tr>
+      <td>富邦未來車</td>
+      <td>4.5 年</td>
+      <td>+107.78%</td>
+      <td>+107.13%</td>
+      <td>+106.94%</td>
+      <td>週一</td>
+      <td>0.84%</td>
+    </tr>
+    <tr>
+      <td>野村新科技</td>
+      <td>2.2 年</td>
+      <td>+68.31%</td>
+      <td>+67.60%</td>
+      <td>+67.06%</td>
+      <td>週一</td>
+      <td>1.25%</td>
+    </tr>
+  </tbody>
+</table>
+            <p><i>*註：若遇休市，系統會自動在下一個交易日買進。</i></p>
+        </div>
+    </body>
+    </html>
+    

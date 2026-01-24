@@ -13,8 +13,37 @@ st.set_page_config(
 )
 
 # ================= CSS 美化 (左側導航版) =================
+st.markdown("""
+<style>
+    .big-font { font-size: 28px !important; font-weight: 800; color: #1a1a1a; margin-bottom: 20px !important; }
+    
+    .news-card {
+        background-color: white;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 8px;
+        border-left: 4px solid #d93025;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .news-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .news-meta { font-size: 13px; color: #666; }
+    .news-tag {
+        background-color: #f0f0f0;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 11px;
+        margin-left: 8px;
+        color: #555;
+    }
 </style>
-""", unsafe_allow_html=True)
 """, unsafe_allow_html=True)
 
 # ================= 爬蟲核心邏輯 =================

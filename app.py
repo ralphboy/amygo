@@ -191,8 +191,6 @@ def display_results(prompt, news_list):
     with st.expander("點擊展開", expanded=False):
         st.code(prompt, language="markdown")
         
-    st.markdown("---")
-    
     # 區塊 2: 新聞卡片
     st.markdown("##### 📰 2. 相關新聞速覽")
     if news_list:

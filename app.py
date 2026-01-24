@@ -53,6 +53,12 @@ st.markdown("""
     .stMarkdown h1 a, .stMarkdown h2 a, .stMarkdown h3 a, .stMarkdown h4 a, .stMarkdown h5 a {
         display: none !important;
     }
+    
+    /* 縮小成功訊息 (st.success) 的高度 */
+    .stAlert {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 

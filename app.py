@@ -174,7 +174,34 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
     status_text.empty()
     progress_bar.empty()
     
-    return output_text
+    return output_text, news_items_for_json
+
+def display_results(prompt, news_list):
+    """顯示搜尋結果的共用函數：分為 AI 指令區 與 新聞列表區"""
+    
+    st.success("搜尋完成！")
+    
+    # 區塊 1: AI Prompt
+    with st.expander("📋 1. AI 分析指令 (點擊展開/複製)", expanded=True):
+        st.caption("請點擊右上的 Copy 按鈕，貼給 ChatGPT 分析")
+        st.code(prompt, language="markdown")
+        
+    st.markdown("---")
+    
+    # 區塊 2: 新聞卡片
+    st.markdown("##### 📰 2. 相關新聞速覽")
+    if news_list:
+        for news in news_list:
+            cat = news.get('category', '一般')
+            # 使用與 Tab 2 相同的卡片樣式
+            st.markdown(f'''
+            <div class="news-card">
+                <a href="{news['link']}" target="_blank" class="news-title">{news['title']}</a>
+                <div class="news-meta">{news['date']} • {news['source']} <span class="news-tag">{cat}</span></div>
+            </div>
+            ''', unsafe_allow_html=True)
+    else:
+        st.warning("查無新聞資料。")
 
 # ================= 網頁主程式 =================
 
@@ -271,31 +298,26 @@ with tab1:
         elif s_type == "custom" and s_kw:
             st.markdown(f"#### 🔍 搜尋結果: {s_kw}")
             with st.spinner(f"正在全網搜索 {s_kw}..."):
-                # 這裡調用生成函數，由於是基於 State，切換時間時會自動重跑這段
-                prompt = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
-                st.success("生成完成！")
-                st.code(prompt, language="markdown")
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
+                display_results(prompt, news_list)
                 
         elif s_type == "macro":
-            st.markdown("#### 🇹🇭 宏觀戰情報告")
+            st.markdown("#### 🇹🇭 泰國政經情勢")
             with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
-                prompt = generate_chatgpt_prompt(selected_label, days_int, "macro")
-                st.success("生成完成！")
-                st.code(prompt, language="markdown")
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "macro")
+                display_results(prompt, news_list)
                 
         elif s_type == "industry":
-            st.markdown("#### 🔌 產業戰情報告")
+            st.markdown("#### 🔌 電子產業趨勢")
             with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
-                prompt = generate_chatgpt_prompt(selected_label, days_int, "industry")
-                st.success("生成完成！")
-                st.code(prompt, language="markdown") 
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "industry")
+                display_results(prompt, news_list)
                 
         elif s_type == "vip":
-            st.markdown("#### 🏢 台商戰情報告")
+            st.markdown("#### 🏢 重點台商動態")
             with st.spinner("正在掃描重點台商動態..."):
-                prompt = generate_chatgpt_prompt(selected_label, days_int, "vip")
-                st.success("生成完成！")
-                st.code(prompt, language="markdown")
+                prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "vip")
+                display_results(prompt, news_list)
 
 with tab2:
     if st.button("🔄 刷新列表"): st.rerun()

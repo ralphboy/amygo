@@ -70,41 +70,63 @@ def get_rss_sources(days, custom_keyword=None):
         })
         return sources
 
-    # === 模式 B：廣度掃描 (預設四大類 - 已調整順序與新增台商) ===
+    # === 模式 B：廣度掃描 (預設四大類 - 中英雙語搜尋) ===
     
-    # 定義重點台商清單 (使用 OR 語法串接)
-    # 注意：使用英文名稱搜尋泰國新聞較準確，並加上引號確保精準匹配
-    vip_companies = [
-        '"Delta Electronics"', 
-        '"Zhen Ding"', 
-        '"Unimicron"', 
-        '"Compeq"', 
-        '"Gold Circuit Electronics"', 
-        '"Dynamic Holding"', 
-        '"Tripod Technology"', 
-        '"Unitech"',
-        '"Foxconn"',
-        '"Inventec"'
+    # VIP 台商清單 (英文)
+    vip_companies_en = [
+        '"Delta Electronics"', '"Zhen Ding"', '"Unimicron"', '"Compeq"', 
+        '"Gold Circuit Electronics"', '"Dynamic Holding"', '"Tripod Technology"', 
+        '"Unitech"', '"Foxconn"', '"Inventec"'
     ]
-    # 組合搜尋字串: Thailand AND (A OR B OR C ...)
-    vip_query = "+OR+".join(vip_companies)
+    vip_query_en = "+OR+".join(vip_companies_en)
+
+    # VIP 台商清單 (中文)
+    vip_companies_cn = [
+        '"台達電"', '"臻鼎"', '"欣興"', '"華通"', 
+        '"金像電"', '"定穎"', '"健鼎"', 
+        '"燿華"', '"鴻海"', '"英業達"'
+    ]
+    vip_query_cn = "+OR+".join(vip_companies_cn)
     
     sources.extend([
+        # 1. 泰國整體
         {
-            "name": "🇹🇭 1. 泰國整體重要新聞", 
+            "name": "🇹🇭 1. 泰國整體重要新聞 (EN)", 
             "url": f"https://news.google.com/rss/search?q=Thailand+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
         },
         {
-            "name": "🇹🇼 2. 台泰關係 (已調前)", 
+            "name": "🇹🇭 1. 泰國整體重要新聞 (中文)", 
+            "url": f"https://news.google.com/rss/search?q=泰國+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+        },
+
+        # 2. 台泰關係
+        {
+            "name": "🇹🇼 2. 台泰關係 (EN)", 
             "url": f"https://news.google.com/rss/search?q=Thailand+Taiwan+OR+%22Taiwanese+investment%22+OR+%22Taiwan+companies%22+OR+%22Trade+Relations%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
         },
         {
-            "name": "🔌 3. PCB 與電子製造", 
+            "name": "🇹🇼 2. 台泰關係 (中文)", 
+            "url": f"https://news.google.com/rss/search?q=泰國+台灣+OR+%22台商%22+OR+%22投資%22+OR+%22經貿%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+        },
+
+        # 3. PCB 與電子製造
+        {
+            "name": "🔌 3. PCB 與電子製造 (EN)", 
             "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+%22Printed+Circuit+Board%22+OR+%22Electronics+Manufacturing%22+OR+%22Server+Production%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
         },
         {
-            "name": "🏢 4. 重點台商動態追蹤",
-            "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+{vip_query}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+            "name": "🔌 3. PCB 與電子製造 (中文)", 
+            "url": f"https://news.google.com/rss/search?q=泰國+PCB+OR+%22印刷電路板%22+OR+%22電子製造%22+OR+%22伺服器%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+        },
+
+        # 4. 重點台商
+        {
+            "name": "🏢 4. 重點台商動態追蹤 (EN)",
+            "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+{vip_query_en}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+        },
+        {
+            "name": "🏢 4. 重點台商動態追蹤 (中文)",
+            "url": f"https://news.google.com/rss/search?q=泰國+OR+{vip_query_cn}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
         }
     ])
     

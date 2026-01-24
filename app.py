@@ -58,7 +58,7 @@ st.markdown("""
 
 # ================= 爬蟲核心邏輯 =================
 
-def get_rss_sources(days, custom_keyword=None):
+def get_rss_sources(days, custom_keyword=None, category_mode=None):
     sources = []
     
     # === 模式 A：深度鑽研 (只搜自訂) ===
@@ -70,88 +70,136 @@ def get_rss_sources(days, custom_keyword=None):
         })
         return sources
 
-    # === 模式 B：廣度掃描 (預設四大類 - 中英雙語搜尋) ===
+    # === 模式 B：廣度掃描 (區分類別) ===
     
-    # VIP 台商清單 (英文)
+    # 定義各類別的 URL
+    
+    # 1. General & Relations
+    src_general_en = {
+        "name": "🇹🇭 1. 泰國整體重要新聞 (EN)", 
+        "url": f"https://news.google.com/rss/search?q=Thailand+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+    }
+    src_general_cn = {
+        "name": "🇹🇭 1. 泰國整體重要新聞 (中文)", 
+        "url": f"https://news.google.com/rss/search?q=泰國+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    }
+    src_relations_en = {
+        "name": "🇹🇼 2. 台泰關係 (EN)", 
+        "url": f"https://news.google.com/rss/search?q=Thailand+Taiwan+OR+%22Taiwanese+investment%22+OR+%22Taiwan+companies%22+OR+%22Trade+Relations%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+    }
+    src_relations_cn = {
+        "name": "🇹🇼 2. 台泰關係 (中文)", 
+        "url": f"https://news.google.com/rss/search?q=泰國+台灣+OR+%22台商%22+OR+%22投資%22+OR+%22經貿%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    }
+
+    # 2. PCB & Electronics
+    src_pcb_en = {
+        "name": "🔌 3. PCB 與電子製造 (EN)", 
+        "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+%22Printed+Circuit+Board%22+OR+%22Electronics+Manufacturing%22+OR+%22Server+Production%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+    }
+    src_pcb_cn = {
+        "name": "🔌 3. PCB 與電子製造 (中文)", 
+        "url": f"https://news.google.com/rss/search?q=泰國+PCB+OR+%22印刷電路板%22+OR+%22電子製造%22+OR+%22伺服器%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    }
+
+    # 3. VIP Companies
     vip_companies_en = [
         '"Delta Electronics"', '"Zhen Ding"', '"Unimicron"', '"Compeq"', 
         '"Gold Circuit Electronics"', '"Dynamic Holding"', '"Tripod Technology"', 
         '"Unitech"', '"Foxconn"', '"Inventec"'
     ]
     vip_query_en = "+OR+".join([c.replace(" ", "+") for c in vip_companies_en])
-
-    # VIP 台商清單 (中文)
     vip_companies_cn = [
         '"台達電"', '"臻鼎"', '"欣興"', '"華通"', 
         '"金像電"', '"定穎"', '"健鼎"', 
         '"燿華"', '"鴻海"', '"英業達"'
     ]
     vip_query_cn = "+OR+".join([c.replace(" ", "+") for c in vip_companies_cn])
+
+    src_vip_en = {
+        "name": "🏢 4. 重點台商動態追蹤 (EN)",
+        "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+{vip_query_en}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+    }
+    src_vip_cn = {
+        "name": "🏢 4. 重點台商動態追蹤 (中文)",
+        "url": f"https://news.google.com/rss/search?q=泰國+OR+{vip_query_cn}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+    }
+
+    # === 根據 category_mode 回傳對應清單 ===
+    if category_mode == 'general':
+        return [src_general_en, src_general_cn, src_relations_en, src_relations_cn]
     
-    sources.extend([
-        # 1. 泰國整體
-        {
-            "name": "🇹🇭 1. 泰國整體重要新聞 (EN)", 
-            "url": f"https://news.google.com/rss/search?q=Thailand+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
-        },
-        {
-            "name": "🇹🇭 1. 泰國整體重要新聞 (中文)", 
-            "url": f"https://news.google.com/rss/search?q=泰國+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
-        },
-
-        # 2. 台泰關係
-        {
-            "name": "🇹🇼 2. 台泰關係 (EN)", 
-            "url": f"https://news.google.com/rss/search?q=Thailand+Taiwan+OR+%22Taiwanese+investment%22+OR+%22Taiwan+companies%22+OR+%22Trade+Relations%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
-        },
-        {
-            "name": "🇹🇼 2. 台泰關係 (中文)", 
-            "url": f"https://news.google.com/rss/search?q=泰國+台灣+OR+%22台商%22+OR+%22投資%22+OR+%22經貿%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
-        },
-
-        # 3. PCB 與電子製造
-        {
-            "name": "🔌 3. PCB 與電子製造 (EN)", 
-            "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+%22Printed+Circuit+Board%22+OR+%22Electronics+Manufacturing%22+OR+%22Server+Production%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
-        },
-        {
-            "name": "🔌 3. PCB 與電子製造 (中文)", 
-            "url": f"https://news.google.com/rss/search?q=泰國+PCB+OR+%22印刷電路板%22+OR+%22電子製造%22+OR+%22伺服器%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
-        },
-
-        # 4. 重點台商
-        {
-            "name": "🏢 4. 重點台商動態追蹤 (EN)",
-            "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+{vip_query_en}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
-        },
-        {
-            "name": "🏢 4. 重點台商動態追蹤 (中文)",
-            "url": f"https://news.google.com/rss/search?q=泰國+OR+{vip_query_cn}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
-        }
-    ])
+    elif category_mode == 'pcb':
+        return [src_pcb_en, src_pcb_cn]
+        
+    elif category_mode == 'vip':
+        return [src_vip_en, src_vip_cn]
     
-    return sources
+    else:
+        # Fallback (全部回傳，如果不小心沒指定模式)
+        return [
+            src_general_en, src_general_cn, 
+            src_relations_en, src_relations_cn,
+            src_pcb_en, src_pcb_cn,
+            src_vip_en, src_vip_cn
+        ]
 
-def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
+def generate_chatgpt_prompt(days_label, days_int, custom_keyword, category_mode=None):
     status_text = st.empty() 
     progress_bar = st.progress(0)
     
-    sources = get_rss_sources(days_int, custom_keyword)
+    sources = get_rss_sources(days_int, custom_keyword, category_mode)
     
     news_items_for_json = []
 
-    # === 生成 Prompt ===
+    # === 生成 Prompt (針對不同按鈕客製化角色與指令) ===
     if custom_keyword and custom_keyword.strip():
-        instruction_prompt = f"""
-請扮演一位資深的「產業分析師」。
-以下是我針對關鍵字【{custom_keyword}】抓取的{days_label}新聞資料。
-請撰寫一份「深度主題分析報告」，包含：重點摘要、市場影響、潛在機會與風險。
+        # 自訂搜尋模式
+        role = "產業分析師"
+        focus = f"針對關鍵字【{custom_keyword}】"
+        instruction = "請撰寫一份「深度主題分析報告」，包含：重點摘要、市場影響、潛在機會與風險。"
+    
+    elif category_mode == 'general':
+        # 1. 泰國整體 + 台泰關係
+        role = "泰國政經觀察家"
+        focus = f"【{days_label} 泰國政經局勢與台泰關係】"
+        instruction = """
+請重點分析：
+1. 泰國重大政治與經濟政策變動。
+2. 台泰雙邊關係、經貿互動或投資新訊。
+3. 社會安全或旅遊相關的重要影響。
+"""
+    elif category_mode == 'pcb':
+        # 2. PCB 電子製造
+        role = "電子供應鏈專家"
+        focus = f"【{days_label} 泰國 PCB 與電子製造業情報】"
+        instruction = """
+請重點分析：
+1. PCB 產業在泰國的擴廠、投資動態。
+2. 上下游供應鏈的聚落變化。
+3. 伺服器與消費電子的生產趨勢。
+"""
+    elif category_mode == 'vip':
+        # 3. 重點台商
+        role = "科技產業證券分析師"
+        focus = f"【{days_label} 重點台商與科技大廠動態】"
+        instruction = """
+目標公司：台達電、鴻海、英業達、臻鼎、欣興、華通、金像電、健鼎、定穎、燿華。
+請重點分析：
+1. 個別公司在泰國的新聞、擴產或營運狀況。
+2. 競爭對手或合作夥伴的相關消息。
+3. 股價或營收相關的當地報導（若有）。
 """
     else:
-        instruction_prompt = f"""
-請扮演一位資深的「東南亞產經分析師」。
-以下是我透過程式抓取的【{days_label} 泰國 PCB 與電子產業新聞資料庫】（包含英文與中文雙語來源）。
-請針對：1.泰國整體新聞 2.PCB電子製造 3.台泰關係 4.重點台商動態 進行深度分析。
+        # Fallback
+        role = "東南亞產經分析師"
+        focus = "泰國產業新聞"
+        instruction = "請分析：1.泰國整體 2.電子製造 3.台泰關係 4.台商動態"
+
+    instruction_prompt = f"""
+請扮演一位資深的「{role}」。
+以下是{focus}的新聞資料庫（中英雙語）。
+{instruction}
 """
 
     output_text = f"""
@@ -174,11 +222,8 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
             if len(feed.entries) > 0:
                 output_text += f"\n## 【{source['name']}】\n"
                 
-                # [優化] 因為現在有 8 個來源，限制每個來源抓取的數量，避免 Prompt 太長
-                if custom_keyword:
-                    limit = 30 # 自訂搜尋只有一個來源，可以抓多一點
-                else:
-                    limit = 12 # 廣度搜尋有8個來源，每個抓12則已經很多了 (共96則)
+                # 因為拆成不同按鈕，每個類別的新聞量可以放寬，讓 User 不怕漏新聞
+                limit = 25 
                 
                 for entry in feed.entries[:limit]: 
                     if entry.title in seen_titles: continue
@@ -210,6 +255,11 @@ def generate_chatgpt_prompt(days_label, days_int, custom_keyword):
     output_text += "\n========= 資料結束 ========="
     
     # === 儲存至 JSON ===
+    # 注意：這裡使用 'a' (append) 模式可能更難管理，我們維持 'w' 覆寫，但 User 應知曉
+    # 若要保留所有類別，可能需要先讀取再合併，但為了 Prompt 生成的一致性，
+    # 這裡的邏輯是「最後一次搜尋的內容」會顯示在 Tab 2。
+    # 為了良好的 UX，我們在 Tab 2 可能需要說「顯示最近一次搜尋結果」。
+    
     try:
         with open('news_data.json', 'w', encoding='utf-8') as f:
             json.dump({
@@ -264,13 +314,37 @@ with tab1:
 
     st.markdown("---")
     
-    btn_text = f"開始搜尋: {custom_keyword}" if custom_keyword else f"開始抓取預設四大新聞 ({selected_label}) - 中英雙語版"
-    
-    if st.button(btn_text, type="primary"):
-        with st.spinner(f"正在全網搜索..."):
-            prompt_content = generate_chatgpt_prompt(selected_label, days_int, custom_keyword)
-            st.success("🎉 生成成功！請點擊下方區塊右上角複製。")
-            st.code(prompt_content, language="markdown")
+    if custom_keyword:
+        if st.button(f"🔍 開始深度搜尋: {custom_keyword}", type="primary"):
+            with st.spinner(f"正在全網搜索..."):
+                prompt_content = generate_chatgpt_prompt(selected_label, days_int, custom_keyword)
+                st.success("🎉 生成成功！請點擊下方區塊右上角複製。")
+                st.code(prompt_content, language="markdown")
+    else:
+        st.markdown("#### 請選擇搜尋主題：")
+        
+        c1, c2, c3 = st.columns(3)
+        
+        with c1:
+            if st.button("🇹🇭 1. 政經局勢 + 台泰關係", type="primary"):
+                 with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
+                    prompt_content = generate_chatgpt_prompt(selected_label, days_int, None, category_mode='general')
+                    st.success("政經情勢報告指令生成完畢！")
+                    st.code(prompt_content, language="markdown")
+        
+        with c2:
+            if st.button("🔌 2. PCB 與電子製造", type="secondary"):
+                with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
+                    prompt_content = generate_chatgpt_prompt(selected_label, days_int, None, category_mode='pcb')
+                    st.success("電子產業報告指令生成完畢！")
+                    st.code(prompt_content, language="markdown")
+                    
+        with c3:
+            if st.button("🏢 3. 重點台商動態", type="secondary"):
+                with st.spinner("正在掃描 10 大重點台商新聞..."):
+                    prompt_content = generate_chatgpt_prompt(selected_label, days_int, None, category_mode='vip')
+                    st.success("台商監測報告指令生成完畢！")
+                    st.code(prompt_content, language="markdown")
 
 # --- Tab 2 (大改版：新增搜尋與卡片) ---
 with tab2:

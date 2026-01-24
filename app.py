@@ -1,7 +1,7 @@
 import streamlit as st
 import feedparser
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 import json
 import os
 
@@ -57,6 +57,7 @@ CUSTOM_CSS = """
 
     /* 手機版隱藏特定元素 (max-width: 768px matches most tablets/phones) */
     @media (max-width: 768px) {
+        .mobile-hidden {
             display: none !important;
         }
         /* 進一步減少手機版垂直間距 */
@@ -65,7 +66,7 @@ CUSTOM_CSS = """
         }
         /* 減少各區塊間距 */
         .block-container {
-             padding-top: 2rem !important;
+            padding-top: 2rem !important;
         }
     }
 </style>

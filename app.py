@@ -229,58 +229,78 @@ with tab1:
         if 'days_int' not in st.session_state: st.session_state['days_int'] = 1 
         if 'search_type' not in st.session_state: st.session_state['search_type'] = None
         if 'search_keyword' not in st.session_state: st.session_state['search_keyword'] = ""
-
-        # [Callback] 設定搜尋模式
+        # 紀錄 pills 的選擇狀態
+        if 'pills_date' not in st.session_state: st.session_state['pills_date'] = "24H"
+        
+        # [Helper] 設定搜尋模式
         def set_search(mode, keyword=""):
             st.session_state['search_type'] = mode
             st.session_state['search_keyword'] = keyword
 
-        # 1. 時間選擇
-        time_opts_row1 = [("24H", 1), ("3天", 3), ("1週", 7), ("2週", 14)]
-        time_opts_row2 = [("1月", 30), ("2月", 60), ("3月", 90), ("6月", 180)]
-        all_opts = dict(time_opts_row1 + time_opts_row2)
-        days_int = st.session_state['days_int']
-        selected_label = next((k for k, v in all_opts.items() if v == days_int), f"{days_int}天")
-
-        r1_cols = st.columns(4)
-        for idx, (lbl, val) in enumerate(time_opts_row1):
-            with r1_cols[idx]:
-                b_type = "primary" if days_int == val else "secondary"
-                if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
-                    st.session_state['days_int'] = val
-                    st.rerun()
-
-        r2_cols = st.columns(4)
-        for idx, (lbl, val) in enumerate(time_opts_row2):
-            with r2_cols[idx]:
-                b_type = "primary" if days_int == val else "secondary"
-                if st.button(lbl, key=f"t_{val}", type=b_type, use_container_width=True):
-                    st.session_state['days_int'] = val
-                    st.rerun()
+        # 1. 時間選擇 (單行顯示)
+        st.caption("1. 時間範圍")
+        date_map = {
+            "24H": 1, "3天": 3, "1週": 7, "2週": 14,
+            "1月": 30, "2月": 60, "3月": 90, "6月": 180
+        }
+        # 使用 pills (如果版本支援) 或 radio
+        # 為了確保緊湊，這裡使用 pills 樣式
+        date_selection = st.pills("Time", list(date_map.keys()), default="24H", label_visibility="collapsed", key="pills_date")
+        
+        # 當 pills 改變時更新 days_int, 但只有在觸發搜尋時才真正重新抓取? 
+        # 原本邏輯是點擊按鈕直接 rerun。與 pills 互動會直接 rerun。
+        if date_selection:
+            st.session_state['days_int'] = date_map[date_selection]
 
         st.write("") 
 
-        # 2. 三大主題按鈕
-        st.button("泰國政經情勢", use_container_width=True, on_click=set_search, args=("macro",))
-        st.button("電子產業趨勢", use_container_width=True, on_click=set_search, args=("industry",))
-        st.button("重點台商動態", use_container_width=True, on_click=set_search, args=("vip",))
+        # 2. 主題選擇 (單行顯示)
+        st.caption("2. 分析主題")
+        topic_map = {
+            "泰國政經": "macro",
+            "電子產業": "industry",
+            "重點台商": "vip"
+        }
         
+        # 使用 columns 模擬橫排按鈕 (因為 pills 點擊無法帶入 args，需配合 if check)
+        # 或者直接用 pills 選擇主題
+        topic_selection = st.pills("Topic", list(topic_map.keys()), label_visibility="collapsed", selection_mode="single", key="pills_topic")
+        
+        # 監聽 pills 變化觸發搜尋
+        if topic_selection:
+            # 避免重複觸發
+            target_mode = topic_map[topic_selection]
+            # 若當前不是此模式，或想要強制刷新 (通常 pills 點擊就是想切換)
+            if st.session_state.get('last_topic') != topic_selection:
+                st.session_state['last_topic'] = topic_selection # 防止無限迴圈
+                set_search(target_mode)
+                st.rerun()
+
         st.write("") 
         
-        # 3. 自訂搜尋
+        # 3. 自訂搜尋 (同一行)
         def handle_custom_search():
             kw = st.session_state.kw_input
             if kw:
+                st.session_state['pills_topic'] = None # 清除主題選取
                 set_search("custom", kw)
 
-        st.text_input("深度追蹤", placeholder="輸入關鍵字 (如: Delta)", key="kw_input", on_change=handle_custom_search)
-        
-        kw_val = st.session_state.get("kw_input", "")
-        if kw_val:
-            st.button(f"🔍 搜尋: {kw_val}", type="primary", use_container_width=True, on_click=handle_custom_search)
+        st.caption("3. 關鍵字")
+        c_in, c_btn = st.columns([3, 1], gap="small")
+        with c_in:
+            st.text_input("Keywords", placeholder="輸入關鍵字 (如: Delta)", key="kw_input", on_change=handle_custom_search, label_visibility="collapsed")
+        with c_btn:
+            st.button("🔍", type="primary", use_container_width=True, on_click=handle_custom_search)
 
     # 右側：顯示結果區域
     with c_right:
+        days_int = st.session_state['days_int']
+        date_map_rev = {
+            "24H": 1, "3天": 3, "1週": 7, "2週": 14,
+            "1月": 30, "2月": 60, "3月": 90, "6月": 180
+        }
+        selected_label = next((k for k, v in date_map_rev.items() if v == days_int), f"{days_int}天")
+        
         s_type = st.session_state.get('search_type')
         s_kw = st.session_state.get('search_keyword')
 

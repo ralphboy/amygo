@@ -353,7 +353,6 @@ with tab1:
                 display_results(prompt, news_list)
                 
         elif s_type == "vip":
-        elif s_type == "vip":
             # st.markdown("##### 🏢 重點台商動態")
             with st.spinner("正在掃描重點台商動態..."):
                 prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "vip")

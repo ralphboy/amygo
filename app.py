@@ -12,37 +12,35 @@ st.set_page_config(
     layout="wide"
 )
 
-# ================= CSS 美化 (緊湊版) =================
+# ================= CSS 美化 (左側導航版) =================
 st.markdown("""
 <style>
-    .big-font { font-size: 28px !important; font-weight: 800; color: #1a1a1a; margin-bottom: 10px !important; }
+    /* 標題樣式 */
+    .big-font { font-size: 28px !important; font-weight: 800; color: #1a1a1a; margin-bottom: 20px !important; }
     
-    /* 強制縮小元件之間的垂直間距 */
-    .block-container {
-        padding-top: 1rem !important;
-        padding-bottom: 1rem !important;
-    }
-    div[data-testid="stVerticalBlock"] > div {
-        margin-bottom: -15px !important; /* 讓元件靠得更近 */
-    }
+    /* 調整垂直間距，讓畫面緊湊 */
+    .block-container { padding-top: 1rem !important; padding-bottom: 2rem !important; }
     
-    /* 按鈕樣式 */
+    /* 左側按鈕區專用樣式 */
     .stButton>button {
         width: 100%;
         border-radius: 8px;
-        height: 3em; /* 稍微調低高度 */
-        font-weight: bold;
+        height: 3.5em;
+        font-weight: 600;
         border: 1px solid #e0e0e0;
-        transition: all 0.3s;
-        margin-top: 5px;
+        text-align: left; /* 讓文字靠左，像選單 */
+        padding-left: 20px;
+        transition: all 0.2s;
+        margin-bottom: 8px;
     }
     .stButton>button:hover {
         border-color: #d93025;
         color: #d93025;
         background-color: #fff5f5;
+        padding-left: 25px; /* 滑鼠移過去稍微右移，增加互動感 */
     }
     
-    /* 卡片樣式 */
+    /* 新聞卡片樣式 */
     .news-card {
         background-color: white;
         padding: 12px;
@@ -197,53 +195,83 @@ st.markdown('<div class="big-font">ThaiNews.Ai 🇹🇭 戰情室</div>', unsafe
 tab1, tab2 = st.tabs(["🤖 生成器", "📊 歷史庫"])
 
 with tab1:
-    # 1. 時間選擇 (更緊湊)
-    time_options = { "24H": 1, "3天": 3, "1週": 7, "2週": 14, "1月": 30 }
-    selected_label = st.radio("區間", options=list(time_options.keys()), horizontal=True, label_visibility="collapsed")
-    days_int = time_options[selected_label]
+    # --- 頂部設定區 (全寬) ---
+    col_top_1, col_top_2 = st.columns([2, 3])
+    with col_top_1:
+        time_options = { "24H": 1, "3天": 3, "1週": 7, "2週": 14, "1月": 30 }
+        selected_label = st.radio("時間區間", options=list(time_options.keys()), horizontal=True, label_visibility="collapsed")
+        days_int = time_options[selected_label]
+    with col_top_2:
+        custom_keyword = st.text_input("🔍 自訂搜尋 (選填)", placeholder="例如: Delta, CP Group...", label_visibility="collapsed")
+    
+    st.markdown("<hr style='margin: 10px 0;'>", unsafe_allow_html=True) # 細分隔線
 
-    # 2. 自訂搜尋 (更緊湊)
-    custom_keyword = st.text_input("🔍 自訂搜尋 (選填)", placeholder="輸入公司名...")
+    # --- 核心佈局：左導航 (1) vs 右內容 (3) ---
+    col_left, col_right = st.columns([1, 3], gap="medium")
 
-    # 3. 按鈕區 (移除所有額外間距)
-    if custom_keyword.strip():
-        if st.button(f"🔍 搜尋: {custom_keyword}", type="primary"):
-            with st.spinner("搜尋中..."):
-                prompt = generate_chatgpt_prompt(selected_label, days_int, "custom", custom_keyword)
-                st.success("🎉 成功！")
-                st.code(prompt, language="markdown")
-    else:
-        st.markdown("##### 👇 請選擇搜尋主題：") # 使用標題代替 st.info 節省空間
+    # [左側] 按鈕選單區
+    with col_left:
+        st.caption("👇 選擇情報主題")
         
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            if st.button("🇹🇭 1. 宏觀戰情"):
-                with st.spinner("掃描中..."):
-                    prompt = generate_chatgpt_prompt(selected_label, days_int, "macro")
-                    st.success("🎉 成功！")
-                    st.code(prompt, language="markdown")
-        with col2:
-            if st.button("🔌 2. 產業戰情"):
-                with st.spinner("掃描中..."):
-                    prompt = generate_chatgpt_prompt(selected_label, days_int, "industry")
-                    st.success("🎉 成功！")
-                    st.code(prompt, language="markdown")   
-        with col3:
-            if st.button("🏢 3. 台商戰情"):
-                with st.spinner("掃描中..."):
-                    prompt = generate_chatgpt_prompt(selected_label, days_int, "vip")
-                    st.success("🎉 成功！")
-                    st.code(prompt, language="markdown")
+        # 如果有輸入自訂關鍵字，就顯示自訂搜尋按鈕
+        if custom_keyword.strip():
+            btn_custom = st.button(f"🔍 搜尋: {custom_keyword}", type="primary")
+        else:
+            btn_custom = False
+
+        btn_macro = st.button("🇹🇭 1. 宏觀戰情")
+        btn_industry = st.button("🔌 2. 產業戰情")
+        btn_vip = st.button("🏢 3. 台商戰情")
+
+    # [右側] 內容顯示區
+    with col_right:
+        # 根據按下的按鈕觸發邏輯
+        if btn_custom:
+            with st.spinner(f"正在全網搜索 {custom_keyword}..."):
+                prompt = generate_chatgpt_prompt(selected_label, days_int, "custom", custom_keyword)
+                st.success(f"🎉 [{custom_keyword}] 報告生成成功！")
+                st.code(prompt, language="markdown")
+                
+        elif btn_macro:
+            with st.spinner("正在掃描 泰國政經與台泰關係..."):
+                prompt = generate_chatgpt_prompt(selected_label, days_int, "macro")
+                st.success("🎉 宏觀報告生成成功！")
+                st.code(prompt, language="markdown")
+                
+        elif btn_industry:
+            with st.spinner("正在掃描 PCB 供應鏈動態..."):
+                prompt = generate_chatgpt_prompt(selected_label, days_int, "industry")
+                st.success("🎉 產業報告生成成功！")
+                st.code(prompt, language="markdown")
+                
+        elif btn_vip:
+            with st.spinner("正在掃描 重點台商清單..."):
+                prompt = generate_chatgpt_prompt(selected_label, days_int, "vip")
+                st.success("🎉 台商報告生成成功！")
+                st.code(prompt, language="markdown")
+        else:
+            # 預設顯示畫面 (還沒按按鈕時)
+            st.info("👈 請點擊左側按鈕開始生成情報。")
+            st.markdown(
+                """
+                <div style="color: #666; font-size: 14px;">
+                <b>操作說明：</b><br>
+                1. 在上方選擇 <b>時間區間</b>。<br>
+                2. (選填) 輸入 <b>公司名稱</b> 可進行自訂搜尋。<br>
+                3. 點擊 <b>左側主題按鈕</b>，AI 將自動抓取並生成分析指令。
+                </div>
+                """, unsafe_allow_html=True
+            )
 
 with tab2:
-    if st.button("� 刷新"): st.rerun()
+    if st.button("🔄 刷新列表"): st.rerun()
     
     if os.path.exists('news_data.json'):
         with open('news_data.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         
         news_list = data.get('news_list', [])
-        st.caption(f"📅 更新: {data.get('timestamp', '未知')} (共 {len(news_list)} 則)")
+        st.caption(f"📅 上次更新: {data.get('timestamp', '未知')} (共 {len(news_list)} 則)")
 
         search_query = st.text_input("🔍 搜尋歷史...", placeholder="關鍵字")
         if search_query:

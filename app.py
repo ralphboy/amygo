@@ -48,6 +48,11 @@ st.markdown("""
         margin-left: 8px;
         color: #555;
     }
+    
+    /* 隱藏標題旁的連結符號 (Anchor Link) */
+    .stMarkdown h1 a, .stMarkdown h2 a, .stMarkdown h3 a, .stMarkdown h4 a, .stMarkdown h5 a {
+        display: none !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 

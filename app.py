@@ -68,13 +68,13 @@ CUSTOM_CSS = """
 VIP_COMPANIES_EN = [
     '"Delta Electronics"', '"Zhen Ding"', '"Unimicron"', '"Compeq"', 
     '"Gold Circuit Electronics"', '"Dynamic Holding"', '"Tripod Technology"', 
-    '"Unitech"', '"Foxconn"', '"Inventec"'
+    '"Unitech"', '"Foxconn"', '"Inventec"', '"Garmin"'
 ]
 
 VIP_COMPANIES_CN = [
     '"台達電"', '"臻鼎"', '"欣興"', '"華通"', 
     '"金像電"', '"定穎"', '"健鼎"', 
-    '"燿華"', '"鴻海"', '"英業達"'
+    '"燿華"', '"鴻海"', '"英業達"', '"Garmin"'
 ]
 
 # 預先計算好查詢字串 (避免在函式內重複計算)

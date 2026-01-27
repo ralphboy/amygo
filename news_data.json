@@ -1,341 +1,838 @@
 {
-    "timestamp": "2026-01-22 15:33:25",
     "news_list": [
         {
-            "title": "Telenor sells its stake in Thailand's True Corporation for $3.9 billion - Reuters",
-            "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNERBTklGOUpBUER6RVVneVlobmJ6azhKRklkWUU1ZTJhZk1HY0VDd3pydmtJUGJycmhidDREbGxZQ01yU2l0Y0pyMU5WNVQyNk14dEl0RnpjbXYzQWx4VkxEWmd0cjJrSlNaaUVzbXNKQUZfX2ZtN2JvQnlFdlpJNGUtU01OYXAzNHdjaVBNR2RYdHlMZEtxQ1poRUpXbFlTdkpFdkhzNEFvODhOQkhYR05RWnQ0ZFQ5MGtYRw?oc=5",
-            "date": "Thu, 22 Jan 2026 06:08:00 GMT",
-            "source": "Reuters",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "Thailand’s data centres drive investment surge - Borneo Bulletin",
+            "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQelQwa0VIdUtrbC1oallHV2xoaHdYR1dVc0VIM2NTQ0xIa1NOQUx3aDB5XzluMTlaYjBkcE9XVjhMWlZ4M29hVXZvbDM1OG9zSzdHcVZIZHZ4a21OQlFqbFdhakxPdFpDMExzY2FXNUpGdEUyVkxRaTZ1d0lUZ3ZOcEpn?oc=5",
+            "date": "Mon, 26 Jan 2026 21:08:00 GMT",
+            "source": "Borneo Bulletin",
+            "category": "🔌 PCB製造 (EN)"
         },
         {
-            "title": "Thailand’s oldest cement firm turns to 3D printing to revolutionize its business - Fortune",
-            "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBxU2Y1X1RsY2dHNVV3V2F1dTNxeFo5YWdoOHJza1R5ZlZwWlp0NERMb29OOENtTndwTk5WSEhWYk5jbVJfbGtrcE1MdWhuVC1OWlFJb1NlOFZMLTJ0aGZBT3dmb0RFNzZDdUROSnBqeGFJUmtaTlV2aDZ3?oc=5",
-            "date": "Wed, 21 Jan 2026 22:00:00 GMT",
-            "source": "Fortune",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "JarnisTech Qualifies Advanced Hybrid Lamination Process to Reduce 5G Hardware BOM Costs - Thailand Business News",
+            "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQY3daVl9wbTF5VHc3QUtpMDNCODJiT1VSdFRzS3NlV1VJSmlOem5JTXh6UGgzZ0t5a19HTVE5TlVYNi1CcEVnMGxfMGRWaHA2c0IwRzNZblBkZWZrVGlsemR4b2Jieks5dnZQcXphSXdfRFhWQ3IyWXVBSWRpejFoUE0tTWtLaEowWHFRVXVVU1VrUUlxV3NqaS1PQzlSeDFrZ09UUDhYVTJVZGYtblZvN0pCUjIzY1JNa3EzaVVzc3lqUHB0U2sya0RpcXhrbFU?oc=5",
+            "date": "Mon, 26 Jan 2026 15:17:17 GMT",
+            "source": "Thailand Business News",
+            "category": "🔌 PCB製造 (EN)"
         },
         {
-            "title": "Telenor to Sell Stake in Thailand’s True for $3.9 Billion as It Slims Asian Operations - The Wall Street Journal",
-            "link": "https://news.google.com/rss/articles/CBMizwNBVV95cUxOTVZVZnltYUpJY1hVaDVwZ185aXJyMUxXQ2hHbl9RME93bk1yZHNfQUxMSS1aczJ0Y1RTV1cwckZUeDdOV2NhRy1KT3NNRDA5YlFkNXo2SFEtSEdKTjdlV3ZxNjZLZUtqTERPOFVrWFNpbUNHTVlhWE9rUjA1NGd0MHlPVXlzaGV6WEVKMDZvdGpnMTlVeVg3VDh6eDlRNnBDejh6SF91cTBCRjhUM1doYWQ1STBBVVF1VnJUQ0gwenRiSlEwX25WQVFsci01d21OVDg1cW0ya1VmVDhWMVhUc3Rod2ZfSDJmZWhaMGtucVdfSnkzdHlvbVFDNGdlVXVJRlpURGR4eEN0NEZCdGgxbmxJWU9JLU96bU1nV0oweG1aS3RZbG1IbTNfMmN0bmtVNlJRbmNIT0NobGZwQjY5U1dBVjZTMm9WM2kwMmpmY1VrZmxUU1FzcDRRR3djV1ZJV2tLbzZzTGZ6VXU0a1NjczA0b2M5b19MVlM2REwzYWtSRHR0cy0xRDRRVDBua2VONG15V0dmanFxZFBySEpYbldrbEpUbjRnQXpmQy03SDBxWTNVem9pMFhtMVVjZlBMMFBWWmRrcFMzcTJPek5r?oc=5",
-            "date": "Thu, 22 Jan 2026 06:59:00 GMT",
-            "source": "The Wall Street Journal",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "PCB says T20 World Cup decision on Friday but tournament boycott unlikely - Cricbuzz.com",
+            "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQN1d6dWtQNmRYYUdmQWpnbEg4Y1JSdkxmY3hrRktKTjdiS01VTW9jWk5fZmktaTNfY2lDUHdiNHQyMmJaVzB4LTI1R1dES3ZCdV9oWjEycWRvR1NiUVl3bEJfLXp6VTJUaEFmMGFMMU5Pc29yNkNYQjlCbkhKbnV0bHR4bHNWYWg5YS1ZTU1jOGNGWkVSclVYTUdJUzh1bUFDUTVPeDNrN0tEUm9mTnJJdmNEVUI0S0FHZDItcEFvc3k5bjdMWUg4S0lxdWtFSkJxQldTMzdncUdqenU3Y2c?oc=5",
+            "date": "Mon, 26 Jan 2026 16:05:47 GMT",
+            "source": "Cricbuzz.com",
+            "category": "🔌 PCB製造 (EN)"
         },
         {
-            "title": "Saudis partner with Thailand for $173m ‘global city’ - MSN",
-            "link": "https://news.google.com/rss/articles/CBMiugJBVV95cUxQdVRpQnNqbmY0all3ZXVwVEZlNktkZHptLTB6aXU3N3BjWVNrMUZlNm5DbVdzSWlyR2plbnBHVjlpblNHRUNFYjlMSGZIbktBcjJEcWZITDNsT1N4X21acExINjdvMmZPcmNmMlpVU2VVUnFxcUZUZF9VZldCc0ZNVV9xczktZUhjTGdDekhJcUZvSDlfZWljR0xKVFRhLVE2Y3d6WGhzbTJUSzdMZUs4UHhzZXgtclRtcmc2alY2c2pYOGJacldDTlhob0tfRWcxOXhmNi1pY29sVkFNbTN2T1lHRWZ2Tm5yRzhJMm9rZldtb3BLTDFWdnY5OTlWUS1ZbjlpbFl1TXpmaDJISHRUdUhPeV82Y2ZULTQ2cEg4VkdaS3FBaDVaR1JQeE8xdTFWaHdCLXA2UjE0Zw?oc=5",
-            "date": "Thu, 22 Jan 2026 03:33:39 GMT",
-            "source": "MSN",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
-        },
-        {
-            "title": "Google Cloud Expands Thailand Cloud Region to Power AI-Driven Digital Economy - The Fast Mode",
-            "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPYXlIVklzaVhNMG5temlxUjBrZ2tnU3VtdXNsc3NEV3JaYURGandHa3NlQlFSakpVZDNlZGxDZEk5VWxWbFpCa21RUVpJMUo5UjFTelBUbzFlejQwRHVab3N0MXg3UWVUU2hnS1oydVhiaExaZjlUV1FrNmNzNTRVNjNRaWRKUUFoSDlOTTZQbjlRNHJPSWlaTVhOdWh5VVJjZGUxNzlYM215NEVTMEdiUXhidmJjclEzZDNwUDN4YkxhNnJVc2szVnZYM3RVWTYyRmtSQw?oc=5",
-            "date": "Wed, 21 Jan 2026 23:07:15 GMT",
-            "source": "The Fast Mode",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
-        },
-        {
-            "title": "Weed Backlash Grows in Thailand as Kids Turn to Cannabis - Bloomberg.com",
-            "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbmM3THFSQTdoTC1CbXo1RnJsaWhDa0lTVGlTSTc1cFFnUWozVTRxdEtNVEV2NVJvTWx3d01UVHVsX0t6TV95WG1CV0Rzbm1xUlZ4blFsS0dzZG1SY3VLREJtd2tKTlAtX1dVRmV4ckR2M1pnWVc2NlZ2WHlSWV92SkVTZF9Wa3IyQUVKUVhsOWZQTXQ2N0R0QzF4dXZjNFJMVXFFS0tYQzl0MXZXNFN1bjJLUFMzOFdVZjAtaW5jUlhJSTZsSDl3?oc=5",
-            "date": "Wed, 21 Jan 2026 23:00:32 GMT",
-            "source": "Bloomberg.com",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
-        },
-        {
-            "title": "Thailand Boat Festival 2026 highlights regional marine tourism cooperation - TTG Asia",
-            "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWFN3UHlOd1NIekhiLVptY1VCZ1V4NGRlTWRaWVhBUXNUV1NocURuUjBJNWtrb0FGdURqckJtajB0YzZxMDFNa2V1Wlc4TkR2THpNOHlBbjVjWFk4bFFBNlR6S25fR0hCWHZYNTFsMjhsZHMzMVJMamlxUGVfeXdjclhBU3dScDY2d0VudDN2VWs3amxDQUZIODJZM2xsenl6X0htYy1WenNGOW9yY0Jz?oc=5",
-            "date": "Thu, 22 Jan 2026 04:16:53 GMT",
-            "source": "TTG Asia",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
-        },
-        {
-            "title": "Missing Brit Joshua Kershaw Found Dead In Thailand - Evrim Ağacı",
-            "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNeDVBMGJpVGdJcGhtR2dYREFjbWZLYU1mV0VDeFl1TDRkYmVtVmtQMk5ibktQZ0JIbTdvSnZDYUVCdnF3bG1WOW9qN04xNzM5cnFTeEoxaElYR1FjQUZPbGhmRUFWdlRObGczd3Q5YkUwdGlJTjdCYndyWVloNDBIU3hVVnNJcGVTTlVMdA?oc=5",
-            "date": "Wed, 21 Jan 2026 14:16:21 GMT",
-            "source": "Evrim Ağacı",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
-        },
-        {
-            "title": "Ekniti in Davos: Thailand pitches neutrality and smart tech, EVs, food, wellness - nationthailand.com",
-            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9hNmdRZEx0RlVZS0xUZ3d0bmdZNkp0amdUeDNIX3Z2Y0llVGFia2hQSlFNZHlzejF3NzE3RVNCQm1IU0tsZFJYcVZROF9lNlM5WlZUQUo5VjhsZDgteS01dXJ3?oc=5",
-            "date": "Thu, 22 Jan 2026 02:46:10 GMT",
+            "title": "Singapore tops BOI applications at THB 547bn, driven by global parents - nationthailand.com",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5VRnl6ajhnWWFEcnRpUEVsUjJxSjU1d2xCdWFBT091emc3VWVFaUxvYXdPTzhaLXdlN3lwZDR4U3lLZ3JZSkk5UVF6NURRdUQyYkxsaUVCeWxmSXBMR2NVSkw5VGNEMVEwOTVn?oc=5",
+            "date": "Tue, 27 Jan 2026 04:34:53 GMT",
             "source": "nationthailand.com",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "category": "🔌 PCB製造 (EN)"
         },
         {
-            "title": "Thailand Becomes First ASEAN State to Launch Upgraded WIPO IP Course - WIPO",
-            "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPQmE1aE5kN2FzOEs4QlVGYkxtYktFQVlvSDA5QUs2OTIweTJUNWtrRlcxVkhKeHJIcXhYTXVYMTBOQkNfb2VrVjFxLXBENXJBUEFBdnJnMjI5MGdEVTRZa21lOEpMbnBLUTFNSm9WYWRyTDYycTBORHdITUlEMEJLNk9IdmYxS2JxVWM3OXlFX1BnTUhnNDkxRTRqc24yQTlobW5NUlJoZHhJUnY2MmtCOUl1SnRXX2djRm1Sd3FR?oc=5",
-            "date": "Wed, 21 Jan 2026 17:47:00 GMT",
-            "source": "WIPO",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "Global Electronics Association Appoints Raj Tiwari as Country Manager to Advance Thailand’s Electronics Manufacturing Ecosystem - I-Connect007",
+            "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPRmlDM0VxejRIRGxSd0h1a0RPd0E2dTVVQVYwcnZUeDNFV20ySGUwS3hpSEE5cmQzMV84QUF4OTRRRVFBdF9QQ0RuZThiR2NPT0treXpmMFNIcHFDYXIwSVRfTEtjdnMtd3p3dmJ1ei1pdmV4X1ZPSXVvYUNGWFdrZ3BoWnltSmxMd29PTTlZeTlhMDdhaXVUcktPdjVldGJJY2w1OWxqanFuZTUtME5uVUU2NlFJWjFRaVZKQ01PVDBWNWtfWTZhNzR1R2tkWjgxXzNjbldWeDZvYWZMUE54RmthZFJHVm9fM1RhMFFJakJRcWVUbFZCeC1BQVJMZDNLck5TNXZoZw?oc=5",
+            "date": "Mon, 26 Jan 2026 12:59:52 GMT",
+            "source": "I-Connect007",
+            "category": "🔌 PCB製造 (EN)"
         },
         {
-            "title": "Ancient Khmer temples scarred by Thailand-Cambodia conflict - Al Jazeera",
-            "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWXd3d2c3aGtKUXFtd1NsNWJNTDd2b0NUSFhMZUZTamdjOTlSRjdWaGd6djhaQ09SWEJRT29heF8yWks0dzVFWWstZWhJU3pxQlNSU1Zycl9KT20tZXRxYVBhenlBTXpuUlhISy1LWE5yLWxLRldLY0JMYnBtOUI0SjA0RlI1Qlp2WG5GODNiTmNPQmIzQzRBbFlfLVd1NG9vMFF3VGhtdzg2THpqcWpF0gG0AUFVX3lxTFBDTWFGTHJBS0JCZk5DQW9fOFVvVTdGSld5WGJ3QUlaLVBDd3pLejM3b2RJTFJ1YnJnNFVZMnBvaEVHU3EwVmxZVlNNbktVejQ2NTlza3JYcDU0b2tSVE4yc3lzVnJ2eW9EenVqbm85cjRpVWl4VlRIc3BlNzlsODlvRnFGS2NzbzFCc0M1TVJaVTJZUGFHNzI1N2xEdS1SUTNodUlzdDh3T25RaEpsWmM5YUppWQ?oc=5",
-            "date": "Wed, 21 Jan 2026 20:31:37 GMT",
-            "source": "Al Jazeera",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "PCB族群紅綠交織！定穎投控攻頂噴天價、5檔齊站漲停板 載板三雄「它」止步連7漲 - FTNN 新聞網",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1VWkRES2lfTEVVcVI1bUNtUmRKUjlrOENhNTNoYXZlRVBtWDVKSzBQNndKOVJKbWsyemJ2OVhqV1dXcUlPTUs4Tld4UQ?oc=5",
+            "date": "Mon, 26 Jan 2026 08:15:00 GMT",
+            "source": "FTNN 新聞網",
+            "category": "🔌 PCB製造 (中)"
         },
         {
-            "title": "Google launches cloud region in Bangkok, Thailand - Data Center Dynamics",
-            "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQU1EzMlVMLVNhMHRSd2VlcGUtS20zQVdPSW0yNXcyQmNmekZGZmViWldHYVhPcDNneFFjaTM1STB6T0IwWWRYZkpjci02d1d6bDhDRTBWSzZ5MW93RmZJaERWbjQxZnFMQ3V5UVdacHp5ZVlWU2hoVndPdm96SGQ2WkNwSF9hX3puaWtxZ3VMY0pHUVF6S2dV?oc=5",
-            "date": "Wed, 21 Jan 2026 12:11:22 GMT",
+            "title": "低軌衛星起飛! 耀華、 昇達科漲停華通創新高 - MSN",
+            "link": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPbGViUXl4WWVkWEJJekhhRTVXSjdkMGltNGhZcG9XQ2pka21kTFMtZ2ZVb1V4ZU5mQV9rS2FwOGZQRTl6clBkTzZGZnAxbHNwVFZrN2lIMDRqM2hickFuV3drZEpNZHJ4cXpyUXU4QWJZWENxU2tmcmtmcFMyelV2Qm45VF9Gb1d6TWpvRUR5Yi00R1lvZ1U1UWZnMTBaUHEzM3dselhDOG5OYnRSV2cyTkJIdDJobnNRNXdvNmpISFZ6dGZ0MFd0X1dJc20yYkd2Sm1JSEFwWU1tZkxjVzVTRlZiQmJabTRfdDBWNXdQTl9PcHNURVRiM0l1ZHNpclppR1ZvVFUtbTJYbFYwcGw0M0JZTU5WQmJjUm1BbjVpZzMtTVRrNDJ0YmZkUWo3RDY4YUZsWHM5WG41Zw?oc=5",
+            "date": "Mon, 26 Jan 2026 08:08:36 GMT",
+            "source": "MSN",
+            "category": "🔌 PCB製造 (中)"
+        },
+        {
+            "title": "太空題材全面引爆！這「低軌衛星銅板股」1月猛飆78% 股價創近26年新高 - FTNN 新聞網",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5zXzlONzh3aGo5UWJyMU9Fbl9WY2psUm82dXRiQTRodkp2ZXhJSlJiaEdTUFhHUDNQME1CMk1acm9hc3N5MTBPeHZKTQ?oc=5",
+            "date": "Tue, 27 Jan 2026 01:00:00 GMT",
+            "source": "FTNN 新聞網",
+            "category": "🔌 PCB製造 (中)"
+        },
+        {
+            "title": "目標價上看600元！這「CCL大廠」泰國新產能到位 估2026年EPS達22.29元 - FTNN 新聞網",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE90dXpXRnhoeHlkbk96X21Ca2dMbGhhTzZWeThlSjlLcHE4Q3ZPUkE1VHE4bUlpV2lsNFpaYmNtbmt3cVM0X25hcVJxaw?oc=5",
+            "date": "Tue, 27 Jan 2026 04:00:00 GMT",
+            "source": "FTNN 新聞網",
+            "category": "🔌 PCB製造 (中)"
+        },
+        {
+            "title": "台燿泰國新戰力 Q2挹注營運 [工商時報] - 富聯網",
+            "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOcF9zNVIxR3VSUFpBWTV2V2FIY1dSRV92bjRJMnF4Sno5ZHBXOWFmM2dYTm93T2lXM19Ec18xWjlvbkJIYzFGbndkMFVzdlNqbWxuZ0txeXFQSHpvclJBV1dxZG9weFJYYXd1Y2g5TEJyU3F6aXRyVGpaVzg5amxxaWdJUTRNZw?oc=5",
+            "date": "Tue, 27 Jan 2026 02:21:25 GMT",
+            "source": "富聯網",
+            "category": "🔌 PCB製造 (中)"
+        },
+        {
+            "title": "【即時新聞】燿華(2367)近五日大漲30.7%，海外擴產與衛星題材引市場關注 - CMoney投資網誌",
+            "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNT01PSkktMkE1YlJoV3V4V0FTbW9NdGUtRE5oUHRNVjhRWXlDLV9WYXNUU3hoQ1U5MlNpMmEyNkd4SkJZOHplOW00VDlGV1p6RmliOFlSTDRaRk9FUTh6MjAxZDFhdkJsaFVoYlhxRzRZb2Fjb3ZZM3dzd2VhR1d6OFJqc1VtY0lacnc3YmNGa2I1TWhBMmV4bXdiOFhSYmxlWVZqM3JOMm45YTh2X01ib1BOc3VfR1Vma1lzek9ieVpDZDdmZzA1UVB0Wnk4WTk0OFE?oc=5",
+            "date": "Tue, 27 Jan 2026 01:44:25 GMT",
+            "source": "CMoney投資網誌",
+            "category": "🔌 PCB製造 (中)"
+        },
+        {
+            "title": "熱門股》太空題材 燿華元月飆漲78% - stock.ltn.com.tw",
+            "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1nWG50bUJuc0MtdEV6ZV9mN1piZ1VKcW9SYlJLRnNuRDM2WXhMUUFLRzZEajFRaU9OMzBWX1gzNVh0dWNzV0Fadk5aeW9pMGtmWThVX0RoVFo?oc=5",
+            "date": "Mon, 26 Jan 2026 22:32:35 GMT",
+            "source": "stock.ltn.com.tw",
+            "category": "🔌 PCB製造 (中)"
+        },
+        {
+            "title": "Resonac-Prepreg(半固化片) 漲價 30% 引爆材料戰爭！南亞、台玻、富喬、長興四大台廠如何搶佔 AI 商機？｜產業熱話 - sinotrade.com.tw",
+            "link": "https://news.google.com/rss/articles/CBMiwARBVV95cUxQWGxpQnZWSE5tXzZ4TFpRd0pfQjdjaDI1ejBxaFJuWDdMRkNvS2cyRGM4dDJ2NUFabmlMZWJZbUVsZEpwNEduMjgySWEyWl9CMVM3anh3MHJnQVk4T0pvWWNhb2ZWSkxscFQ0dFNrNHFzbWlIM29pbmJlYXg5dXB5SEVObTM4UVh2WENTVm81NXljVlh2aEU2WTc1MmQtT1ZwaEdwLXRDQmh2ay1vNGlMUHltYzBNTVdoTXh0M0p4RXFPWlBKQU40ZzFPTUhrQjMtejhwU2dMSXFsMmhsbFhyU0xKbmE2Y1pLLVFwNEwyUkpESmZmYTkzTGFxczBvY2Q0S1FFanRHLUsxSnVmeVktaTBkZTFIVmpsUmZFeXdMRU9JZGtPMjBydlRFZzc1ZzM1NnZKSzIxeXB2WkFqZnVBZzk2MmxoQ2x2WlVDOHBFYjFWYXZGYkVVZmpCV3QxeDcxeHJrUl9UZ080bko4aGlPYllIdjJQaURvWEpCXzNNMS1aOG96NWRYdmlOQ2o5Z21xT1ZqMWdjcV9hWGpocElISFQ5Vmt2a002eU93eWFrMWV3YU5WS2FZNllwOGhvS3NRbGtCd2I2SVRVNkp4Ti1LQlgzVUVHalN5Zy0zVHZxV0wxUFViMmppOFJFYlN4Z2I2SmU5MFQwdzBKNC1HNWp1YmltZDVxNXlRZGkwTXZGLTNPOUx5Sm9rUVV3VjNwQTRTcFZRUWh6VlR4S3NiWERYWVlyb19FbFhQNjRqbDZKTnA?oc=5",
+            "date": "Tue, 27 Jan 2026 04:50:03 GMT",
+            "source": "sinotrade.com.tw",
+            "category": "🔌 PCB製造 (中)"
+        },
+        {
+            "title": "Swiss luxury watchmaker Breguet debuts in Thailand - Inside Retail Asia",
+            "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPUFZCSDdfZ2hvd01GQzE5ZldDdGkxTlpyQktNY0x5WDZhbjd5T0NaZkdNdENqanlmcW5WWkhxSUdVRDZMSFNxZnVqd05pWVR4OWJSTW91NkRMZ3c0eVpvRXVpNTRsbnZSSWloYndpaWRNaW1RUjZ5S1dhLWNJNThVRFhLbUZnWjVTTTM1c01fbnlFdw?oc=5",
+            "date": "Tue, 27 Jan 2026 02:56:47 GMT",
+            "source": "Inside Retail Asia",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Thailand Reinstates Covid-Era Measures in Response to Nipah Virus Threat - Thailand Business News",
+            "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRm5WM3J3OU9OcHlDbVVDSXJEQzFOeXR4UW1ZQlN2eFh0N3IwRmJCajFZWEZRNE5UZHk4UUdJZXpqTUx2VkJhRHRaNFRaRTVHeEZtNG94eGxwWWQ1eURNZ0gwLVptNUlCV1MxRi1sLWthNkdfUmViMmJwSklSdXNhR0FEbGYzbFZDR2ltYmhYLVBPVElGbk82LVN3Q2dNcDhSUlJ0VjhqQlpNWnY3eG1tNzJ2cXg1emZPZEhQSU8tVVMtZTg?oc=5",
+            "date": "Tue, 27 Jan 2026 02:55:15 GMT",
+            "source": "Thailand Business News",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Thailand releases endangered leopard sharks in conservation push - MSN",
+            "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcWlOMjd4Rjc5NkNPVmhVUUpTYnhtUi1ZbFY5OEhZQTc1VENwRzl3cDFFc1AyVFptWHNXU2JrM1ZBRHhqUENneFluYVgzS0xMNmlZVmNSczdRbDhIeXRJOWZ5aDZabUNUYnFGaWlhUnktUXVxOU0yRHJjaDk5QW5wYlRjaU1IaXFYZG5RVnJFODUyU3FvX2xwelpadDVFbmJnY0RFZUl4LUdQTmUwUjNfVHZFRHZ1SDItTEZUTXhWSW81SDF2U2Y1SVBpdlB0QmRleXVMSFBJTmticmhy?oc=5",
+            "date": "Mon, 26 Jan 2026 17:28:28 GMT",
+            "source": "MSN",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Preliminary Results of the 2025 Population and Housing Census: NSO - nationthailand.com",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFA1cHNlYVplMkFTSEVKVFhMUGRkTFl2RUttX2p3cTRGT0JlOGlzZl8wME1JTk1ycmNZd3BVNVNhWlY0RDREeFBXMWtkcmdxUHB0NVJscXVRREdKSTFocUd3QlVB?oc=5",
+            "date": "Tue, 27 Jan 2026 03:29:10 GMT",
+            "source": "nationthailand.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Thailand expects 35.5 million foreign tourists this year, finance ministry says - The Economic Times",
+            "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOSlcxYUVkQjRqRFFKTktWTGVPSVBuc3BibDFXYUg4QzA0TFJuTFlUR3Y3UXZYaGI3N2RDckVQX09NR1ZkSXdBQzVoZ2l3RlVEaWRmUnpLandVUXJaRm9VRmtFRW8xUU95ZWNvUGpKTHZfWHVXQXF4dFNzcU90YkJSUDgwNmV6c2o0TlNOYzJlOE9sZ3hNbGU2d0FwTHR4eEVxaE1GMlB5XzMxcm9ZVC1JTDJuLUpEbmZMWVdTM2lRT0JfVU9rdlRJRDJjWWNsdGpHZ2FGcFNWNW1qUdIB3wFBVV95cUxPbl9qM1NVMms5bS1vcXR2Ym5MSmh0TDhBb05yNnFsTUo1dUF0WlFSZnA2SXQyaHVadjZTZ1VXaFNBTmtVZ2JPUmZZMk4zd1BIY3JKajVDWTJ1Tk1zUEw0TGEwNHZqODRFbjQ3bzk1MHBITW13Ymk1WnF5OGhIQ0V6M2pPR1U0QTR2dWl3MlFCSWNveXNKa0RkRzdhQWpwQ0MzV3ZQQTF5bUVZMkVYMnlOZ3N3UUVJbWc3R2YzQUl0ZkhLbWlFbHBvOHYtZjQtcjhkMXlOSGxfV0lyUTdraGt3?oc=5",
+            "date": "Tue, 27 Jan 2026 04:42:42 GMT",
+            "source": "The Economic Times",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Thailand Cuts 2025 GDP Growth Forecast to 2.2% - TradingView",
+            "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVFM3Y1ZrdVpJSXZCTUdhOU0tMGVWTEJKQ2VpUEZkZjhQd2RqNEppVFVKaHZleV81bXVqX2hCcWNCdUE4VXVGRFhDbEI1cHhtcjdOLWFLcjY0ZmVDNkFUYVlJNVVFblpnc3JhTmZPNHdYUHhXUlZaX0JnSktla3RTTlJEektJYmluQ3dySTBETlBzc0dVRm04THVUM04?oc=5",
+            "date": "Tue, 27 Jan 2026 06:54:00 GMT",
+            "source": "TradingView",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Finance Ministry cuts Thailand’s 2025 GDP forecast to 2.2% after weak Q3; sees 2026 growth at 2% - nationthailand.com",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1OR1JxcGdaeVFLZmQtLWtTZ2NOYU8taHN3MEdDY0lwcElYc3pYT1FFcGg5YmxNV3RtV1pJeVVwanZOSTdVS0JBc0pSYmhNSTdkQmRRcWR3eERsSUxxM2ZmTzBXbUg3cVk?oc=5",
+            "date": "Tue, 27 Jan 2026 06:40:00 GMT",
+            "source": "nationthailand.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Thailand Masters 2026 badminton: Know where to watch live streaming in India - olympics.com",
+            "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcHlDZ0dkbVQyZk9GYklwb2NsRzVjUTFPYlo4QlhSNzV1U3hKcDJiTDBZNUxDa25HUDE3QnVfR1pEaWI5NTVDLUhyMzc0Z2lhOUZBbHFyd0YzQ1VLTW5ZOENES1JlUXhtWTM5ZnRUNkNjZktIYVkwN3VIcjVwM1VfMVI2ZFlLV3F4TGNxV0ZpN0ZwMEp6WEdjODlKanozN3RIRmc?oc=5",
+            "date": "Mon, 26 Jan 2026 11:21:00 GMT",
+            "source": "olympics.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Gold traders see Thailand price hitting 88,000 baht this year - nationthailand.com",
+            "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBzOGgwUXhPX2s5ZF9WYXVyclk4b2ZHcDRLUnRscG81TExyeV9kTlN2RjhTUkNLMDFESFhNaGJkOE5ZWGI3SDBoSGtrNVlZbXR6VFh1Xy1uUm9abEZOeFhkenpydUtEbmJtMnR2bUxMS1BXYktoNEE?oc=5",
+            "date": "Tue, 27 Jan 2026 05:05:00 GMT",
+            "source": "nationthailand.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Fugitive Captured In Thailand After 30 Years On The Run; IE Authorities Say Hes A Killer - Patch",
+            "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYUVzNmwyRVNOanZaVW96R3pzeVNXQ0dYQkpncUp3Tnh5V3ZUWlh1b09Wb3FLREFiVTl0S0RfMkhpbE9vVWE5TDBrWVZTY0R3LVFEWVZSWmxaVXM3NVJOMnlIZkFwempnbG9QTTZSYnRYQnJ2QmlEdWl1V1JSZkM5T056dHozeVhoQ29WNmxSTXFKQ3V6ckN2UlhhRXF0Qjh4NXdKSjc4R3M5V3VjN2RkeWNvYVHSAd8BQVVfeXFMUHBEd2hZOWRHYTBvUU9yUWd2VlphQXVERTdBX1gtMWIxWmhSbGlLQU5TQWVyaFo3MHc2djJKSG1OQVk2eGJuYUY0amVocDEtTDRtS1p1dnlTVENnOXFySmdUMTNqRTVpSEp1bmxkcW5fSFpBU1drZjZzTzhFdmtpWmVmZ0lMYTd0WHBLbzl2UTRySzlkZnVaNXlxU192UjNKN2JTQWg3RnV6dEZKZVMyLWFfc3VETkhTQnd4WG92VzhtTnBYNlA2V1FiLWNCSkVxS0QzaGZyM2FObk1QamlYVQ?oc=5",
+            "date": "Mon, 26 Jan 2026 21:14:41 GMT",
+            "source": "Patch",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Phiphat says “Disneyland Thailand” in EEC feasible, PPP study underway - nationthailand.com",
+            "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1tWS1ZOTRFYm12TmpESldzOFVuUERoWlItRkxGeXNmV29weGZObERoYmEtZ0laSWd4OUV5ZlRSWW90WGlWeGxRSXMzVTFmWWtEZ3ZjQ0pjVlhodEZleGVMRg?oc=5",
+            "date": "Tue, 27 Jan 2026 06:16:00 GMT",
+            "source": "nationthailand.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Suphajee calls for Thailand to be a partner to all in a more divided world - nationthailand.com",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBTSVY1Z2dhNHhaa3VYTGVTQUtfRDN3ZEJ2ZkFQVm1rTmlpWVJMVmdvbWVnb0xneDZmQmRzeEpFV1ZDdUc3S2pzbnRPTmhGdksycWJSdGpKMzJqeGl2YWV0U2tmMWM1Qmc?oc=5",
+            "date": "Tue, 27 Jan 2026 03:52:00 GMT",
+            "source": "nationthailand.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Frasers Property deepens collaboration with SPX Express on new built-to-suit facility in Thailand - markets.businessinsider.com",
+            "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPUjFtZHFQRXJTY3FsOFpwQ0FoOUNNTUZGNFRqSFFYb3dhS3lQOW42RFB0RXJXRnRpRW9ZZXBWaEZkaVBQUTRwRE5GdjJLcGcwdGhwaS13Wlg1b0tQYjJuQkxEYkd0bk1zUFlNLW10eXVQekcxX3ZMU19kZGJ4c0VYYXdBVnlUdHEyWmVpcVdIT2h0UXd0ZE9sYUNaelh6SlZpM1JEa3Y0QXpWRWl4d0I5WmlfV2xKMnY4RVpkU1FuNDgxU2FmU3VsSGJLQzR1aV8zcmdBNS1BQ3A5dHgwRnp1a09nOUFCZHJ1NXhVWg?oc=5",
+            "date": "Tue, 27 Jan 2026 06:39:33 GMT",
+            "source": "markets.businessinsider.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Thailand's foreign tourist arrivals fell 9% so far this year, ministry says - TradingView",
+            "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQamFreDRRRmpFdF9YUEwyd084Qmg2RzlsLU80UVpjLWw1ajZibmhfcFdfX0pBemU2NGtKaGRYX1JXRWgwMU1PTlNWUzFWanhuQnpLUEQxMzdCcnNpbWJET1p3YTQ5Ti00ZDlMaC1YMzJEbDZ4aWZaMXFJNS1TVTRqZ3lRaDZhaUNadXRLbFU2VXA3SThLR3hsdUZ6WW4xbXhuLXhXeVg4OUc0N2NFc25mMzVwYl9VN2xsTGFoXzhoMlB3SUZsSm1VR3BRQ0Z6SndzREdCRXJXRkE1WWc?oc=5",
+            "date": "Tue, 27 Jan 2026 03:55:00 GMT",
+            "source": "TradingView",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Poached elephant trunks, rhino horns shipped from Thailand seized in California, 3 arrested - kron4.com",
+            "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbTd5Si1iU3pvbU93RnhhTGs3aURCc1ljYTdBc0dzS2JGV0VzWkRHems5MFhVU0pDWkxrczByUVBhUUtfNXRQc3lDckxwTTEtUTJFZzluNzV6c19LeC1mclR3NW9NZnZzWWxBdy1FQ2h5UlItT2NOM3Q5cUVCYm9XTmcwcGIyYmVCLThwR2JlaGxxNE4yWTFTaXNpRHZWNFRpMHZ2OTJqcERLc1lSQzJwOUFkUHNtTEVMc3BneEdieVVrZGxPOU1R0gHMAUFVX3lxTE4wVHM3bVBVMUJGY1Q3bDJrN2JQT250b052RHRyQ2ZZVTFxZzRBamVmczAyOFhjd3Z6VUI1OFZ4eWtLN3VQZFhvcElFdi1hX283b2NBQ21fcWc4dzlwV3VnOG9tNF9vcTV4RjFQSGZCSlBXUmtQWmsxU0ZFaEZpdjlQZmVPWHZCVVFROTFaaWhmYUxmMWNfMVZ3R2VreERrNzN6TVp6dk1YRkVYNGFVOEo2Z3Y3MUU4anF4X2xST19UeFZyeG52MTRjOWtSTA?oc=5",
+            "date": "Mon, 26 Jan 2026 17:56:50 GMT",
+            "source": "kron4.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "NTT signs 100MW PPA with B.Grimm Power in Bangkok, Thailand - Data Center Dynamics",
+            "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdTB3bktxOXFZUUhCUEJCcUwyd0FuYXpmenpCTlZRcDlaS1E2dzFhcjVoY0NmNDJSQmRjV2RhX0EtZE1qUGx5OThzbWZpWE9OZERnUzFsUTF3VEpKWTg2aGFLQlJUYVRvYUx3MnhEQzljSWdBUnFCOHNSZXdkcnFLazdZeUUtOWs4bFctNGlWQnUwVV83TnQwWGpHYkwtdEtzQ0VR?oc=5",
+            "date": "Mon, 26 Jan 2026 15:44:59 GMT",
             "source": "Data Center Dynamics",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "Azerbaijan Tourism Board expands outreach in Thailand - Latest news from Azerbaijan",
-            "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1vRUx0dGozdmhNTHZQQ1dTckp1RXV1WmVKcUlLNFhPNEpBXzlUbU1DaElIU0NBbzV2VjRNajMyYTh6azM4OE9CaDZzVlB6NVU4aXZ4UUxYUUJsUjMxRlNqWkthMUFUN1hieGZHYXdkT192WWNCOVlMTkR1V3FTbzg?oc=5",
-            "date": "Thu, 22 Jan 2026 07:05:19 GMT",
-            "source": "Latest news from Azerbaijan",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "American siblings reunite with Thai hero who once saved their family - Thai PBS World",
+            "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9uRFlUSl9BRS1HRzVXVHFrWGxoeUF3SzRhdnVDZW1FbWFfQWs4MWRYUnlLdHBJT25LQmlObUdZaDlUVEVyaExMUTlNSG16ckdqN2c?oc=5",
+            "date": "Tue, 27 Jan 2026 06:56:47 GMT",
+            "source": "Thai PBS World",
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "EDC Thailand Might Be Sticking Around—Insomniac Plans Third Installation for December 2026 - Digital Music News",
-            "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPU2ZkLU1FZ3F4cUVIZGMxbE8wb0VTVUxrclNKaFU1NDFvMkx3QnNJa2dvMVlUSjM0MEhfMWVHU1JzeTIyZTd1dUpzT3otSE5DdjZVZ1ZiVVVKTHZyUDFONUk3N2VNNFJUVFNCYl9sWVIzSW1UQXhodmJCVmJOUGVvd2FYcm5acnVP?oc=5",
-            "date": "Wed, 21 Jan 2026 20:51:34 GMT",
-            "source": "Digital Music News",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "Suspect in 1996 San Bernardino County murder arrested in Thailand - kesq.com",
+            "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdEptU2Nnbl9xbDdycVNteDFScmM1LUJrd0h3WWsyM18tTnlWM0xzU1dXbUxhZDRiUmNuLTVaM0VSV2t1Mnp4OWRnZU1pSF9OMEV2ZEluQmdCOVBSWDh2Qm1yN3ZmZ0I2c2thbktDR0RuNUV4YndXUWJ2MmlzdTJaUFJqN0NwZG9nUkdfcmlLV3JITkdiUzQ4cGMxNk1Bc3VtTElKcDBGOVNIdUZsTk9v?oc=5",
+            "date": "Mon, 26 Jan 2026 21:42:39 GMT",
+            "source": "kesq.com",
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "Telenor to Exit Thailand with NOK 39 Billion Sale of True Stake - TipRanks",
-            "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZGhMb2hvZmNPcmF5WmR5NmlzRE1xR2V4QUdlX2l5andhUy14bnRybThCRXJaWG5oVzRIaGVSZW1KU1B3RHA2WF9xNy0xUWptNUFtbHRmNHBMTC02VU5DTWVqSnMtZzJsUW91SkUwQUc1b09mY29hSmszVzl2VVp5OTh1ajVuNHN4b1pseXVqUUpDRVlQemdRbmlHMVdwTm9iRnUyMGVtUE5rdGozUzFyTkUwbVVnZw?oc=5",
-            "date": "Thu, 22 Jan 2026 06:09:30 GMT",
-            "source": "TipRanks",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (EN)"
+            "title": "Brand Finance Global Soft Power Index 2026: Thailand ranks 7th for food and fun - Brand Finance",
+            "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOeVdKbVYwSGJaWTdQSzZieVY0Q25xc3VQN01NNzFvbE5NUUdvVVBSaUljVTZnQlNpTGNhSFhETWFSbEhhUHRhemQxWW1iNnB5OGd1d2p0dkRsemx1VGdTMHpMTzRkTGlZQzh4bk05NURRN0NxRmpkVGVBSXJYZlc4dHBtRXlha3JRMl9UcGhZdTdIUjFNLU9qYWd0a3FsbUdRbXFTeUFsT1h2N0gwZVMtMHZSU25YUWs0R1E?oc=5",
+            "date": "Tue, 27 Jan 2026 03:27:23 GMT",
+            "source": "Brand Finance",
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "泰國觀光局找Lisa代言卻用AI圖！網批「浪費世界級巨星」 - visionthai.net",
-            "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOc2dISWpKc1JfNFAwOHV1cTh4NXRNX2U0ckNScndKUmhQaU55SGR0akNJWnozbmRYR01PX0xzTWpucHQ5SWxuOENUQWlWSlVtY3RFVUpXUFVySTM4V2FVanRPdkJ2TTRfNUplQmVtUVlCRWdHT1g0a3FISFh1SDhobklocE94NHN0aklEUVh6VDFJUWRPdGp1amF3?oc=5",
-            "date": "Thu, 22 Jan 2026 04:14:06 GMT",
-            "source": "visionthai.net",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "Thailand’s Finance Ministry Cuts 2025 Growth Forecast to 2.2% - Bloomberg.com",
+            "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMDQ2UXV5UVdlbWQ2ckd0WU9hY3NmTGRKX0lhLXluWVNmcmhnUHdkZzdvZmJXQXd5LTJPRlJRVTk5U3ozQ0RDbFUwdFh1UzBEQVBPN1ZfM3gwYjZURmd0VzkwSFVJbGlJUnRLV0F5UXhjNGVQN3VPbTROcEkzeVdOTW5GTHJXTGJubnRBajE0V0tDVXlqZ0hvLW9QSHZxb0xrLWI2TGM5U2M0cVIxR1pVWA?oc=5",
+            "date": "Tue, 27 Jan 2026 05:48:00 GMT",
+            "source": "Bloomberg.com",
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "2026泰國入境新制上路：台灣旅客持續免簽，但需要支付「入境費」 - Bella.tw儂儂",
-            "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSFFOT2VXY25oYjNtbGlzcXhBc0c4cDY1a2s0ZGd1Z1BvbmVFLXE0Mm9hSUtFVGt3LUc3YzJnX1l6SWFuV3pic0NwOVFQcmFqbzNkanNMSDRsZnlWb2hHalNTQjlXSnNmbkx5UFR3YmNfMEZIZHA1dTFJS21HS2dxOFhmTS1mRTFfNlRQblNINEp3UXJ6TWV5b3h5emxIRWw0dWVDTQ?oc=5",
-            "date": "Thu, 22 Jan 2026 04:31:37 GMT",
-            "source": "Bella.tw儂儂",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "Thailand’s liberals face a difficult election - The Economist",
+            "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRTR1NlBMR0xJa3VTRVdGVkVQenZ3elNDdjlDXzVFM25tMDR1anJpNFpsaXBMZ1p1bW1WR3RsVEJFemQ5OXQyOVpqcjlBRzAzYThySkpyQ2Ffd29PazFxdDU5UWFta1Zqako3MlNCUWxBVlZJMGdKOEVybTRsSWd2akRSSFN2cmU3elN2ejhwNA?oc=5",
+            "date": "Mon, 26 Jan 2026 17:11:09 GMT",
+            "source": "The Economist",
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "美歐貿易戰疑慮增加，分析：泰國可能從中獲利 - TechNews 科技新報",
-            "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbmplRUJEYTBNd1hFTFkxZTRqMzRUNlJ1Y3RKbVdXNWRWTldia19qWC1UUGJYY0EyeG5vT2VGOERyMExrNDMzWkVEdnItcUVJYmZDY01NNzBQZGtTZEV2UkNPd3Z3eWFQdkJ6TW9vTlVQSEd4aTlIRkxObUVlcjR6em9WR0NaWmFveDc2TQ?oc=5",
-            "date": "Thu, 22 Jan 2026 00:50:19 GMT",
-            "source": "TechNews 科技新報",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "Thailand sees record hotel transaction volumes in 2025 - TTG Asia",
+            "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOckdmNmhkdU9la0Jzd0ZzVEVSLWVCTE1nel9SQ2NnZzNxQVhBWG1TTjZaSkJwa3B3NVdUcHd1S20wMkNBN0pBeEVmTFpaMzVQRlBBLXlKbEhTMWtuYkl1cWl0NU1qMHcwanZxU3FFel90T3VfZS02ZmthN25CdzkzRDFucEFCS09UbmFRV2hTY3c2aTJq?oc=5",
+            "date": "Tue, 27 Jan 2026 04:03:36 GMT",
+            "source": "TTG Asia",
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "【2026版】泰國必買伴手禮Big C TOP20｜超人氣零食＆實用好物全攻略 - funliday.com",
-            "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5KTVFscVRWdTdnS2dQQmxObXhyWmRzTnZycTYyVzkyWUpBVl9EVHhzMFQyRW5iZS03d2tocjF6YndEc1lSYzZDVGdfU1ZnRlk0YTZpZ3dVVExnYXgwVW42ZA?oc=5",
-            "date": "Thu, 22 Jan 2026 00:10:00 GMT",
-            "source": "funliday.com",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "Thailand screening some inbound flights for Nipah virus - TravelMole",
+            "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQWExpZUdLNWFQWEU2dDdvVEFZYmJNbUhodWRFMVlOM2lteFlvOXp4dGZVdVRCM00tQ3EyNVFPOXRHT3VaMUlWTzB0amFtSkhPd3ZDRDl1VWJrcHhrbmc1Q1hDaDNISWhEMUdsU0VqbTF0UjdoRHJkLVhmZ0xER0NFSHpwbzdqeTFxWUdWTDF2NXF1UQ?oc=5",
+            "date": "Tue, 27 Jan 2026 06:36:39 GMT",
+            "source": "TravelMole",
+            "category": "🇹🇭 泰國整體 (EN)"
         },
         {
-            "title": "2026泰國EDC音樂節1/23搶票！購票連結、地點、演出陣容什麼時候公布？ - Harper's BAZAAR",
-            "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObC02WExrVW9haXJOTUY4YzRDNUU3N0UtaVVHbkRBQlpkSW5jTENYWWZxYzlEQ0VZVVN1bHRmSHhNYUV3bWVMMk1teUhjaFd6emlDcHdBTFBObi00bkRValdCSXdXVGN5RklJVjNUMzJJSkhNUjkyRzVOTjNCeVFYcE1Pai1aOFQ2bWc?oc=5",
-            "date": "Wed, 21 Jan 2026 08:23:05 GMT",
-            "source": "Harper's BAZAAR",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "Thai gold traders with at least 10 billion baht in annual transactions must report to central bank - Reuters",
+            "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPREx4RTljQ2lyNFpKX2NadDhHb1RXOEdaVjJkN2N4dmdRWTZSWnZDbGxldEhBcGwzUFBIUVNkczhvVnBzSno1NHdIT3BNQnBHbmFSM3pvNWZ2QnRQVE9pMkNOSFJQQ2lEZ3dHdHBfNE1tOU1sWHZDM1JKYnJVZ0ZvTE5rRzgzTE9hNGNMM2FGVklFd2pEWmJYNFY2VncybUtnd25RTklaMkpBNEx0dzVEWjNPa3AyR0UxQ0tRbFRmelhKRnVmQnowSTFfWQ?oc=5",
+            "date": "Tue, 27 Jan 2026 03:32:00 GMT",
+            "source": "Reuters",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Fear of Thai border action steers Cambodia towards UN law of sea after 43 years - South China Morning Post",
+            "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPc01Cd0pEcFEzcW1fRlBxMEFpS0VkUFo1RW5MNi01SW13VVFOV0Jyb0JpSXo5RWdtWlVkdEJRZzdzN202NjNvaUc0ckVvUkczX2g2aUliUjdyaGlzTlFDR0JXZ042YU1uT1FLbzNaell6Wjd0SVYzRFczN1hBWEEwU19YYTV6UzNXQWdSZmdtLVduRFpkaF80VmdIUlUwcmhEWHFwOU9NWVlSR1liclRqamlDaXRyOVhMdllLZ1dueHN4NVlsSmhPS0JfLWpGd9IBzgFBVV95cUxPc3pIdF91dzhKdDcyVnUtSzlzMTcxd0xNVWxocFhPVExMMVR1WUJXcnNwRHNvWlFUU0YyWE8zWUxLXzhFbDdQLVNKWDMwQjNmeUNiTXZtY0tOMW5XN0JrczdxVEprOVZzMjRPcHJ6ODBvNlB0NFdWU0Q5VkdfdWxIb1hmMm9zQ1pnRHZkR1VMZUF3SEtvTFJpeTdBQW5Wdm1CRnBGSUtkWFpvekM0OER1RmUzRUx4YUFVZ01CTGlGMmZCNFRwTnIzV2tSM1MzZw?oc=5",
+            "date": "Tue, 27 Jan 2026 05:23:16 GMT",
+            "source": "South China Morning Post",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "NX Logistics Thailand enhances ocean freight consolidation services by redeveloping its CFS in Bangkok's Lat Krabang district - markets.businessinsider.com",
+            "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQMnpFcTZOcGV4WmZjLTNvZW1PWmkxM0xuandvenRFZ3dab0xiNnRWUjVEcjUtOFpoMlh4SDZMclhUWnNCVkF6QzlsVUpRaUttUkJ6UnBhUXRyUV9mRjhWRklKZ2JkNDdLODVuSXl3MkVKN2JzNWxmV3RycnZxYU40MDFDemdOZWV1RTdjY19GNS0xb1RlMHJuR1VnX0xlT3M5MklnS2NUTWRHNGhtM3ZMQ3dEWnpFOVZhMGVsUE9raDRJT3lqZVNPMmVydzVubmVIOGxheWlMT2xCa0ZSa2dUVC1ORmc4YllQZTE4VHQybkhsZjRBOXdaYlZqM0U0aVhhTzlhakNDY3ZEQ0hVOHhoaHRn?oc=5",
+            "date": "Tue, 27 Jan 2026 06:39:32 GMT",
+            "source": "markets.businessinsider.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Thailand steps up airport screening, says no Nipah virus detected - nationthailand.com",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9CUTNWeWhYUVVlVXVxbktvbDZPcDFZdjc3OC1leDJ4TE9NTEJSOHlfTDZfancxbGRjYm4zRDViVllYWnNSa2xLVnB1ck5XQ0NEbXJacGJCV1c2M2xSYlB5QnMxNnBxRmszbkE?oc=5",
+            "date": "Tue, 27 Jan 2026 01:11:00 GMT",
+            "source": "nationthailand.com",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Coast-to-coast coral assessment reveals Thailand’s reefs losing complexity - Mongabay",
+            "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZ19Rak8yU0ExM2pFci1YbW02SldLbmVvNUlrd1FqTGJ1QkF2SmZ5TlRzVUxZTnZScERXTjdOYm93OEtyckF4dHVCT1dNaW1vdVJNNmk0STA3XzdOdEpWRmkxM25Ed0d4YmltMHlhbGR2N1IxaXQtcjZpRFJ2MHl6OHdwRExkc25JU0tDVE5DVjJCdVZfallVSjE3SFBuNVY2Ykx3YTlPM1FGQzFu0gGyAUFVX3lxTE1xenBPRWpJY3J1RjRlMDBZWEZMbGFvOE1IUnZPUVBKQ0NlUVh1TS1uM05Ed19MSVAtX1JpcVdGbHdtSGRDUU9tZUFfZTNmcEFXcWo2dkRYNGlSQkpaSnEwSjRYanBhZXdNYUlDVU9GenJxd2dtYWUyWU5iOXhIdlJReEtUOGxyY0ZyZlBOdGxXbGVOenZ4R3hGelRJTUN5aS1UbXN5ZVR5a2p4cjJjLTBSbnc?oc=5",
+            "date": "Tue, 27 Jan 2026 01:42:53 GMT",
+            "source": "Mongabay",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Rapid Support for Displaced Families Along the Cambodia–Thailand Border - CWS Global",
+            "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNb1oxX29kc0hzTWV0SjhqM2ZObTVvbDZ2LWNVajc3a3BkWmFQNXpZZ1lwWnk5dDhvdUcyZmRlT2k4Z0xhc212OGJJZkctbUJtdzNSVUl1Wkc1MmY5SnBVeGlxYngyVERJcnBwNDdna2k5NlR6SUZTcGNwdmt1aHg4UmJqVlhucl9hVDVtTzRfV3ktbHRxQjFYOWhyanRTWTl5?oc=5",
+            "date": "Mon, 26 Jan 2026 23:31:09 GMT",
+            "source": "CWS Global",
+            "category": "🇹🇭 泰國整體 (EN)"
+        },
+        {
+            "title": "Nipah virus cases in India prompt airport alerts abroad - Aaj English TV",
+            "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE55QVpfQVV6bXN1c1pCTkVoWUdhd3N6a1gxb1lpd00tYVU5LWxib09wclFoOS1LWHhXY0tRa1FSXzZHUllSNjFzZ1Q5ak5zcGRTN21z?oc=5",
+            "date": "Mon, 26 Jan 2026 14:39:28 GMT",
+            "source": "Aaj English TV",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "India on alert as virus outbreak leads to airport health screenings - thenationalnews.com",
+            "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcjF2T2tjQW9VTFFHamR2M1hVT0ZSY1F5dkNWdjFpYkZLZ09MV2hrVEZsU0ZMZWVKQVd0WWZJQXZXY1hFZEVsY201YXpsS1J0NlNQZjNsY3QyYmxnSi1MQ1hKdExobE1ueGpnS3pGalpmU21qeVY2OWt3SlFNcS1ybElPcVNyNlJwMVN5VnV5c1p0RV8wZ2V5bl9mYl9hR0Vna2pDdW94enJleGpNSUlxNmZrZldNdTN0LXhoeA?oc=5",
+            "date": "Mon, 26 Jan 2026 16:18:45 GMT",
+            "source": "thenationalnews.com",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Airports introduce Covid-like measures to combat fatal bat virus with 75% mortality rate - Daily Record",
+            "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQOHZ6Q2VVQ1RYZGFvUWdPak1rNHcwUjluZTFmQzNSOW1Xenk4bEdhMjJQMWk5d1hEeHpyMUhMX2Q2QURvRnBXWmkyeWlVOGhYMExCeTQxX0lWYXBLUWI5NVpCSXRBZ3hKTkZZNWk1Mi1WQlFkNVdqT2pUX0FDZDZNXzRJQ05CVDBfMXVWdnlvWWFPc2vSAZgBQVVfeXFMTllWbjg0YmFGaThablppbWZTeE0tai1hRGFEUWxuUGRXV05EU0lDNEd1REYzckdSeFdjMWN1c1ByNzQweG9mWEd6RUYxdXNUN1U3TEN0U2tlbmp1dGJnbmtOenFMQVZnbDJpbkJyS1BDSkdkcWpXeHRRV1ZPTGl1QU1jM1hKcGVlbDZfZGwweDZYc29ORWFIY0E?oc=5",
+            "date": "Mon, 26 Jan 2026 22:03:00 GMT",
+            "source": "Daily Record",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Southco Expands Southeast Asia Footprint With Chon Buri Facility Opening - taiwannews.com.tw",
+            "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE00YXhNbmkxMnVKLTdjaUlWTzlQc0VJb2c2WUt5WlZUOGRZRFdOS3NHSnJGMXBvQWJUZ2Y0TU9JTnFYVkJ6OF9fTWdXei1RNE5wbTdMX1g0bHk?oc=5",
+            "date": "Mon, 26 Jan 2026 08:40:00 GMT",
+            "source": "taiwannews.com.tw",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "LOOK: Senior Tourism Officials from ASEAN member states plus three (Japan, China and Republic of Korea) for the 48th meeting of the National Tourism Organizations. This meeting precedes the formal opening of the ASEAN tourism forum. | via Annie Perez - facebook.com",
+            "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQREVMTlhydExRTTg2VkNqQTZ0YUxVX0RpXzFUUUZWbzdDT2dkSzVLM1dwYWhGVE5XT0JqNTI3MWNGUGE5QUNsRnBNRXFnUXp3ZC14NEdoQ0Jtc1Z0RkZISW5YUmZVV2NVWGQ0NnUtSVQ5NlFmcndtWEJCVVRQZW5WZ0Z1eV9RalpJbXRPWWVhVDZoMFhDNm1BUHRnMDJpcUxqdFdIZXZ4MF9sTlJYazUxbmZxUTRGdmNFb0RBM2szNjFfMzlCbzdXUHVldVZMNU0zN0FFd2hlYw?oc=5",
+            "date": "Tue, 27 Jan 2026 01:34:30 GMT",
+            "source": "facebook.com",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Doctor explains risk of deadly virus with no cure and 'epidemic potential' reaching UK - LADbible",
+            "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQnhQdjFEQ3RIQzVVS2tISUVENkozblkxSnhDUUU4MFhwVUpBUUNNcTJQZ0w1MWpzVFRVdjhESkZ1dmpuSlhWck14SmEyei04Y2M2VWJweHU0NDJGQTRsa25wdk5wVEpSN0lkYjdDWGxCMm1KVU1DSjYyZUtodGN1c1phUERWVk9OdVNGWV9RV1UzcjAwNzlCMzRsbS1IcmREQ2FtRDZDZEZGRkVDWmNIbWpCQXlKeGM?oc=5",
+            "date": "Mon, 26 Jan 2026 20:03:57 GMT",
+            "source": "LADbible",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "LOOK: The 48th meeting of ASEAN Plus Three (Japan, China and Republic of Korea) National Tourism Organization is set to begin in Cebu City. Some of the topics would include enriching post-pandemic tourism and digital transformation. | via Annie Perez - facebook.com",
+            "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNd3l3cEJDZVo2a0hhRTJfUjlIRkJpRW1UaWpvVDJyRkxTVEYzMTNVeEVtWlpGalhjblVrQXRrZ0Zhb1prVkdSM1NTSkZ6NEdjRjJIVWtORmt5T2lpT2RSQ1RoZVNoSHpYLTR3VGdDQTJwd2NEUXdBX0JpV1Y1LThKb1BzeDloUmw0WHp1WlBXZUdBYlFtRFNxcG5uYVFnOXpRWTN0MkZhUExPYm5NWngwcE5GM3Z1VWdsckxpblR0dHc4dkVyUktQSWtjOGVld3NrSTlwUGU1WQ?oc=5",
+            "date": "Tue, 27 Jan 2026 00:51:59 GMT",
+            "source": "facebook.com",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Thai Princess Pichamon's Skills, Beauty Wow Chinese Media - 조선일보",
+            "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPekFiUVZqa3hMcTdEZ0I0dWVzLVNrLTJuVURKb3plejlZT0RZTTByM09PNjFaVVk3ZkFvYnExNHJxY2lPZWpCZVVFTmxtSjdLbm5nRUw4cm9lYlNyVlJRbUdldGo0QWtxMTQ1R3NEcnMyWWRLMk9MelFtSGxjaWxWS1ctLWp3Zw?oc=5",
+            "date": "Mon, 26 Jan 2026 15:26:30 GMT",
+            "source": "조선일보",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Asia on Alert as Nipah Virus Outbreak in India Raises Fears of Deadly Spread - NCHStats",
+            "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBwMW1BUXNJQlJFXzZEb3J5WG9wMW5ack52OWVvLXFJZVBaZ1BndnpublRISmt3ZkdHbXR6NG1zRkQ5ZEpaSmlTMWNrV3B5aHJxN01KcmRuQ1gyUEc4Zm9HSA?oc=5",
+            "date": "Mon, 26 Jan 2026 10:27:24 GMT",
+            "source": "NCHStats",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Symptoms of deadly virus with no cure as outbreak prompts airports to launch COVID-style measures - UNILAD",
+            "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQN1NwZkFXQjA5MHUxeGhzUVhmVDdtTHB3M0plTFNNV3hKNmtQMTZTWGtpT1VhSzVtVjhoMUpkY21qVHpoTlBBQlVpYzAzb1VZcVhiZ0VyVGJQQU5iTkxPLTMteUI2TU5sQTdCOU8ycGtWS2VIbkNOVDFCMVEtNkd0Sm9tcU1jdzlTaHJwU2x0MUYtbE5RdjVjMEZWOWpVekNqN2ww?oc=5",
+            "date": "Tue, 27 Jan 2026 01:37:33 GMT",
+            "source": "UNILAD",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "DKSH Expands Great Place to Work® Certification to 16 Key Markets - TradingView",
+            "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ2U5d1pkaXFPb1Rlc1RXdmYzN3NFbGlwdXZrTzVTY1VRd1lNUTVZUThMNjVISDdSUUN4eWhjRGk1cVpCVWRHd3UtMktOZVcyZGlrT0dVeHJSbzVJNmtEMDlPdmVlT3dSWnJUNnZnOHpaZ1UxeEVuSzkxZ21lY0NsMEtORGluTy1pWUpHbzZWT0FQUDl1R2N2eHNtYVZkVThnSUJSWEVCdHUtR1JQVXMtc2dzVzY0R0lhaHc?oc=5",
+            "date": "Tue, 27 Jan 2026 06:00:00 GMT",
+            "source": "TradingView",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Taboola Earns Great Place To Work Certification™ - Taboola.com",
+            "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5BbXV2YWk1T2lORnlEV2VDSGdyT3ppUjZ6R2pMbzBrT1ZoalY5dU1XaHpRR2NnVkRLRC13UldhWEExRkdmdTd2ck5NNlRndDR2NmdMU05JblFZRVpOQ0E?oc=5",
+            "date": "Mon, 26 Jan 2026 18:41:58 GMT",
+            "source": "Taboola.com",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Outbreak of deadly Nipah virus in India prompts Covid-style checks in airports - manchestereveningnews.co.uk",
+            "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQZjN0QTA5M1RMVTl3bXE1akpmNU5MZ290dVlPTWVMWlpGTjd2dzRodGtmSkMzRkxfcUVHWmRhX0hiU2d6Nk91SWNnd1BIWk43UXVJUFE2SnZDMURsY050LWpWTEFBWHFXZWR1dHFGeDJZZmhVN3luT2xaLWZEV1dIQ3RzR0QxTVlTWV9CMmpHUXhsckVkVmFFWm4xQzF1T2lQUV9BX9IBpAFBVV95cUxQZjN0QTA5M1RMVTl3bXE1akpmNU5MZ290dVlPTWVMWlpGTjd2dzRodGtmSkMzRkxfcUVHWmRhX0hiU2d6Nk91SWNnd1BIWk43UXVJUFE2SnZDMURsY050LWpWTEFBWHFXZWR1dHFGeDJZZmhVN3luT2xaLWZEV1dIQ3RzR0QxTVlTWV9CMmpHUXhsckVkVmFFWm4xQzF1T2lQUV9BXw?oc=5",
+            "date": "Mon, 26 Jan 2026 13:10:00 GMT",
+            "source": "manchestereveningnews.co.uk",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Deadly Nipah Virus Outbreak: List Of Countries Tightening Airport Screening After India Reports Cases - Times Now",
+            "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQMlpmeXQwQ05aU2t5LWdqWnV2am0wSjZOOHRIVnpBdmNTN1M5cjhsT0E0ZDM0ZzNvV1pHRXhrSEZERmRsMm8yQlQ5QldKX3FUS1lQSmJQU0dKVWlMMXl2RnI1OVp2QnNCS2VrdUZGbVVQVW9tTnJUYVFMMnBlY2lPN1RqZVBUODRweUEwNFczaVNCeWZiYjA2TXBNNGtmZjRpd1NIcm1WcUtZMDVDUnJNRFhrX3dtMlNMTzRoWk9Hb3ltd3FLSUJKdWx3dmZYVVl1NFVRXzZ1ajlPNXlUWDVjRTN3NXI0TzNJ0gHuAUFVX3lxTFA2dGllYlhrMFd0d2dWdVVWRE1TSEF2M0RWY092UDhNd3VsLWR4NGt1TEwzYkREZjJnR3F5MlRnNHpwUjdWdnpRQ0JZU1ZsLUtHRnZYMS1Lc3hFcDJZSXB0MWNVZkZCQXVwVHkwdUJjWGZGSlNET0k1bFdRckRnZ1NDZExmODA2ajdXZjRKOUt1OC02Y1ZaX3lrd3BZS1MwRzY3Tm1FUXgxQlZ0bDRlZFdSN2NLdEhhQjhLQnhyczhOZXNaaXJOaDlzQ3J2TXRNSl95S2ZsWXhNLWx2UVJETE9PLXlOeURfVnI2N0g0Y0E?oc=5",
+            "date": "Mon, 26 Jan 2026 20:07:40 GMT",
+            "source": "Times Now",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Airports tighten screening after Nipah virus outbreak in India - Sri Lanka Mirror",
+            "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNd3FmdlJKOU5DRVZNQWNzLTBqR0tlTGktOVpFT29MWEpCWm9ndG1aaE1VY1dQazE2TExtc2lBbGtOaE5BbEQtMUxBMWZ4NWNIcTNLUTQ3Wld2YXhHa1dtUW13U2NMSVJTWGoxbE1vdDRSeTdLQ2R2NUNaUTR4QWpraFFsQl9FZm1zLXNHZ29oV2lOMmpBUnlYazlFaUJJeVhOYjJv0gGjAUFVX3lxTE13cWZ2Uko5TkNFVk1BY3MtMGpHS2VMaS05WkVPb0xYSkJab2d0bVpoTVVjV1BrMTZMTG1zaUFsa05oTkFsRC0xTEExZng1Y0hxM0tRNDdaV3ZheEdrV21RbXdTY0xJUlNYajFsTW90NFJ5N0tDZHY1Q1pRNHhBamtoUWxCX0VmbXMtc0dnb2hXaU4yakFSeVhrOUVpQkl5WE5iMm8?oc=5",
+            "date": "Tue, 27 Jan 2026 03:51:40 GMT",
+            "source": "Sri Lanka Mirror",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Asian Airports Tighten Screening After Nipah Virus Cases Detected in India - Kursiv Media",
+            "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQTk3S05MQ1BDdWR2MUZTYTg0RTQ0THN5TnQwaDJEWllSV0VxcVoyc2tvTHF4VHk4U1oyVDFPR3VKaWFrc2x2ZDdRX0NtTW1FMnpFVlBZYUVNU3ROdThFM0JIQ242dnpoSmFsWUJUdGEzU2lxMzN1aFFQX1FtUHZWUklYekZnZjU1QUp2OUFRb1NWdE11RUc5Vkl4OVAxd0Y3QVhhQXJuc096ai1PVWIwV0J4cy03V2pS0gG4AUFVX3lxTFBBOTdLTkxDUEN1ZHYxRlNhODRFNDRMc3lOdDBoMkRaWVJXRXFxWjJza29McXhUeThTWjJUMU9HdUppYWtzbHZkN1FfQ21NbUUyekVWUFlhRU1TdE51OEUzQkhDbjZ2emhKYWxZQlR0YTNTaXEzM3VoUVBfUW1QdlZSSVh6RmdmNTVBSnY5QVFvU1Z0TXVFRzlWSXg5UDF3RjdBWGFBcm5zT3pqLU9VYjBXQnhzLTdXalI?oc=5",
+            "date": "Mon, 26 Jan 2026 13:48:30 GMT",
+            "source": "Kursiv Media",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Airports in Asia reintroduce Covid-style health checks amid Nipah virus breakout - Metro.co.uk",
+            "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPYnhDUnBlS0xWdmQwaUNNNWstRkFPZkQ0aEJMc3VHNkpnUUtGdHZkaDgxX1NCSVNQeHgzUUp2Q1F4MHhlM0M5bWtfTTc1MjVWd2pheG9pTW9wcDVlYjNSWGc1Wk9GcEhGNGhJWE94azFaU1NQNTdtYXM1LWRYUXhCOHQ2S2pGOWNRcUljTDN5OFNrckNWVlp5VUZfN0tycXBPa3d3LVBFRmcyWDBvMUJRcXhJUmdocXBsbWfSAb8BQVVfeXFMUC1VbkJreFBEcmpDUVBNampLSGhiREFqRTc1MFhuZnZtWWt4cjNKc3QxYVVKbzVENGlMUjVITkt6a2pVbW91YV9MdUtPTWVWNnlEQ1N2dWFobEd2Y2dsdkJ3TGhwWWczTjNwUTBwYzFXX2xWVGJJUlNKTVRJYUNEc01RY3NHX3o4cDZBN3VXTlJJSE96cE05MlZUSG1fY2RwcGhjYU9DWU5SUEZEWUF3TEN5anVMd2ZkOE5HNldUdkk?oc=5",
+            "date": "Mon, 26 Jan 2026 18:01:00 GMT",
+            "source": "Metro.co.uk",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Is there a Nipah virus outbreak in India? What we know about the disease with no cure - The Economic Times",
+            "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNNXJfcWN2UmQxdEVuSTJnU1NzaTVJaklBSDI1cEhxNDBMZW9FWDh0QV9GV0ZOSjEtMmkxUUo2RE5wUVpLZmpPbUQ0dEpXbmlfcEEwVXhERUpvcnZfY0dESS03QjJFaWI3eWpNX0xZcE5qdkJ1N3dPSjdFU0t2eEhTWU5la21VTE8wbkdHLXo2Xy1KRzBvbXFRdzh2S0RCcFVsMEJNaUl6TkViNnpGc2ZReEdSb2RlOFFSOHY1aHdzRFctMnNyQWVSMl83Njdic1pPQkRTa0RUMkpaSkt5a3haSTZQY9IB6AFBVV95cUxPSE1sbXg0amI2WXV2NWdEbUhJcjQ5blNPX3BIZGoxUHh0Mk9RSDVBZXRHclpWY3pRSjZ0NUdEM3FwWDlwclNRQzl1MXFLWUdmSWFBbndJaTFvUDVRd2JWY2FSUVFGV2VRMnBnYWlNclFRTWRJckR0SFB3OGVzUnRYY2tmcXZsU2xRaFVnWi11RjRXNThxam5tczNmc2d4aXR3N2Nia1dfeFltWVV4N2JrY09lNjZGZGRBWUE5UzFhSm1ZNTRUdW1yTzJXUllFRS1WakY5cTFRLTgteTkzME1WSVN3ejlXeEFr?oc=5",
+            "date": "Mon, 26 Jan 2026 14:20:21 GMT",
+            "source": "The Economic Times",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "India Joins Thailand, Nepal, and Taiwan as Asia Tightens Travel Health Controls Following Nipah Virus Reports: Everything Passengers Should Know Now - Travel And Tour World",
+            "link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPYTIwSExVMDZONVlINTNWY1lEaC1fRWF3aGVUNjJ0TGt3R0pMaUpQVWRZYk5DbWw3Tll2RDBGdzBJVzd2di0wZm1SNDZxb3hrVmxHUWdZWUlReWM3aGlpYTNFN1ZmR3daT0xOQ3RIYTVycWJYY2NkLXQ1Zzlac05HT1lZZTdvZy1USHR0Zm41eVdEY3E1eEV1NElwUWNINjRCeHMyUUdnWGNacGhFVkc0ajUzNHVJMkczeWwzZHBXYkZNSnRVaGp5Y3l4VVdqXzE1OGFEa3UzUmRtamFONURoUGUxNHlSdmlsbE02eURTRWNaR0hPZ0dyTTJ2aVp6cHhOSnR5Nm9HdFBscFVNQkQyQ2NKUEZhU3luZm1CSzFkbw?oc=5",
+            "date": "Tue, 27 Jan 2026 06:37:57 GMT",
+            "source": "Travel And Tour World",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Airport screening ramped up amid deadly Nipah virus outbreak - The Independent",
+            "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNRDdUeHlnUjljQzVGY181dE1XUnpia213MnB1dmVDa2VVcHFQQkE3QnpZWUtfcHZYQm9Ga2dIbjNNZjhET3ZHYkNXb0psc0NKT3pRV1d1MTdLcGtjdGVXUEp5NTdnTGZxU0tkbjdEUlNPTG5UUm1YUWd4NVh6SGRmS1pEOGFxOFY0MUdJcFlWU1RDWHFnTzFvOQ?oc=5",
+            "date": "Mon, 26 Jan 2026 09:26:00 GMT",
+            "source": "The Independent",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Airports across Asia reintroduce health checks following Nipah virus outbreak in India - The Indian Express",
+            "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQTXpHNmJraEV6MjN3bU92NUFUcV9rT0lOUDh4SXdQa2Frdkc0ZWZzVmdqSmxYbkpDSGhnS2tuOG5VVXdCQ2lYT09YUnZVYkNBamlLcWhTRGNqUjJHUEFIa3VNbmtrNHFsbzk4cTR4cVRjSzY5Y3FFZktaSXNWbnozTWZsNkJuV2lvTFlqRmZVVjcydl8yajJUallQUndFLUpBLXRlSkFJN09abDZnTXg1d19kNV9lbnhHOFlSbWx6ZU9VY2hoTmt4d0lrQktJV0RuU0HSAdgBQVVfeXFMTW5NM2ZnYkhIR2NYUlhPT3VtdkhCTWxYTFZVOGtESmpCbUpyTl9tSjc2VHAyT0d0TUFVOGo5bVV1NUpjYlduSURtNTdmN3NNNHozeFd6ZlV4aEFwbjdMek0xazgyM0lGR0ppU1haQ0ljUFM0T2hnMVRqUEFwRjlNY3RFTHBSdEFCb1ZJNjRPUmc4SFBuZHR6SWZ1emVtSUxNM2xuVjJYNXZiWXVzTkhscnhCUFQwT0ZUbHJrOHg0aUJDX3UwLTVhZDRlY24yV0NiUmxXbXJYVlJj?oc=5",
+            "date": "Tue, 27 Jan 2026 06:17:39 GMT",
+            "source": "The Indian Express",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Airports across Asia deploy COVID checks for Nipah virus - Rolling Out",
+            "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE54ZnNCMVEyZXBpY01iSmZGZ0E4QWEtM0tWZWphNFF5NmUyVzY0YmlYem9CXzFVeTV6X2lfWi05ZFFDQlZkc0NTMWlza1hxMDI5NXNOcXN4WFkxVUlrY0NEX0owaXgyU1NrU1hZRTZub2duV2pQaEZmbmV3WjlnZw?oc=5",
+            "date": "Mon, 26 Jan 2026 17:15:57 GMT",
+            "source": "Rolling Out",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Due to a new virus transmitted from bats and pigs, Asian countries are introducing enhanced sanitary control - Українські Національні Новини",
+            "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQ0l2cGFTZUdUdWEzMENYNkhjQlFPbzI4azh2N2tEdkJwdFJNQ3hHbTBCWGUyS1N1TmZpaDBmUDEwSXpsdlpJTGtnVDl0bGZScVhEdjhKUDFwSGZqaWp6ejhlZ2NwUDZOZ1ZiSGdYQ0xHcUhmM004LUhzYVRFOEtJOVBJT1NzZTJocW16UHBiT19VQXBHS2swYVkxZ1p0MzhqVTR0LTE4Tm12REFzem41Y2U3MjJPUjN6SXdDRmk1QlptbXQwcVZPSXd30gHIAUFVX3lxTE9mYWdsODdvZjE2WE9kRldJamJWTWNnNTlPYzJKVmJ0NzlQM09MaXVDSTloZFJJZHJEcnVVZHV1YXZnZDVjYWxzbWc5VXowZGJTdzBST0dmaDNhUjNCdTF4SG5XT3lEUDkyYnRacW9udVhINlN6MVJ2SkRZM0V1OEZaLXhYRWFuWC1tQ19JUWpJVncyWnRMV2JHbG5tc1RmVUxRUDFBbzBiVklZQ1hkT2t1Q2pZa1h2RTNuZ0JYWW0zenpyZE9YWWRH?oc=5",
+            "date": "Mon, 26 Jan 2026 13:39:44 GMT",
+            "source": "Українські Національні Новини",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Outbreak of deadly virus with no cure prompts airports to launch COVID-style measures - UNILAD",
+            "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYzF2c0pJWGFCeTBLVDJJSDhpQi1XRmRpQ2NhUnctelVTUFJwUWxNVU9yeklJWExaMlhUYWxUZ0V2Q2JZcVZwRXFRaXhzYUNjV3Zjc3Y2TXRqNkgwS0RIb1NHdHFSV2ZOWDBoZ0M5OEpQdzM4emJTM2FjdnRuQmVmd2N2WGVQZ2lvVVpNS2pDYU5RWWVVUnJsanRWbw?oc=5",
+            "date": "Mon, 26 Jan 2026 20:14:24 GMT",
+            "source": "UNILAD",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Thai Researcher Turns Durian Peel Waste into High-Value Sustainable Fiber - taiwannews.com.tw",
+            "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1IUUlOdUF6anh6THdJbG0zUmh3ck9tdjkwd29qQ1g4TzRsMnExYkxjaFJmQjlGdmlxakN5bzJhMmxQRjdvd3NlVy1KcFRPRklUUDQ1Nm5mR28?oc=5",
+            "date": "Tue, 27 Jan 2026 02:00:00 GMT",
+            "source": "taiwannews.com.tw",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Four more countries tighten security at airports as deadly Nipah virus continues to surge - UNILAD Tech",
+            "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTE1sTXdHLUdKOEtYbzlESkQ0YUZNQnpGQmZiSE9SMUlfQkdNQXNfWlZGaGVlZlo0ZWtvdnp0bHdQcmRMeG9BcW1VSmtJdGtyY2YwOHM3UkdUNG1VTF9keUJjUjI4WWtESWMzNl9zVEgzQk01YTNMVFhDZG5ad3ZPYWZvNzhPRVJVREVMc2c2eVJNdnUzdEVYNkttdjNUT045RERlakdSZFNvS0pkUGgzVk1R?oc=5",
+            "date": "Mon, 26 Jan 2026 17:05:22 GMT",
+            "source": "UNILAD Tech",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Nipah Virus Scare Triggers Heightened Health Checks At Asian Airports - travelandleisureasia.com",
+            "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQbWVwbWNpd0FfUk1Tc1B1SE9oajJkZE85VXJOalc5N3NSUHQ4cVJMeS1lOVdfRXNCMVJMMUd4bklPNFoyXzdrNC1FNDhNNUp2SVExTGxmdkdwNUxmNDJ0SmpoNzF2VExEbGItYVAtWUE4RzBkSlJpZXhJNi04Vlp6R1ZpZUFrMktGNnF5R1VpRWp5N2k2YkgyMDg3Sm5kd21sSnZpMFVvN1RBaU5XalVQQXVMVzdHUdIBuwFBVV95cUxQTTVRXzZmQXQzWndWaF9PMUxZMkFaTmNzdFYwVGhBMkZSd2VZS3V5U3hRa3FnNWlzRUJxVkpqNFRsSE5STWJyaVoxUzFJNlhjMmkwZDVRM1VUUTlBa3RGUGZBVWtCbE5TU2d0cHRsWHd6TEZ1Ym40WVJhN1BzRGJ5WHRQSlVEcHlQUUhZQkZVSWVmYmhQTHd4aTQyT2Z0QkU5OWp3MnJzSW1KMnc3bHhqY09OZFBpUzg5dnZB?oc=5",
+            "date": "Tue, 27 Jan 2026 06:17:56 GMT",
+            "source": "travelandleisureasia.com",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Asian airports step up health screening on India Nipah virus scare - VnExpress International",
+            "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQLXRuODFlRW5tTGxoaTVCaEhzS3gwUjBWbnFqd19RbUZhdWtYaVlGVXB3eTl6YnNyUUhnMGdscVFxb3Y5NGJUS2xQc0kzb0NTdHpjb3hxWVczVGsyaWJLNldWS2ZZOGk1TktpQVEwVUFndTU2bzMzM1k0YmRlaS1tdEtDbnRTTjRpSkFYWnR6N3diOExFQ2xINTk4bHE1Tkx4VVduUjBNa2V3Rm80V25WS01JRmppdw?oc=5",
+            "date": "Tue, 27 Jan 2026 03:23:20 GMT",
+            "source": "VnExpress International",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "Thailand Joins Nepal, Taiwan And Other Asian Nations In Bringing Back Pandemic-Style Airport Checks, What Travellers Need to Know Right Now - Travel And Tour World",
+            "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxQNzR6Uk83Um1ZNGgzakxRZ2Y0cDdiMVlhcERHazk1SENrRlVOSUo0anRnTVlEX05SdE5JWjRfUmhXb3A5Y0N2Q0hTVXFGLXlpMmc2VExMNjRoejlLNlN2RVpNVnlBMTFRUDFjYWktRUVjajhwcWRYdTktOWFoNURyRmJEb0s2NFhqRDM1RUZZeElRb3lEbUIwUjREM1FYZFBJMHNGVDJ6Z3pNVlc5eFNSNENWY1F6dW5uUnRoSW0xRHBKb1VQcFVQSmVObXd3X3htclBvZUpWOGNRLU44NDVTa01YUm1BWWVvNTg5NDY1bmVPeVZtVmI1TU9sRlhsNGJHajNuVFI4UVFZM3ptTjN4T1hKQWw?oc=5",
+            "date": "Tue, 27 Jan 2026 07:13:00 GMT",
+            "source": "Travel And Tour World",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "India, Thailand, Taiwan Prepare To Battle Nipah Virus - RTTNews",
+            "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVDZrYThzbFVKSWhxVzY5RVZ5N0RfLURBeHlWWnVaNXhVV3p3andmX3k2UV85cWxYczhYMUdvWUppUHliMzFlWFhGa2p0UXZ3eEc0cmw2d1p4ckpGUXA1dGt2N2diMlliTnFCS1BNLXJTU0dtbTRBbHNYZktEVUQ3RnBBYkNuT3pHVlZpWlZYV0JhUHE3bTM00gGXAUFVX3lxTFBUNmthOHNsVUpJaHFXNjlFVnk3RF8tREF4eVZadVo1eFVXendqd2ZfeTZRXzlxbFhzOFgxR29ZSmlQeWIzMWVYWEZranRRdnd4RzRybDZ3WnhySkZRcDV0a3Y3Z2IyWWJOcUJLUE0tclNTR21tNEFsc1hmS0RVRDdGcEFiQ25PekdWVmlaVlhXQmFQcTdtMzQ?oc=5",
+            "date": "Mon, 26 Jan 2026 18:16:00 GMT",
+            "source": "RTTNews",
+            "category": "🇹🇼 台泰關係 (EN)"
+        },
+        {
+            "title": "立百病毒致死率高引恐慌！泰國多座機場升級防疫、旅客行程急喊卡 | 東南亞新聞 | 四方報 - NOWnews今日新聞",
+            "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE5vUWF3ZGJXeXRWT3JLWnZEakNlSzhnbzROVkU0RmYwak1jZGlZNGlYbm9oWUdnOGJHaGpCZFJUTGpmSFl3LUVCdEVNTXc?oc=5",
+            "date": "Tue, 27 Jan 2026 05:01:23 GMT",
+            "source": "NOWnews今日新聞",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "孫東出訪泰國及馬來西亞 加強與兩國創新科技領域聯繫 - bastillepost.com",
+            "link": "https://news.google.com/rss/articles/CBMi7gJBVV95cUxPZmx5MVZGck1sd3ZyakxSTm9xOWZEUXRjRWtHdG9uTmVwVS1HcmhrVXBTV3ZqM3BrVnIyN3NFWHRNM216UGs4SGY0UV9scGxHOUhnM3loZkcyd2ZUUHFSbTF0OGc3c2RBVFNYTUtZS01IMEJaWnRWcnVmM0c1bGhyR0dlZ0FPWnJ1TnJ5aXBPeXdJUmJDSU1XNEN4X0diNnhpYllrNDNjM3JWWTFEZWczM3BVOG9ueVpJMHBxWEJsVlRjX3ZPYXAySmhLb05tOTFkeWpRMGtKU2duU1htZTVsaEVpWk0tWjlIbXpmeGYtQ3ZZZ0txTHktMXBEdU9BNHJBR2lXd0V6ZHRKZ3oycDJMa0lGVHh3VTU3MFJfY1hjOE9fa1ZRX2M2eFBmNTRPTy1FSTBYWGY0MzNEV0pyNThkYzJkb1hGMUN3MFg0ekVadlEtWTJMYlBORTRtSC1wSEZrQW1ha1dLT052eXptd2c?oc=5",
+            "date": "Tue, 27 Jan 2026 01:34:34 GMT",
+            "source": "bastillepost.com",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "泰國大選淪為現金大放送 各黨狂開民粹支票學者憂債留子孫 | 東南亞新聞 | 四方報 - NOWnews今日新聞",
+            "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE0tVmpyNXBpM3pBajAyUnUtZ3RWQ3pxRGdYWXJtU2Ric1NMZWEyeDlZMzRhcWFiRlh5U1Y3S3VYM0JBOU5DSkwtb0RQZVI?oc=5",
+            "date": "Tue, 27 Jan 2026 01:00:00 GMT",
+            "source": "NOWnews今日新聞",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "泰國黃金交易商年交易額超百億泰銖須向央行申報 - AASTOCKS.com",
+            "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPc1pPMWpaTjN5RE5JUXpHQ25RUjRTOGt3Yy1EaWI3dFhYX0NpR2dpYy1OM3ZHU0NaQjRtSTk4OG1uaWg1U0NxZ2pKMjlBTkQ1U0ZydGQwTDN1VUEzOFg0Q1hFSTJtWkZQUFI0TUc2TjNWQ3FkMDhTQ2pGQ1F6NjVZcA?oc=5",
+            "date": "Tue, 27 Jan 2026 03:02:00 GMT",
+            "source": "AASTOCKS.com",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "2026 台北國際書展 國際作家(泰國) - TiBE 台北國際書展",
+            "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFA1RU9MLXZuelYwYnRjWXNYRzJQam10WmRWQXllNXd0bWhJdXlibWFHZDNrcUh0VmNOQXdfeUVzcTR6aVM3UWRMczJaQkVrUkxiRU9mYlRsczhRUFBiN1E?oc=5",
+            "date": "Mon, 26 Jan 2026 15:06:13 GMT",
+            "source": "TiBE 台北國際書展",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "越戰下的生死之交！美三兄妹大海撈針　奇蹟重逢53年前泰國救命恩人 - 鏡週刊Mirror Media",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1SR0U0cjFaZnA5cFNiellNWUw4UWRoSTlKOTV4UTV0OE5RcnVfR0cxUm0tRW9HdWROdVllb09RWFZjSlF0VjR0dXhodUtCQlJsanZZelVLbzBpbzTSAWBBVV95cUxQT3BHaGFMaHRqZjlObF83bFpWbUJEZXNoQWNrNHZEUWtaU1JBS0Y1WGxZN0ZzRnJMeDMwUnN5TXFmRTF3M1hfMjF1MExybkZEaXRZMVJDMThJSHhHdUt5OVo?oc=5",
+            "date": "Tue, 27 Jan 2026 04:43:00 GMT",
+            "source": "鏡週刊Mirror Media",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "外交部： 中華民國政府對泰國王太后詩麗吉辭世深致哀悼 - MSN",
+            "link": "https://news.google.com/rss/articles/CBMilgRBVV95cUxOelNDa1Y0Yy1nMndPZjdhdnFaSXpaMGpOVTBndnZfdG4zdDNfY1N6Q1Z2MUdGc0VBWHpmeUQ5M3BUTUtYRUJYOTk4VGEzZlpydENtNzZKa0lwQWExR2xLT0VTdmFhb1E2Z2plcTRsQWV2QjlnQmxlYk10ck15RzJuaU8xSWY4Y0NsdFRpRDl4d2tKX2FraW5ESGdJZG5QcnZVcmRsVFR0U3dNdk05Rl9uUFN3ekg3cXNvanJSaW1zTTlPMG40MUsxdXc5RHNEYl9DbDJzSXhBeG5xZkROSzFzWWVqUGluTEVRZ3l6R0VSM1NQUXY5S0k5UHFKNkFGQV9xUU14dnRWQ2hkTjVJRzlKUGI0ckhjRkxtRUFCR3FScHhEUFZCYVVTNElhb1VpbVVYdkxVVlh5NzJHWXNuS3FKTjJhVkE0b2NKRXNVbHNZUXdIcXF2QndZaWc5UzdmZzlzbWlkSUc2Ql9RN19XQVFrempYWmQzVHhDN1A4eGpFVFB5REl1RHZPUGVWNmU0dXFGbUZvQ1phMVRpa3lFMVFzelpOWk9iT1FLZXU5ZWVWTWU0b2pmdWtHUGV0Snh1YzZwR3dSUnpaZzBsb3RGSnkwNGhsMl94UElTZmpnSDJfZ1pKNnFmTnFnbWIzSlZkdHpQMi1lZ3ljUi1Fai1qdnI3LW0zLTdicEY0NVpaRVN3SWRTOUozSkE?oc=5",
+            "date": "Mon, 26 Jan 2026 18:54:10 GMT",
+            "source": "MSN",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "泰國蝙蝠驗出立百病毒致死率飆75% 官員示警：遊客恐成傳播破口 | 東南亞新聞 | 四方報 - NOWnews今日新聞",
+            "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE93VkZoSzN2UXpLWXZ1VVVwMW9iMlhTbXgtTGtPZE5jR1ZQMUlDMTgyM25FQURhRHZCZzNnc0tnbE1qVEZzZXlMUXhGRjY?oc=5",
+            "date": "Mon, 26 Jan 2026 14:00:00 GMT",
+            "source": "NOWnews今日新聞",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "2026全球旅遊國家推薦！日本、泰國、法國、義大利，17個國家最佳旅遊時間 - 輕旅行",
+            "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBBYjhjUnFjbWVHWE5FeU9oVFlkY19aSWxIUmpBcWd5ZUVoTnlZc3pZei15SWcxZ0MtYWt3M3FlWktTT2VzZnRhTGpZdTZEUQ?oc=5",
+            "date": "Mon, 26 Jan 2026 21:19:10 GMT",
+            "source": "輕旅行",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "泰美非北約盟友關係穩固 「金色眼鏡蛇2026」續強化區域合作 | 中央廣播電臺 - LINE TODAY",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9wUkl2YXg1RVM1clJ3OHJQQkViSXdsQTNjWkdaTS1vYlpKamFjM185UWJUUlN6eGJPMVl3cGNjRWpOY2xPUHQyMEk1LU9ZTUQtd0R2YVRn?oc=5",
+            "date": "Tue, 27 Jan 2026 05:31:27 GMT",
+            "source": "LINE TODAY",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "每日抽獎造就9名百萬富翁 泰國為泰黨政見引熱議|未分類 - 僑務電子報",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBxSU8xLUQ4RlNUNFlSNTdHRnNzdlRZa2d1Y1BwNEFRX1c0VTItR09ubzZCZklfajZKVjZIM0lTTDFRbGV2RmgyM1RWQQ?oc=5",
+            "date": "Mon, 26 Jan 2026 16:00:00 GMT",
+            "source": "僑務電子報",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "台燿泰國新戰力Q2挹注營運- 日報 - 工商時報",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1kMy1xYjBqaG1oa3hINm9TeExDOWhPVUhTcnZDUG1IcnNUaUNjcXFHcFdFMzdQWlBVT0ZxNlh5Qm9wbVRoei1ZRy01REpwNEdRVXFHQTdiMDRzaHBaMWJj?oc=5",
+            "date": "Mon, 26 Jan 2026 19:00:00 GMT",
+            "source": "工商時報",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "泰國大選將近！他提政見「和外星人結婚、1妻4夫」是認真的 - 奇摩新聞",
+            "link": "https://news.google.com/rss/articles/CBMi4wJBVV95cUxQdGVvR3dWZGFfT2J5OWcyYmc1SVZ2TVdYMThmZTF3V1FuSnpUVGFOdmhHWXZwTFA0LWFxeG1qSkhub3BSVGVnZXZwM25lVTA1MktwWEkzdDkwcFN4TmhlV0E2SkRLd1B6d2JUcktPX2NKMkRKV3RNQXN1b2l5MzFxWDBEb0ZfQlVlQWZrMzZwNTRZbUJaVjNpeXlHa0J3Tlk5bXNDbjlua1VFYkk0a1p3LUpGVXI4X0lycjU5YV9WMEtkcGFGblNHQTlTMC1laTUxa0dWYjhHQl83UnQxQUdCLVRfa0loYzRPMU9IR3MyaC1zUDNmTHY1Zlh6bnRaT3FORE9qTFdZeFVUSWhZbEpqaF9jd3hOdmlOckJfZmdXN21uTko4YkhoWXBiTDkxeVUwRUNnenQ4azI2aTY2NzMzdmVOYkw1U28xU3BCYUdDMDI2X2RHeUtIaUl3dVhLVk1YNUFZ?oc=5",
+            "date": "Tue, 27 Jan 2026 03:47:37 GMT",
+            "source": "奇摩新聞",
+            "category": "🇹🇭 泰國整體 (中)"
+        },
+        {
+            "title": "泰國財政部削去年經濟增長預測至2.2% 今年料增長2% - AASTOCKS.com",
+            "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5TeGhZZExzQ0owSlVSNkJjMjFCWmRTbVVITEpKSVhsTTZBc1hLdW5DaFgxeUM2UlNiZzl0ekViY2JzUU0zZVF3ZU5YaFRWREtNNTFORWpuNFJQbm1JZHBMWkozcFBZUmd3OC1GTm9pZw?oc=5",
+            "date": "Tue, 27 Jan 2026 06:19:00 GMT",
+            "source": "AASTOCKS.com",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
             "title": "駐泰國代表處僑務組– 全球僑社動態 - ocac.gov.tw",
-            "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNN1EydmdKblBaVGxjSXotSVdWVXlrY2EwNnJZYzM4c0hUcWpETXhUOGZxSUpaTUFPbGhlTzcwdVJ1clJzalRvYVA5MUs1SUlCYldGSnVHU3FUTjJmUVpXWndDTGRBNDAxbjY2SUdsREtRZWlKWTh2bDEyUHdpVEcwbVRpOERIMnpNRmk4eU1mWktaQzI2azVrVnR0bjVnUjFjdWJzTm4yZVJIdDJudU51Mi1wWVUwUWpZVmJpYUJGTQ?oc=5",
-            "date": "Wed, 21 Jan 2026 22:45:03 GMT",
+            "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQSDJCT2l1eG11WlJxX3dKVkJ2UWtCUTFqNWtNRzh6d0hzNGhpeHh3TkVsMmNGTjJONzJqa1JRU1I2Z19nRUdtZDJCR21sa1BJQkFPZl80bFBfVU02aFdHNGtZMktXVEFRNk01UjEwV1pFY2I1V0RsUllIY0pRTGJ2WDVadk5fZzVBYjBxSU44dUtMTVJ6V2lYWE9uZjQ3ckZfUjE0clQxWTlrM1E0aFNxTlRuWUZVZGY3RTlDc1VtRQ?oc=5",
+            "date": "Mon, 26 Jan 2026 22:30:39 GMT",
             "source": "ocac.gov.tw",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "泰國觀光部出手整頓亂象 嚴辦剝削旅客業者 - Rti 中央廣播電臺",
-            "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1vM1Yzd2wxUWtfQWkyOU5vUUR5REY0b1Awak9BNW5fV1Qzd1plZjd3TVRpZDhlS0JXV2d2ajhyMTlXaWhNd2lzYlE2TG05bS1MRjhCRXozSQ?oc=5",
-            "date": "Thu, 22 Jan 2026 05:15:41 GMT",
-            "source": "Rti 中央廣播電臺",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "泰國男下葬後竟「死而復生」返家 親友嚇破膽揭烏龍認錯屍急挖墳 - 香港01",
+            "link": "https://news.google.com/rss/articles/CBMivgNBVV95cUxQcGpYYnZsTFViRWphSVR2OU5xMEhfNXdaRm9CS3VzQnFyYzlQRHBzSE16RFUyajJQbHJmZFllZGY3c2FfU1BiRHVPVnpDaG84RnM5WnYyWG16bFFfUWlSMmlXOFUyMGJpZHJwaHE4dU1LWW5OakduQ3BTQU9QcFVnbmpEbllrYThZVlNCRllMMmZzWVk1ZGdTYjNXaHRtSURsSkVyeDdzNWpWNXhEX3FhU0RBY0MzdVRTSE9qR20xWjNsdFEydC1VM0F4dy1vZU9kTFFnbVFma1A3U0VVSi1pNmVHWlF3OEM2NjRwdXFGbXFMdzEzT2xOcnJPUGNVWGJXY2pmYlMyUjlPeWpBZWdBOFhRRkQ1bnprVHlQTTUtMkZpUFMwTl85d0g4SV9ZQ21tNXpBaU8zTnhIbjlqTDFCRmRSdENOQnZfT0RPcFhsbUo0RmlrVnRNTk14U2FKaW1wRV83TFRIeEd4bXh0WDBwWUg4enNycWhIQnBKaFpfYnE0MDFqellBTHJ0R0tsNVVzLU4yV2hZUVB1YWY4NkllRkdwN0daeTdnXzlOMUVzc0dldEJhUFY0cGhHRzY2Zw?oc=5",
+            "date": "Tue, 27 Jan 2026 05:30:07 GMT",
+            "source": "香港01",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "台北一次吃遍曼谷預約困難名店！COAST重磅客座6大泰國名廚打造「泰味新境」套餐 - 鏡新聞",
-            "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9ySndlU3N6QWE4SkQteGRRbWRJS1NGYTZrQ2pIQV93QXllMVFFSGNxdnFTVVltREI0RWVaVi1ZTWlqUUpTZUZ4NHRuYXZMWWRLNGJaT0xDLVA?oc=5",
-            "date": "Thu, 22 Jan 2026 02:20:47 GMT",
-            "source": "鏡新聞",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
-        },
-        {
-            "title": "2026 台北國際書展總整理：售票資訊、逛展攻略、泰國主題館！編輯加碼線上策展各國出版業概況 - 換日線 Crossing",
-            "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1kVnBuMHR0a1RMVUljNndndkRLSDRjbzZXMkhscXlMeDAya1hLUnFGUDJvczRIOEJRaGdBT1FsX3ZyU0o4TlVhZlhBcVliUk9RekE?oc=5",
-            "date": "Wed, 21 Jan 2026 16:44:42 GMT",
-            "source": "換日線 Crossing",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
-        },
-        {
-            "title": "四人角逐！泰國大選競爭激烈 候選人特色曝 | 東南亞新聞 | 四方報 - NOWnews今日新聞",
-            "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9YMklzdjJWYjg0WU5odEVoeURqVU1LVGFXd2V1UWpIaHlRRHVOSzVXYTBUY0tsRFpfV05GdlJWRGlqUXZyNEhmSWI1Vlo?oc=5",
-            "date": "Thu, 22 Jan 2026 03:01:00 GMT",
-            "source": "NOWnews今日新聞",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
-        },
-        {
-            "title": "「台幣泰銖1比1」難得一見! 謝金河揭泰銖升值隱憂： 泰國這一關不好過 - MSN",
-            "link": "https://news.google.com/rss/articles/CBMi6gRBVV95cUxPaUpZT1NwMnROMmZCM3lPSTE3ekMyRzNYdlRPNzRqY3lNS09MY2U0T1RlcGJ2ODBtUXUzYzJwQXhQVXdHQU9BTVE3Sm50ZVdtNDhGYlpxUjl1Z2VTV2JES2IySzZoQWR1N1dDUGVtREJzMGxYc1JXckNQNzVaM0d4TlQzUVJFZnVKcXBndDRyVS1DX3lRYlhxenZteEs5V2Z6YU01RzhCS1hvV0o0YzRQR0ltdTJNRk9lUzB2NXZsSUpoQTlqemo1dkR1RnNVVkhIcnR1eG5TSXh1eVVPYWR2aDd2OEhqWThXUjRXUW9xbGg0M2JxYXhIUWN6ODR4X2J3dXIzaUxUQ0N3VUgxajdFYVRDYlJEd2xVbXJ1T3VobktFY0tjV3pNQ09mc1o0SjBxYWhMOWw5ZXl3MGd5N0pZSnhCTlVVSVpDMnZ6WkxuY0h2dm5RcTFBTTNlbmZ0eEpxS0Y2ei1PaGtUVGZlZFg3ZjVmR3JmcVR6X2hWNmJJcGZ2SE9FNURudlRfZzR6amdYVTd6SGxmb0tETHBDNThsWXZlRzZxd3FLXy1xbFFaSlpEMkUyZC0zVVhHYWs0VlE4RUZteFVZeUR0Tm9JOW1iQWNBcktjS0liRjJwMElVSVJlQ0l1TF9nNndSOG9rZmpWbXdodEpzd1F5MFdCUUV4SWpDVXhLR1dzdXN6QzZ6ZWVuazZSY0xNOG0yNTJtSU0wMG1tLWU0S0pjMDZSaVJrTnRuRUZCVTEzOUR3ZWRJLXVFdGVCYjA2Uk5ueEEzRVpLQU1ONGNmLTFuZF9RR3AydDJLdDNIaG5ETkE?oc=5",
-            "date": "Wed, 21 Jan 2026 23:08:14 GMT",
-            "source": "MSN",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
-        },
-        {
-            "title": "泰銖太強恐趕跑遊客！業者憂消費減少、訂單下滑 - visionthai.net",
-            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPM2V1U2VRUXc5aUpDZG1DbzY4YXdOYTRtSlMtUl9ZTWRtVkZuTnhuVXlUTGVxYVNNeHh2VjhLUDRpU1B1aUk1bFc1TjBianZfem1wZzNMbEJnU2R2R2NCV0s3QUY0WEg5YnlSQTRnU2dEVy1OX2dpdU9LRERkYmRwdnZvU1E2NUZzcXJtWXh3?oc=5",
-            "date": "Thu, 22 Jan 2026 03:25:57 GMT",
+            "title": "曼谷空污嚴重PM2.5飆破百！政府研擬推遠距上班 - visionthai.net",
+            "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQbTZvTGkxczRBaDFGWTNVMUV6VlJsMmtpbnAxd0xGU3d4Z2xsTW4xblZmU3R3TjltM3ZqQUJUTFVCTkZmald4WXNsYkxCM1VRUW4tc1pMSzhCeDA3akdJYk1ST3ctRzBZY2x5V0JWaXRCZXl3MHRjX0JoMkdUU1NHQg?oc=5",
+            "date": "Tue, 27 Jan 2026 03:48:20 GMT",
             "source": "visionthai.net",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "泰銖匯率飆升至5年高點 泰國財金首長發出警告 - news.cnyes.com",
-            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBIaElQY0JtTmdUZ3BKc3dzUXc5cVlCdUZEUVRwSTh3QUM5X0xJY0YtMEZldlF5d3dxell3bkRlRkZyc19EVjJBN21adERPd3c?oc=5",
-            "date": "Wed, 21 Jan 2026 13:10:02 GMT",
-            "source": "news.cnyes.com",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "自泰國盜獵象牙、犀牛角來美3人落網| 洛城焦點| 洛杉磯 | 世界新聞網 - World Journal",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBwcFVMZ2RiR0J0Q1Z0QjhOYS1JUDJzZjBacHdiaGtKbnE1MFpGMGs3VUtsdktFal9mYmlhRlJCUzVCeE5YemIxNXVhTjQ3SlFPZ3ZZcXd4ejRqcndNLWFVdUln?oc=5",
+            "date": "Tue, 27 Jan 2026 06:00:28 GMT",
+            "source": "World Journal",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "【2026 泰國行事曆】台泰假期對照表！潑水節、水燈節假期一次看 - 吃貨瑪莉",
-            "link": "https://news.google.com/rss/articles/CBMiPEFVX3lxTE1fMUNuYjFwQVdsNFh2LWVZVTBySU81MVl2c2Q4LWtuQUM1YjFhbFdadmV6V1VMdzd4Rjdiaw?oc=5",
-            "date": "Wed, 21 Jan 2026 09:12:11 GMT",
-            "source": "吃貨瑪莉",
-            "category": "🇹🇭 1. 泰國整體重要新聞 (中文)"
+            "title": "MICE 旅遊新樣貌！入住泰國清邁萬豪酒店工作度假體驗從創意市集到敲筋按摩的從容日常| 旅人生活| 品味 - 經濟日報",
+            "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBoVHhSQkF2X0tpVkdnRjg4ZWpFekJxOXRfX3NFV1MzU2RfeUtzY0RBRmVpbGJVMEpDX1lRbjhHVlllRG82VUxTUUNWVkpyczlKaW9haWJQcnROREJQZGZKN2t3QU5YdzNJa29RbndrQQ?oc=5",
+            "date": "Tue, 27 Jan 2026 06:39:48 GMT",
+            "source": "經濟日報",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "Taiwan PCB direct shipments to the US remain limited - digitimes",
-            "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQazdUOGpnZ25ZeTZWMnI4aVBTRkZFWEhSd2lRTHZQMzVtVEQtNmtpTEZsQklITmNSYUdDaUxOMUVwLVpPY0lWa2hjbmlyOU5PT2lSaUxrekVCdW9MM1NHNGNTYk1iWGg0QnB4RWFnRXNQdkphSkJCQVpfUEJuVzEzTWFjemVVWlcwS3c?oc=5",
-            "date": "Thu, 22 Jan 2026 00:24:56 GMT",
-            "source": "digitimes",
-            "category": "🔌 2. PCB 與電子製造 (EN)"
+            "title": "急堵尼帕病毒! 致死率達75% 印度發全國警報、泰國加強航班防疫篩檢| 國際 - Newtalk新聞",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1IRkVrZTBrc3dXNk9FSXJiSkhZNWxwdTJKeXRQQ3AyV2NrLS02ZWh4cmNkbF9iVWhjelFPTEpXVnJ1bmVJSno1VFFJN3lUQTAwNlVEZFYtZXBvZFk?oc=5",
+            "date": "Tue, 27 Jan 2026 05:44:47 GMT",
+            "source": "Newtalk新聞",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "SAFF Futsal: Bangladesh clash with Pakistan today - Banglanews24",
-            "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5jQkNSeTJDUzI1OXkyNFdDdUhnYnpldFFsRkYyc0NoYXpqSk5OVnlMTlVGb2RkX3lPR2ltTElNZmlPdUdIeUdxQlJkZlZMQUpMT19Gb1BCR1dKMHVDRzhnY2dxYTFjT1c5U0RZUEFNWUtheDRI?oc=5",
-            "date": "Thu, 22 Jan 2026 05:24:16 GMT",
-            "source": "Banglanews24",
-            "category": "🔌 2. PCB 與電子製造 (EN)"
+            "title": "金像電今年資本支出看170億泰國廠二期提早量產- 新聞 - MoneyDJ理財網",
+            "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNS2RiR3BXcUVRdUlsUGlTd09BSVNhdktVRWxFQkZfY2FzRHlMY25LazVKaDdHNUcyQXNwX19iN2Z3WVNiQVd3LVF4eTZFNjZZT083VXpzZnhVczlqeDBDVGNQY0haTkhubC1vTVhVLWVxdldfcEg5NC1WcUJERjZoQnJiUjZ2U0ZRZ0ZZNUhJU3BTZw?oc=5",
+            "date": "Tue, 27 Jan 2026 02:44:00 GMT",
+            "source": "MoneyDJ理財網",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "目標價上看925元！「這PCB大廠」EPS預估衝至17.8元 法人狂喊「這兩檔」是下一波主角 - FTNN 新聞網",
-            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8yLUFPS0JoMjVjeGpxOWlMd3lGRU5qUGJuZ1JnbFVfbURyTWYzY09wcTRGZ2xPSTZFVjBVQ2RqQ2Q1dzZFVEh6WWdLNA?oc=5",
-            "date": "Wed, 21 Jan 2026 23:50:00 GMT",
-            "source": "FTNN 新聞網",
-            "category": "🔌 2. PCB 與電子製造 (中文)"
+            "title": "泰國政治金童皮塔談大選 民意與權力結構拉鋸正牽動命運 - 中央社 CNA",
+            "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5pYkNrRV9jNHhKWUlBTl9PYWxud1J5c3dKOUxkVGhwS1d0T3RVQUZneVJwYm1uYkdEUENhQ3pWNlhwWUV0aE1kbVhzZ1plaWdySEM0?oc=5",
+            "date": "Tue, 27 Jan 2026 04:29:41 GMT",
+            "source": "中央社 CNA",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "AI PCB雙強回檔內外資喊買- 財經要聞- 工商時報 - 中時新聞網",
-            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5CSTBFX09uZkdNTVQ2NFhXa2NGLXZCRHhuZm9wOVBPMzF6UTVhYVRVM0N6ZnRET1FLVndRYUE4ODZLdEE5bWpBZUNqQzNpbzJkbzR0TS1tQTRFNW96TWhwd0dDUlo3S24wM2pR?oc=5",
-            "date": "Wed, 21 Jan 2026 20:10:00 GMT",
-            "source": "中時新聞網",
-            "category": "🔌 2. PCB 與電子製造 (中文)"
+            "title": "印度尼帕病毒｜泰國等周邊國家加強邊境防疫！出發旅遊前要注意事項 - Yahoo News - HK",
+            "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQUm5MRGtNWUhMOFdmOEw0cFhsTnpoZ2tzYzBVRVJVckhoUWhycE1WQnFKY3dZNmZMUFhtX3QtdFZFbVVEUzNZXzl6eG5ZZHNQcERNeUVId3R4TVpQeUdNM0ROQ2puSFVoQmR5OTBKVHQ3UEx6SkNYV2V6OGRfeXc4UHhUeFVqclNiZ09seFZ0cTh5enQyM2xpeTFWTVpTRWkwWnNSUGNSNkFpUnUyRXZQa0JsNmYwV2doQlU5aXUwT01nVVVvbENJM1ZhSkZFaGtVMjBwSDJzSFZxaldtT2ZpVG5pU1JoUWdDVlktVGpjOVl5SnFwOTJ1THREanlPOXFi?oc=5",
+            "date": "Tue, 27 Jan 2026 02:06:56 GMT",
+            "source": "Yahoo News - HK",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "〈焦點股〉鉅橡高階產品比重提高Q1不淡 股價跳空漲停創新天價 - 優分析UAnalyze",
-            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9UN3BOLURFMG5ycXJxajJrbm83OVh4YzIzeVZyRG9QMnFrNl9GalNLN0JUWEpDYjJDWmd2SU9seF9xR1pZV0VZRlBMMzY1aUJjV0NUazJn?oc=5",
-            "date": "Wed, 21 Jan 2026 09:06:27 GMT",
-            "source": "優分析UAnalyze",
-            "category": "🔌 2. PCB 與電子製造 (中文)"
+            "title": "泰國維持2026年經濟增長預期為2% 出口與觀光回暖但面臨匯率挑戰 - cnyes.com",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5uWVFNSjFPX2V1TXNRMXhZb2NXaXpMVU9ZNVB3TWpUaVBlVFhxNkJ6X3Z0MFBpX2ZkY25vM1FXcmhlb2hqU2lVNGFvaw?oc=5",
+            "date": "Tue, 27 Jan 2026 07:10:12 GMT",
+            "source": "cnyes.com",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "Shaklee Announces Leadership Change with Appointment of New Taiwan President - Thailand Business News",
-            "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWVBLYjlwMG1iZXpfd3dkcjQxWUFjRFg0UzZzZl95RU9KTmpuTF9qQWYzcUNoOXBSZENXb0plR2x5TGRFNG5yOFBsWTA4OGFXYV8wR2JCUWs4aWhmOWlSekY1NHJHOUF3WHVncS0xcWpKN25YUUdvbVozUXBETmVIQWFFU1U1eC1oeExxZHdwc3BlLVBMMl9IRl81eWRldXJhOGNxLTFjYTdGYkNHOVNqMHV2VUdfX1NncmZCZERmejY?oc=5",
-            "date": "Wed, 21 Jan 2026 20:09:14 GMT",
-            "source": "Thailand Business News",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "泰國多地PM2.5達紅色警戒 曼谷考慮要求居家辦公|未分類 - 僑務電子報",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE84Q21sTUdtSXE4aW5pSjRMUjgxVkMwVzNOeWxuQmVBR29NY0drbW5NYzBkWWhGM1g0bHp4RTVqOWpXQXAwYXFZMU1vdw?oc=5",
+            "date": "Tue, 27 Jan 2026 03:00:00 GMT",
+            "source": "僑務電子報",
+            "category": "🇹🇭 泰國整體 (中)"
         },
         {
-            "title": "Top Trumps: Asia ex-Japan equities — 22 January 2026 - Fund Selector Asia",
-            "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNZm5jblpRV0M2bWloRm5MdVBTWFlaZEFCeERUTWVIQmZza09XdW1yUUFDZGQxVWxzMUJ0Vy15Q1lSSWpMWmR0ejlxNld5cVM3VjNqOGZOUjh6RXU5TE1GSERaaWVrTFNEZ2ZtamNXVWMydVdxZFVPaEx1Umtmem9rNjE2djFKQQ?oc=5",
-            "date": "Thu, 22 Jan 2026 03:31:30 GMT",
-            "source": "Fund Selector Asia",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "印度爆發尼帕病毒後，亞洲機場面臨健康檢查 - arch-web.com.tw",
+            "link": "https://news.google.com/rss/articles/CBMi7gJBVV95cUxPeVIzNUc5ZmFEU0pyUkxiTTFHbVV0XzhLZU1Kal9VRzFEMm1rQ1hwT2w4YWNINFpFVGVqNHpVcC1qc1NSOFhSNmpncGxoYUhCQWRfUmtfQjE1NWIycm91TUcxM0tWdmx1NG0zNTdKTDhoYi1qQzFJSllnZ250N3laalFwSE00d3pyanRHa0FPZzJad2JESmRvSGVndVQ3UHMtTGtyaFYyTV81ZEVTMTE4SjlOVlI2TnNXN2hqYmhNZUZ0S1RLZ3dNZFViSml0MlRVQkExdkZJR0lvbG5xVTZWT2lxdWUyREs5YjlER3FGeWM1NGZzVDdkTTFId3NGNGs3ajdtS0xXa2NHR0RSeWU0cjREQmFEUmQ4YzdrUDROcDFNejd3QzZVeVh3OC11aGJDZ0tZUTZZejZsT1ZYR2RsYW8yQ0tydEZSS2IxQW5NeHk3MENyNDV1NUZIZll5RVJ1dWlpbGtmVEpLLU5iSUE?oc=5",
+            "date": "Tue, 27 Jan 2026 06:45:49 GMT",
+            "source": "arch-web.com.tw",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Hyundai Spin-off Alleviates EV-range Anxiety Via Integrated Solar - PlasticsToday",
-            "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPazlRallaYjdmRDhpOWt0TEhaV0NnV1BqdHJIc0tuQkNvMXJsM0dmeEtJcGtFWVhxUHExb2plT3hYVFFFaUpVLXlJanpfMmlQR0JUdXhXbmhMbkx4ekJGUGxNbGFydDU5VnBTenQwdG9ZWlRJbkdHYkVFZFhKeFBSYjZlY2lBZFNSTFdMZFltZEpVNkdGLVNpSGhKQzlpaWZZREZ3dVE0TXZWcWFlREdQMkd3b2RRUQ?oc=5",
-            "date": "Wed, 21 Jan 2026 21:38:28 GMT",
-            "source": "PlasticsToday",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "抵港航班時間表｜1月27日到港航班資料實時更新＋受影響及取消航班 - hk.ulifestyle.com.hk",
+            "link": "https://news.google.com/rss/articles/CBMijwNBVV95cUxOdXJhYmpKWHUtMWNwa2N6c1V2aThGX1R3c3dpSFN3LWxwbUxyOC1TVmxQUGlQSW1UbXBEUEh0Q1lXZGJwdkRHMDY3cGZQMEI0enZHYmxUWmtpS1I3b2hNZ3FZSVN5VXF6anYtU0NPVjdIOEtfODVZaWZxcl9EY0RBY0c4bDc5V1ZzVTZjYzhHRkpIMVlpaDdhWVNpVUlyUUlSNE1XbE5mU016QTdrb0JGSnVOOGhKNWY5OG5oRGpYY1dsVTczSVl5QWZvZEQyWE15RFhQVG9RZjJrdFlRVldzMmhjVHdua2E1eFlwWTBGOEZOS3lJWjhQTks1MDVhWHNFby1wVGM5RWRzMFFGNlFBSmRCQTJUTkRTYUhYNGJ6Q0NDQnFfZ1FReFZvTHI4N2pXdUtUSWprVW5xZklMaVZtVWFpOW1fNUhiTHJ3c29OdkZRSldVWVNJcUQ5WnpURUZJaWpXLTNKOTBEN21Kd3RwTGg2UFlQaE11amlNTVJxS2R4MEZXSF9NN05QbHNsTk0?oc=5",
+            "date": "Tue, 27 Jan 2026 00:00:55 GMT",
+            "source": "hk.ulifestyle.com.hk",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Telenor sells ownership in True Corporation - taiwannews.com.tw",
-            "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE80U0NPbHdqRUtfbjVFMWNDUzhrcVJxX1JydWNEX05LN0ZTV25mMTgydzZ1Z0ZQaUdYT3RPLWMwcmJtM3N5akh1V3RlQm5TT3psOGRIREt3eDU?oc=5",
-            "date": "Thu, 22 Jan 2026 06:00:00 GMT",
-            "source": "taiwannews.com.tw",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "印度病毒｜印度爆「尼帕病毒」死亡率達75% 專家警告遊東南亞勿吃喝3類食品有旅客寧蝕¥5000取消赴泰 - 香港經濟日報HKET",
+            "link": "https://news.google.com/rss/articles/CBMi6ARBVV95cUxQcHJRNExiSkhISEZ4bnpHU3VUNmF6eG5hZklsWWx2N1F5cjNZZVpMWEphMXUtYmFGM0gyZnVxSkRpZ3paNzg2dnBFUUJUaHNDTXQwRnZYSmU5TWpreGF3amRvZHdfaWJ1Y01SNEhKWDFzcjE4ZHozaWdpTEprdUxIeV90bl9LOUpWQWFGRXJtaUF6eEZaVG40dlBSTDAzYjJfdDVJRnJpOUZwNnFrbHZhLUdzZDVwVGlhMG1zN09lcDdXSUlmdVVzMnhWR1lEbnF4VTFjdjRpU1A0WlNwY2VzQTV3WXJBblNuMGt3SGhhYWIzRFF6MTIzWkxKb1owQWFuMjBYX3ZLLWgyOUttMnFEX3lfSmpGZl9vc1JxZERGXy1TNXVmalF0cGc5ekQ1Zkh4RENUVGJEUTFGdDBvQTNmQW1jVG5OSmNkdFExdmQ3WUhwU2dISXhHUWo2LTVnSzd6SlZqT1I3aU03M2NUQmQyZ3phUHQ4bWJzSEtBcjZtQUMzdV9PUUh5SVZhaXc2UnZsclY4OEgzV1FmUlZKRDV1Smd1UGg5OUg4Z0lJbE9CSkFtZEhhWEgweDRiRkJVS1dBSXhmUnZTRUlxVldHQjQ3Q2xjdE5sMU80NG5TcWZjZjNFQ2I1RzZnRnNVOVAzbEEtM2tEWHdqSDhxSk1TbFJpcEZmY1BOcVc4UmhIakRJYkRIOGJ2UzVScWoxSHpHVHdkOXE5ckRCeUFwVHpwRkw4SnF3aXo1M0hHcFhTaFVRd2V6NTZLMWNtellDSFExejJpZWdlNGtWRDMxM09UTVItSXdVS2hqaUJW?oc=5",
+            "date": "Tue, 27 Jan 2026 03:35:28 GMT",
+            "source": "香港經濟日報HKET",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Taiwan Unites with China, Thailand, Vietnam, Malaysia, Indonesia and More to Reveal the Most Affordable Destinations for Budget Travellers in 2026 - Travel And Tour World",
-            "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxONlRlR1ZVZUdpWHZtbDBoaGtHS09OVXF2ZUN6eHRIWVJCeDh1eTlncHVleWZXc1lTVW9qQlpGRkF4S2JpUHVkSmJrTm56aTVBTTN1RkNoTVQtTXBFU081QmZpTDhzNmh2VW1zUWFMZjViblJJdjhhVjZoZm9TZEJSdUJoN0lXekpNel9Hc191RkdrakdZel9HQ3o2Yy1NUHRsNkhVN2NIVzJ1c3NqNERiS09oVHYxMlVLQzVINmtDZDF6ZDFYbDhOMzI0YWhtMGZmdFJPVjlwaHVGc1dzVUNLRWphUXNoSWJOT0lvTWNwd3pGNUpYZ0htMkdrRFJPY3JoTW5fQmRxZ25qOFE2UmtmYmFDaUpPNHhObEZB?oc=5",
-            "date": "Wed, 21 Jan 2026 22:42:23 GMT",
-            "source": "Travel And Tour World",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "越南旅遊注意！違反「換錢新制」最高罰11萬元，加碼曝越南海關入境規定 - 食尚玩家",
+            "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBtZGRjQTNvdjhuV0xSU0FvRWR3MnExMmVicnV6QUZrUmFvQ1h1SUpwOEhGUmlZYWJmWGVWUEU4WGZrRlUteGFsSFZMYk9OYTFkNnRyNUxPQWXSAVhBVV95cUxQbWRkY0Ezb3Y4bldMUlNBb0VkdzJxMTJlYnJ1ekFGa1Jhb0NYdUlKcDhIRlJpWWFiZlhlVlBFOFhma0ZVLXhhbEhWTGJPTmExZDZ0cjVMT0Fl?oc=5",
+            "date": "Mon, 26 Jan 2026 17:00:00 GMT",
+            "source": "食尚玩家",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Taipei book exhibition to run from Feb. 3 to 8 - taipeitimes.com",
-            "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBHTTFuMGgtZDltWnFyQnFBSVg0WWhzNDlhS0Nqd3Rpa2hVV0NMZU1OYkNxa2N4RXZrTkI5b2Rzc2MyYzJiYWZYbXJDUHZwZVVRTGlsWnFlaFhRdlNGZHdBQ1ZKNHFqYTdka1RWZEtaY3VwZU9BNHE3ZGJB?oc=5",
-            "date": "Wed, 21 Jan 2026 16:00:00 GMT",
-            "source": "taipeitimes.com",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
-        },
-        {
-            "title": "William A Brown Obituary (2026) - Sarasota, FL - Farley Funeral Homes and Crematory - Venice - Legacy | Obituary",
-            "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNX3Q2eDc3UGN1YkpkT3B2dlI0QlpDdkRtX2JRTEJMdWlkUnRLeENULXRHVEVXTlZGV01ObzVvdldfb1FRSUhxVU9VMXNBLUxPUWNENDViZDFiWGZLUE1IRTZGMGFhRFV6RW9CT09oMFlvcFlmUHdlcVpqbkpSREY1M0tR?oc=5",
-            "date": "Wed, 21 Jan 2026 17:24:34 GMT",
-            "source": "Legacy | Obituary",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
-        },
-        {
-            "title": "BTS announces 2026-27 tour: Cheapest prices, best seats, concert schedule for upcoming World Tour - sportingnews.com",
-            "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWEVOLTFwZEgyNklnR19vZUctelVZckVVZ2hmQ0hRZXZCOXlsTjg4Nk5qUEpueEhLV1RjVmJnZ0Z4U1F0aHJVY05fazBQVnJkdzJrazVXUkoyc1VMa1Z3UmV6SnZRSjV4WFVBUlV5dXVDNnJ3X29tdjhHRkszMHJUSy16Uy00T01uNldPSTJDQUlsSnFiQlVlbC1wMDF6TS1WSjEtMDAwdUVZZU5BaERKZEJlTnBKS2J0NVBkQTR4SQ?oc=5",
-            "date": "Wed, 21 Jan 2026 15:19:28 GMT",
-            "source": "sportingnews.com",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
-        },
-        {
-            "title": "OpenAI's viral Sora app is finally available on Android: Top features, how to download and more - MSN",
-            "link": "https://news.google.com/rss/articles/CBMisgNBVV95cUxOMzliNDhKWTROOWVIbmtMRHJSdHVQM2NfejhCdUdXdGpBS05UWTkwbFFWc191dFpNd3EtS0pBV1czMkJ4T0VDbGVMSjlLYTdZWGVxUEV6OGJkYXhSeHhDbFYwNER0dFlHYTg4OGJjckl5YkNpbkMxUG5OVU1HdENILU9rUVFEMFh4QW9MUW5WaW5Xc1lzS0h3Nm9kRVRFSmZUN1c4TllYWmNaVU93UmtOdWhidFFpZkpjVkZpeWl5VlVETHVwOGlBRjBzNnVWdWlHenRXcDVYa09lNW1sYWl1c0Q1NkRXOFVnU0ZhSVhnVW9Ob3NEcW1lUDMweWhsZ3hrNVF2NE0wajltLWNxeGdWa3VEQk5rRGk1cXJHZHFtWndFdHlxdDNtMlYtNjFnUU1mYzBKNTdfY3hmNE9ONXBaZ1J2dVVNdlRpcU10cGpha1lMUlRWRUZSQTNBOS1VT3Bwcmk2cUhXNTFuX0o3MlllcmtNRDg2UmdDcDlyc2VjRWpsY0JpeEs2UHNiQm5UUGE0d2dWQ09kRkNkR0NGSWQ2YTVYcXd2b1N1VUlKbHVGcHhDdw?oc=5",
-            "date": "Wed, 21 Jan 2026 10:38:53 GMT",
+            "title": "足球／台灣男足主場遭泰痛宰無緣亞洲盃 主帥才接2 個多月賽後直接請辭 - MSN",
+            "link": "https://news.google.com/rss/articles/CBMiowVBVV95cUxPWlR3OUlPdjlEZjdWMm52SWVZTnF2d2l3WG9QaU1BV3U0djFOdVhic2Z2SjVyUUdZdjdjT0VaNW1xN2hCNVFkV0FwYXRQSlVldjVqVW9KOUlleVQyVEl0Yk1ldEVLek5iSmE0UEFkSDZkUVg0a1BYMzQtNGNDQlR4ckpiWERYbEdKSXZVUEtnaERTd2dYT3dpSnhRb2RuOEozdzlQLVZLQmlrOG9WM3FOc2pXdFlPeEF6YWtHendjLXk0MFF5eERTRDMyRU81VVRPajZTS2E2TmJXU296YlFGR2V2ckV3d1ZPbTlfaHBoUWJ0eEZwNlBwdTA5QWlBZjl1eGlyTjk3Tm4zNzRSeEJXb3g2RWZSSG9IRUhDM0dXUnY0WEVPVFpUeUhycTVmTFVCYjFqOVkzakJoYXR5S3pNWWFSMklWSVZpdXZrYmpldUVMVlZMQzd6bEVSY2ttcFNpZUlUdWJZY1RqODJldkN6VUgwTUlqNWtPbUJYRlVJaEpmSndKdUNOV1E0bGs4emVxV2NwN0pmZkQwWFFvSUI1elE4UXJ1UG9kcFQzSUxrUGJubXVXMGJocjgtc1VHYmJxNUtPN29DT2tNMnA2Y0FnRXVvdmp6dWxpbHRWLUFEWTJJM1RsQnBDVXdSSWJYUF9QZUFVSFVhS0psUC13WGdqS19fSEZNVWkxYmIxbVNIRVZodmRhNjQxc2xpMFAyMDZGdExjbGRFTm1UM1p5WnRCdDNkY0FzWVpQOGFrTWlaQUU4NDBlV0kxZHRfdUxzUGVFeWVCNVRFRm9oZkVxMmtlY0ZUb1ZBU2ptWDFRU2JXNDFFTFpkYmlLX0VqQUNHXzZLNk1mUnBOdjY3b2x3SUtNVUJZNTNNMXM5Z0U4UVkzYnE2ZEk?oc=5",
+            "date": "Mon, 26 Jan 2026 09:40:14 GMT",
             "source": "MSN",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Japan National Tourism Organization Announces 42.68 Million Visitors in 2025, a New Record - TRAICY Global",
-            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBIZG9Ra3Vrd0R3bFZuRFBxdFJiRGVBbml2dkZWYkQ4SzFnYlQ0ZWlsMWlfY2FaVmMzYjhMTlUxeXF2VXIzM3AtcHUzUG9JcXE4VnN5Uw?oc=5",
-            "date": "Wed, 21 Jan 2026 11:47:42 GMT",
-            "source": "TRAICY Global",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "泰國大選將近！他提政見「和外星人結婚、1妻4夫」是認真的 - 鏡週刊Mirror Media",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9OQUZJTWMwVTVsdGlaRm1XZm9lMEpyaXU5OGJnYWpaMU9NNWo5VW5xQVJZLU5MRXFzVTZiNkg4MndudTBzSFJueE9ySWYxMDg4OExPUV9QR1FoLWwxaGJGZGF4Q2FsZ1hF0gFoQVVfeXFMT05BRklNYzBVNWx0aVpGbVdmb2UwSnJpdTk4YmdhaloxT001ajlVbnFBUlktTkxFcXNVNmI2SDgyd251MHNIUm54T3JJZjEwODg4TE9RX1BHUWgtbDFoYkZkYXhDYWxnWEU?oc=5",
+            "date": "Tue, 27 Jan 2026 03:04:00 GMT",
+            "source": "鏡週刊Mirror Media",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Japan Has Tough Road Ahead to Achieve 60-M.-Visitor Goal - nationthailand.com",
-            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1vV3ZUcGZCMjFDRV9wSkZJZjV1NE81cF9Pa20zTzVFaGQzS3c5dmpaMFp3X0Rka0pmREloZktHQ1poeER2NWtvSzFlNlNVODZNRmlJN1luYldJOUo4a2JjckV3UWxTZ2M?oc=5",
-            "date": "Wed, 21 Jan 2026 16:39:00 GMT",
-            "source": "nationthailand.com",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "足球／台灣男足主場遭泰痛宰無緣亞洲盃 主帥才接2個多月賽後直接請辭 - MSN",
+            "link": "https://news.google.com/rss/articles/CBMikARBVV95cUxPV0tEVlo3cm5ZU3ltUGZqYV9pbkljcHFDU01hYnlYbUJ6SUdoNnJqV2s0ZWlBWXlBSXY2VDNYY3ItcjlpMFVtdnZ0R0RBRm8tXzVNLUtJc0NtLTFQTW1yeUJHcVgwTlRtXzQteGdiTEZLa0xZUjZ6X2tOZUItT0VnRllwRUJFc3B1NEk3MWV0eklQQmpJWTRpVFNoMko3NXE5dU9hQjlfTG9ZOXR0N0U5c0VRUUhnUWotSG12YzFnWWRpOFFHOWRGZi1hSFJGekRZaEVwZXFNcWtSOG9kX19kdnRUOUlmbXJVX1ctc1pBdHpnM3VNRVpGRzRFSHUzNEhJNVBvS3o3RFhhMTl3d3d1M0FkemFhaldoV016OU9ZUjJKVVQ3MEphNElzQmpZNjFkLXVia2xtM2FUYTJ6ZWVuWm81dVo5YUNFZkk5QkxMWUUtUmN5VUk0N05NbmlNajdFV3ZQYV9ST2pZMTVicDZUUjhzUlpNRm9zQUdHTWlycTkyU25Fb3pfUzI4V29lY1NuUWRIZnBMczB2Q3Y2ME11bE9Jb1FZRGY0TlpzaWRaaXNXTF9Od0RzbWMxeDZPRExHcHpnbGFTV2JqelRORWVONk9rZTlCMVh3NVFrUXFaUWZkdzNWaEEyRmI0VnA3Y2hEaG5CWFJvandBZGN2MHFkZmViUjNTUVNGN091REdwSVc?oc=5",
+            "date": "Tue, 27 Jan 2026 01:26:39 GMT",
+            "source": "MSN",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Busy feat - Taiwan Today",
-            "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBWWlZGN2xoTWJfUDlDR2ppTE14QThiQmsyOGxubEpNYWtzckRpMllBSmlkYjA3MU92a0FwWFItZkFBUUcyN3RSdHBQc0ZMS3h1T3BNUTA5T1FYWUg4UmtoVHUtdw?oc=5",
-            "date": "Wed, 21 Jan 2026 08:26:15 GMT",
-            "source": "Taiwan Today",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "台驊集團小金雞台灣空運旺年會「台空金馬」 共啟 AI 與永續新局 - 經濟日報",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE02SDFXQ29pd0JwaEk5U3pUNlo5bmlkMEM3UkVtNEpkcXdqSlhHeFJuUzY4d0RFbUJkWTU2Y1U4NGNzVExFeTVESk5OUWZ2UXJJQ2NGdmYxYV9GZ9IBX0FVX3lxTE8wdXl2Y2xwaS1NS3RhUDg1Y1dCM3ZfUjA0cXh4YmZSblF1TVR0MURLY29ScXJPM1FvWFhrcDh2SHdweDhWdmxXUlpmMUVvZ2Rycm90OEcyNmhjWncyS2tN?oc=5",
+            "date": "Mon, 26 Jan 2026 08:00:00 GMT",
+            "source": "經濟日報",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Inventec Corp expects double-digit AI growth - taipeitimes.com",
-            "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9KWW5EVlBZenJvZWVObWF0Um1tT2ZhR0RnbDFIU2FuRGR2TmN2Tnc4emIxeU16ZWNPYzczQS1RYkZsTktWZy1UQmJrNmtfSXkwdnJrWjZ6SEF2NUhHUlZiSDVxakF6aXZtN0lnajAzWS0xN3FJclE?oc=5",
-            "date": "Wed, 21 Jan 2026 16:00:00 GMT",
-            "source": "taipeitimes.com",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "台灣《劇場版「暗殺教室」：我們的時光》3/27上映 - 4Gamers",
+            "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPdEwwUllPdEgwUjE3TjF0SUtlaWx0V1ltUHRrcnVsNlMwRWRMaW5OLTFUR044UmJWaUZPNEhaejduLUVxUE1UX3hyT3pxN1FyU2FqZ0xRZnY0cTlhNlBhRlVwNGZjQW9iQmpub2FwbEt6Z2tMWFpNdDRmMGJzNlNDVUwwSXRmQTBiRmJuMnRKc2UwV0lOaDVKVml3QUNkak8xV25rcWdSYWc?oc=5",
+            "date": "Tue, 27 Jan 2026 03:29:15 GMT",
+            "source": "4Gamers",
+            "category": "🇹🇼 台泰關係 (中)"
         },
         {
-            "title": "Japan Joins Malaysia, South Korea, Taiwan, Nepal, Thailand as Chinese Tourists Are Vanishing, Leaving Tourism Economy in These Nations in Dust, Everything You Need To Know About New Reasons Behind Sluggish Travel Scene - Travel And Tour World",
-            "link": "https://news.google.com/rss/articles/CBMi4AJBVV95cUxOR0o5NjFTQUtfRXREblZrblFIRFoxLTJpc3lvWlE4UVNhck9jZGU4aFNVS0Qxd3liVlJrY3k3M1NCeEdlZUNJU0xiWW9JcWJ2Mk1YdW5QbEtEUkk3TWFpdGdSMGdFZy1XVUlIUHJra1F0M2hobDJERk00d0Fkd2g0STItZXZsU2VvcEdKZDR2bTV5Tl9XQTloS18wTGdsb056MUxWdFJLSWd3WTZCanBKZXY1czBRLS1CRHdfSURmZlBiMjFURkxmcjVQTHhuVXE3X1JlVkFyRDZuSDVyWWw3c2htbWFaOV9lUFBpdUVDSTBpWjItUUFQUjlRWHNodG85NnYtY1dGOUZ5STExdTJJS21Rd2F3NVM4cG1hMmFodjdTUVB1QkJjSXBUR0JQZzZ2N19ab0x2ZTAtdU94aC16dHRxRDlFU1NCbmZEOGZRTmI2UnVyS2lPRnpjY2o3MXBz?oc=5",
-            "date": "Wed, 21 Jan 2026 17:41:45 GMT",
-            "source": "Travel And Tour World",
-            "category": "🇹🇼 3. 台泰關係 (EN)"
+            "title": "立百病毒致死率逼近6成！症狀初期像感冒？台灣人愛去「1國家」拉警報，傳染途徑/潛伏期一次看| 周育信 | 全解析 - Storm.mg",
+            "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE01MTVQVEYyRm1wQmlnNnhzNlRVb0laUUhuYkRjVnNuUkVkcjJ0Z09OV1RQckt4cS1IS05TT2N5T3RnR1ljblF2cDdhMWV4QQ?oc=5",
+            "date": "Tue, 27 Jan 2026 04:28:20 GMT",
+            "source": "Storm.mg",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "亞洲健康識能國際大會11月清邁登場台灣分享經驗| 生活 - 中央社 CNA",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5lQ2Z3UXR2Nm5icEhkbndpX2Q2cFBwc1gxVEpFYzhjX0JHbDdSVW8xVzZQOFNWcTd3WnNzLS0zaUJYdndPN296dUljYkxhTDZGSHkxREx2VmZkT2doRktr?oc=5",
+            "date": "Mon, 26 Jan 2026 11:47:00 GMT",
+            "source": "中央社 CNA",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "再次攜手漫威影業！POCO X8 Pro鋼鐵人聯名款通過泰國認證| 手機王 - LINE TODAY",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBldzF3MHhnSkxEMTgxU0ZUX01IbXdkTEpfVEtDTFpDOFBkYWNvd3VfZWFWVG50Q0tqWGpxSnhJb0ptX2Q2OXJaUjdCZnc5ZXJPQ1p5eXFn?oc=5",
+            "date": "Tue, 27 Jan 2026 06:30:41 GMT",
+            "source": "LINE TODAY",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "〈人物專訪〉醫學系男神闖台拍片 Gorn把握機會當戀習生 - 自由娛樂",
+            "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5UN01QS1hiRTRUREJxRl9sOWJZdGtDMDhVa0NrY2hRT3hzanFIVmJOc3V6Ty1SeE9GM2ZVM2VZOXdWQkx4a1A1RzUteVNYNkVNaUc40gFYQVVfeXFMT3ljNVhkRzRnZXBWVGxsLTFKN2RlNDd0c29hV1BzVkdPUWRJbEhOX3VjQUlSV3RmX0ljaHdfNmRscE9CZ09UV3NJOU5Ga21oWmhpSnB2SFJUSA?oc=5",
+            "date": "Mon, 26 Jan 2026 21:30:00 GMT",
+            "source": "自由娛樂",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "Taiwan+N／ 首站泰國小花正在綻放 - MSN",
+            "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPR0ZZNG4weGZYTnZmSjZ2YTkwNVA0R21oR3gyRGdGMWZpaDB4MGt5ZkMtWWVKY21FUmlwdm1mcUhhWVNzNVFZUXpLQnM0TjJVY2hlLTV2VWN3NXBmV3ZTSi1kQ1VKWVdHTlZZRDBqbXJVVWpLT0JaSmtKNlVGS1Fyb1phVW84a3VsLUpGM2g3blJNNmlQeUVxOEVwZlRWc2tKX0pRaV9BYU96dUdxRUpsSkxaWko3cnNoTnlnbmd0UlF6dmw3Vlc0TUlqc01Nbkx1ZUdpV05neWxGRnFkRW54UWM0b0FFa2hXYjRV?oc=5",
+            "date": "Mon, 26 Jan 2026 09:26:43 GMT",
+            "source": "MSN",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "新產能+遞延出貨 金像電Q1淡季不淡 - 台視全球資訊網",
+            "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPWmhpSVR6eDRiUHhwTnY0aDhuNnFfMTJ0OFlBaUg2SzF3T2ZCbXBUUkpSRk51TVdyc0VadWJIWk83ZXpvbW1nZGstX3FkMzg5RmlrU0RqdnlQM0V5NWplRTdjV29ieUVIWGtUdy02NHFmV0JkQ0sycllYSjQtaW1aZEtmQVd6M2psS2pmYmNjQ1lja01EY2ZOQ3pxblQ?oc=5",
+            "date": "Tue, 27 Jan 2026 04:47:48 GMT",
+            "source": "台視全球資訊網",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "Nissan 全新入門小休旅 Kait 成全球戰略車！台灣有望導入取代國產 Kicks - 自由電子報汽車頻道",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5yNFpKTV9panpyTUNnUUZaemhFV0haSjl1Qmx2VE5QUmNveU53eTRTb0lQVGdGZlA3bXJiaUpNTEQyb3MzYnVRQ2dWakkwM2fSAU9BVV95cUxOcjRaSk1faWp6ck1DZ1FGWnpoRVdIWko5dUJsdlROUFJjb3lOd3k0U29JUFRnRmZQN21yYmlKTUxEMm9zM2J1UUNnVmpJMDNn?oc=5",
+            "date": "Tue, 27 Jan 2026 03:00:00 GMT",
+            "source": "自由電子報汽車頻道",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "泰國春季旅展圓滿落幕 台灣館創佳績現場銷售破千萬泰銖 - visionthai.net",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4yUWxHNlIxV2FJQkxCVGFJeERxYnhxUFd1YXRCNGJ6eUFuYTRsVWdJYUJWVk9NS0dHT1VxWGVFZFExVlNpZFBNRXFqUDVSd0lzcHR2MHNZcGttQXNCdWw1eEpzZkpRZw?oc=5",
+            "date": "Mon, 26 Jan 2026 10:09:12 GMT",
+            "source": "visionthai.net",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "台灣「國產Nissan Kicks」後繼有人！全新Kait入門休旅有望來補位 - ETtoday車雲",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1UbFdpUFBHQ2l1bXhaazNoa1NBS25qLWV1VVdrcTN5OFM0Z2xMdXdoMm1XUWlPaXNyVVpBS3Fib2pmVjZpT2dPWnZGSmlBLWfSAWtBVV95cUxNRUhXTHluMFJJUEdTOHp3Uld1a283akN2SlFod3EyMF8wVGpWOFZwYlJBMG5wNi11R3MzOHJpSzVPSEJQY3lSTU5vd3A3b1NPelg1RllST09hNUFOTklJbGk0aFBDTUdianpaOA?oc=5",
+            "date": "Tue, 27 Jan 2026 00:03:00 GMT",
+            "source": "ETtoday車雲",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "立百病毒致死率58%，8症狀像感冒！台灣人愛去的國家警戒：出國別吃這些食物…傳染途徑、潛伏期懶人包 - 今周刊",
+            "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQV2Z0QUJWS0lOVmVvbm1Mal9jZm0zMDAwTU9VME02VmZEY3hCa01za2FjTDh1UWdOZ1BsYkRxM0l2Ymc3M0JpTGZrc1hPX1BMQlhpOFZSMVBOZmJ0UWIxc3J4Wms4TGV1NDdPS1djbVltVnJHazhnVF9nR1RlbWl4TA?oc=5",
+            "date": "Tue, 27 Jan 2026 07:18:07 GMT",
+            "source": "今周刊",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "金像電今年資本支出看170億 泰國廠二期提早量產 - 台視全球資訊網",
+            "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQU2VRd1RuRkM1T09fUzZBVE5JTlFOV2ppVGhsY21RRTBmZTBZLVI3cG5YTXgwTlBmYlFyY20zR0tvVEoxbEVSNHVxNXJqQzNNcVFCWWprT2pmNmJycklKZTlZM1JJeUtuWEhyWXVMUmdIV2s0S3UwZENaWkxuR3d3N0g4Rnl0US02YmhLanhkRkxucDJlX1JsR3VRSFhsMzl2bzMzNVN5VWJLRXM?oc=5",
+            "date": "Tue, 27 Jan 2026 04:51:45 GMT",
+            "source": "台視全球資訊網",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "爭取泰國觀光客源來台 觀光署：續推高鐵買1送1 - 工商時報",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE02N0NyQzAteEVMb3J2Y3ZwSjM3T29pV2dvVW1iQnhJU2xFaDNlczNRSC1Ra1dFYnBjNkk2ZFFTZFhaWmNxVk8wYnA5Y2ZJZWkzV2hFSTc3cFlwcjdPSTNJ?oc=5",
+            "date": "Tue, 27 Jan 2026 06:53:00 GMT",
+            "source": "工商時報",
+            "category": "🇹🇼 台泰關係 (中)"
+        },
+        {
+            "title": "泰國春季旅展盛大開跑，台灣美食、燈會、山海美景 邀請泰國民眾體驗台灣觀光日夜精彩! - taiwan.net.tw",
+            "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5TSEtzZDN0VURSV1hiaWJuRTNkS3dsTWxOc0dSeDQxNDNkME5HczhLRXlETHZSbWhyLXVOOGFTNkJUTUZTdDg2eUxMdzRLRWtKSGRkdTlwd2M?oc=5",
+            "date": "Tue, 27 Jan 2026 06:48:25 GMT",
+            "source": "taiwan.net.tw",
+            "category": "🇹🇼 台泰關係 (中)"
         }
-    ]
+    ],
+    "timestamp": "2026-01-27 15:25:48"
 }

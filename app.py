@@ -4,6 +4,8 @@ import time
 from datetime import datetime
 import json
 import os
+import concurrent.futures
+import html
 
 # ================= 1. 頁面設定 (必須放第一行) =================
 st.set_page_config(
@@ -140,6 +142,13 @@ def get_rss_sources(days, mode="all", custom_keyword=None):
     
     return sources
 
+def fetch_feed(source):
+    """Helper function to fetch a single RSS feed."""
+    try:
+        return source, feedparser.parse(source['url'])
+    except Exception as e:
+        return source, None
+
 def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=None):
     status_text = st.empty() 
     progress_bar = st.progress(0)
@@ -168,12 +177,20 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
     seen_titles = set()
     total_steps = len(sources)
     
-    for i, source in enumerate(sources):
-        status_text.text(f"📡 掃描: {source['name']} ...")
+    # 平行抓取 RSS
+    status_text.text(f"📡 正在平行掃描 {len(sources)} 個來源...")
+    
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+        future_to_source = {executor.submit(fetch_feed, source): source for source in sources}
         
-        try:
-            feed = feedparser.parse(source['url'])
-            if len(feed.entries) > 0:
+        completed_count = 0
+        for future in concurrent.futures.as_completed(future_to_source):
+            completed_count += 1
+            progress_bar.progress(completed_count / total_steps)
+            
+            source, feed = future.result()
+            
+            if feed and len(feed.entries) > 0:
                 output_text += f"\n## 【{source['name']}】\n"
                 
                 # 自訂搜尋不設限，預設限制 30 篇
@@ -191,20 +208,34 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
                     })
             else:
                 output_text += f"\n## 【{source['name']}】\n(無相關新聞)\n"
-        except Exception as e:
-            st.error(f"錯誤: {e}")
-        
-        progress_bar.progress((i + 1) / total_steps)
-        time.sleep(0.3)
 
     output_text += "\n========= 資料結束 ========="
     
+    # 累積歷史資料邏輯
     try:
+        existing_data = {"news_list": []}
+        if os.path.exists('news_data.json'):
+            with open('news_data.json', 'r', encoding='utf-8') as f:
+                try:
+                    existing_data = json.load(f)
+                except json.JSONDecodeError:
+                    pass # 檔案損毀則使用空列表
+        
+        # 建立現有連結集合以過濾重複
+        existing_links = set(item['link'] for item in existing_data.get('news_list', []))
+        
+        new_items_added = 0
+        for item in news_items_for_json:
+            if item['link'] not in existing_links:
+                existing_data['news_list'].insert(0, item) # 新的放前面
+                existing_links.add(item['link'])
+                new_items_added += 1
+        
+        existing_data['timestamp'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        
         with open('news_data.json', 'w', encoding='utf-8') as f:
-            json.dump({
-                "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                "news_list": news_items_for_json
-            }, f, ensure_ascii=False, indent=4)
+            json.dump(existing_data, f, ensure_ascii=False, indent=4)
+            
     except Exception as e:
         print(f"存檔失敗: {e}")
 
@@ -225,10 +256,14 @@ def display_results(prompt, news_list):
     if news_list:
         for news in news_list:
             cat = news.get('category', '一般')
+            # Security fix: Escape HTML special characters
+            safe_title = html.escape(news['title'])
+            safe_source = html.escape(news['source'])
+            
             st.markdown(f'''
             <div class="news-card">
-                <a href="{news['link']}" target="_blank" class="news-title">{news['title']}</a>
-                <div class="news-meta">{news['date']} • {news['source']} <span class="news-tag">{cat}</span></div>
+                <a href="{news['link']}" target="_blank" class="news-title">{safe_title}</a>
+                <div class="news-meta">{news['date']} • {safe_source} <span class="news-tag">{cat}</span></div>
             </div>
             ''', unsafe_allow_html=True)
     else:

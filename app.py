@@ -249,7 +249,7 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
 def display_results(prompt, news_list):
     """顯示搜尋結果的共用函數"""
     st.markdown("##### 1. AI 分析指令")
-    with st.expander("點擊展開查看 Prompt", expanded=False):
+    with st.expander("點擊展開查看 Prompt", expanded=True):
         st.code(prompt, language="markdown")
         
     st.markdown("##### 2. 相關新聞速覽")

@@ -6,7 +6,7 @@ import logic  # Refactored logic module
 
 # ================= 1. 頁面設定 (必須放第一行) =================
 st.set_page_config(
-    page_title="Amy 的印尼研究院 | 印尼戰情室", 
+    page_title="Amy 的印尼研究院", 
     page_icon="🇮🇩", 
     layout="wide"
 )
@@ -93,7 +93,7 @@ def display_results(prompt, news_list):
 
 # ================= 4. 網頁主程式 =================
 
-st.markdown('<div class="big-font">Amy 的印尼研究院 🇮🇩 戰情室</div>', unsafe_allow_html=True)
+st.markdown('<div class="big-font">Amy 的印尼研究院</div>', unsafe_allow_html=True)
 
 tab1, tab2 = st.tabs(["🤖 生成器", "📊 歷史庫"])
 

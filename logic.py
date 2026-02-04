@@ -25,17 +25,10 @@ VIP_COMPANIES_CN: List[str] = [
 ]
 
 # 預先計算好查詢字串
-VIP_QUERY_EN: str = "+OR+".join([urllib.parse.quote_plus(c.replace('"', '')) for c in VIP_COMPANIES_EN])
-# Note: Keeping quotes in the query string might be intended for exact match, 
-# but usually for URL params we want to safe encode. 
-# Original code: c.replace(" ", "+") where c had quotes.
-# New approach: Use quote_plus. 
-# If exact match "Foxconn" is needed, we should quote the quotes?
-# The original code: '"Foxconn"'.replace(" ", "+") -> '"Foxconn"'
-# URL encoded: '%22Foxconn%22'. 
-# Let's trust quote_plus to handle special chars including quotes.
-VIP_QUERY_EN = "+OR+".join([urllib.parse.quote_plus(c) for c in VIP_COMPANIES_EN])
-VIP_QUERY_CN = "+OR+".join([urllib.parse.quote_plus(c) for c in VIP_COMPANIES_CN])
+# Google News RSS strictness check: Use %20 for spaces, not +, and quote() instead of quote_plus()
+# quote() encodes space to %20. 
+VIP_QUERY_EN: str = "%20OR%20".join([urllib.parse.quote(c) for c in VIP_COMPANIES_EN])
+VIP_QUERY_CN: str = "%20OR%20".join([urllib.parse.quote(c) for c in VIP_COMPANIES_CN])
 
 # 選項映射
 DATE_MAP: Dict[str, int] = {
@@ -61,41 +54,40 @@ def get_rss_sources(days: int, mode: str = "all", custom_keyword: Optional[str] 
     
     # 自訂搜尋模式
     if mode == "custom" and custom_keyword:
-        # Improved URL encoding
+        # Improved URL encoding: use quote() for %20
         clean_keyword = custom_keyword.strip()
-        encoded_keyword = urllib.parse.quote_plus(clean_keyword)
+        encoded_keyword = urllib.parse.quote(clean_keyword)
         
         sources.append({
             "name": f"🔍 深度追蹤: {clean_keyword} (中)",
-            "url": f"https://news.google.com/rss/search?q={encoded_keyword}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+            "url": f"https://news.google.com/rss/search?q={encoded_keyword}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
         })
         sources.append({
             "name": f"🔍 深度追蹤: {clean_keyword} (EN)",
-            "url": f"https://news.google.com/rss/search?q={encoded_keyword}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"
+            "url": f"https://news.google.com/rss/search?q={encoded_keyword}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"
         })
         return sources
 
     # 預設模式
     if mode == "macro":
         sources.extend([
-            {"name": "🇮🇩 印尼整體 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('印尼')}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇮🇩 印尼整體 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('Indonesia')}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"},
-            {"name": "🇹🇼 台印關係 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('印尼 台灣 OR "台商"')}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇹🇼 台印關係 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('Indonesia Taiwan OR "Taiwanese investment"')}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
+            {"name": "🇮🇩 印尼整體 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼')}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🇮🇩 印尼整體 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia')}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"},
+            {"name": "🇹🇼 台印關係 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼 台灣 OR "台商"')}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🇹🇼 台印關係 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia Taiwan OR "Taiwanese investment"')}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     elif mode == "industry":
         # 印尼關鍵字：EV, Battery, Nickel, Electronics
         sources.extend([
-            {"name": "⚡ EV/電子 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('印尼 電動車 OR 電池 OR "電子製造"')}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "⚡ EV/Electronics (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('Indonesia EV OR Battery OR Nickel OR Electronics Manufacturing')}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
+            {"name": "⚡ EV/電子 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼 電動車 OR 電池 OR "電子製造"')}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "⚡ EV/Electronics (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia EV OR Battery OR Nickel OR Electronics Manufacturing')}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     elif mode == "vip":
         # 使用全域變數 VIP_QUERY_CN/EN
-        # 注意: 這裡的 URL 已經由 VIP_QUERY_* 處理好編碼的一部分，但 URL 結構需要確認
-        # 原程式碼直接串接，這裡保持用 f-string 串接，因為 VIP_QUERY_* 已經包含 quote_plus 編碼的部分
+        # 注意: 這裡的 URL 已經由 VIP_QUERY_* 處理好編碼的一部分 (%20OR%20)
         sources.extend([
-            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('印尼 OR')} +{VIP_QUERY_CN}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote_plus('Indonesia OR')} +{VIP_QUERY_EN}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
+            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼 OR')}%20{VIP_QUERY_CN}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia OR')}%20{VIP_QUERY_EN}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     
     return sources

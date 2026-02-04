@@ -9,8 +9,8 @@ import html
 
 # ================= 1. 頁面設定 (必須放第一行) =================
 st.set_page_config(
-    page_title="ThaiNews.Ai | 戰情室", 
-    page_icon="🇹🇭", 
+    page_title="IndoNews.Ai | 印尼戰情室", 
+    page_icon="🇮🇩", 
     layout="wide"
 )
 
@@ -66,17 +66,17 @@ CUSTOM_CSS = """
 </style>
 """
 
-# VIP 公司清單
+# VIP 公司清單 (印尼重點台商)
 VIP_COMPANIES_EN = [
-    '"Delta Electronics"', '"Zhen Ding"', '"Unimicron"', '"Compeq"', 
-    '"Gold Circuit Electronics"', '"Dynamic Holding"', '"Tripod Technology"', 
-    '"Unitech"', '"Foxconn"', '"Inventec"', '"Garmin"'
+    '"Foxconn"', '"Hon Hai"', '"Pegatron"', '"Delta Electronics"', 
+    '"Compal"', '"Gogoro"', '"Kymco"', '"Pou Chen"', 
+    '"Eclat Textile"', '"Cheng Shin"', '"CTBC Bank"'
 ]
 
 VIP_COMPANIES_CN = [
-    '"台達電"', '"臻鼎"', '"欣興"', '"華通"', 
-    '"金像電"', '"定穎"', '"健鼎"', 
-    '"燿華"', '"鴻海"', '"英業達"', '"Garmin"'
+    '"鴻海"', '"富士康"', '"和碩"', '"台達電"', 
+    '"仁寶"', '"Gogoro"', '"光陽"', '"寶成"', 
+    '"儒鴻"', '"正新"', '"中信銀"'
 ]
 
 # 預先計算好查詢字串 (避免在函式內重複計算)
@@ -90,8 +90,8 @@ DATE_MAP = {
 }
 
 TOPIC_MAP = {
-    "泰國政經": "macro",
-    "電子產業": "industry",
+    "印尼政經": "macro",
+    "電動車與供應鏈": "industry",
     "重點台商": "vip"
 }
 
@@ -103,7 +103,7 @@ st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 def get_rss_sources(days, mode="all", custom_keyword=None):
     """
     產生 RSS 來源列表
-    :param days: 天數 (int) -> 這裡就是 traceback 報錯的地方，必須確保參數名為 days
+    :param days: 天數 (int)
     """
     sources = []
     
@@ -116,28 +116,29 @@ def get_rss_sources(days, mode="all", custom_keyword=None):
         })
         sources.append({
             "name": f"🔍 深度追蹤: {custom_keyword} (EN)",
-            "url": f"https://news.google.com/rss/search?q={clean_keyword}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"
+            "url": f"https://news.google.com/rss/search?q={clean_keyword}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"
         })
         return sources
 
     # 預設模式
     if mode == "macro":
         sources.extend([
-            {"name": "🇹🇭 泰國整體 (中)", "url": f"https://news.google.com/rss/search?q=泰國+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇹🇭 泰國整體 (EN)", "url": f"https://news.google.com/rss/search?q=Thailand+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"},
-            {"name": "🇹🇼 台泰關係 (中)", "url": f"https://news.google.com/rss/search?q=泰國+台灣+OR+%22台商%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇹🇼 台泰關係 (EN)", "url": f"https://news.google.com/rss/search?q=Thailand+Taiwan+OR+%22Taiwanese+investment%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"}
+            {"name": "🇮🇩 印尼整體 (中)", "url": f"https://news.google.com/rss/search?q=印尼+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🇮🇩 印尼整體 (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"},
+            {"name": "🇹🇼 台印關係 (中)", "url": f"https://news.google.com/rss/search?q=印尼+台灣+OR+%22台商%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🇹🇼 台印關係 (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+Taiwan+OR+%22Taiwanese+investment%22+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     elif mode == "industry":
+        # 印尼關鍵字：EV, Battery, Nickel, Electronics
         sources.extend([
-            {"name": "🔌 PCB製造 (中)", "url": f"https://news.google.com/rss/search?q=泰國+PCB+OR+%22電子製造%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🔌 PCB製造 (EN)", "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+%22Electronics+Manufacturing%22+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"}
+            {"name": "⚡ EV/電子 (中)", "url": f"https://news.google.com/rss/search?q=印尼+電動車+OR+電池+OR+%22電子製造%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "⚡ EV/Electronics (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+EV+OR+Battery+OR+Nickel+OR+Electronics+Manufacturing+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     elif mode == "vip":
         # 使用全域變數 VIP_QUERY_CN/EN
         sources.extend([
-            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q=泰國+OR+{VIP_QUERY_CN}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q=Thailand+PCB+OR+{VIP_QUERY_EN}+when:{days}d&hl=en-TH&gl=TH&ceid=TH:en"}
+            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q=印尼+OR+{VIP_QUERY_CN}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+OR+{VIP_QUERY_EN}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     
     return sources
@@ -160,14 +161,14 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
     if search_mode == "custom":
         instruction_prompt = f"針對關鍵字【{custom_keyword}】，請撰寫一份深度分析報告：1. 重點摘要 2. 市場影響 3. 機會與風險。"
     elif search_mode == "macro":
-        instruction_prompt = f"請分析【{days_label} 泰國整體與台泰關係】：1. 泰國政經局勢 2. 台泰雙邊互動。"
+        instruction_prompt = f"請分析【{days_label} 印尼整體與台印關係】：1. 印尼政經局勢 (含新首都/政策) 2. 台印雙邊互動。"
     elif search_mode == "industry":
-        instruction_prompt = f"請分析【{days_label} 泰國 PCB 與電子製造】：1. 產業趨勢 2. 供應鏈動態。"
+        instruction_prompt = f"請分析【{days_label} 印尼電動車與電子產業】：1. 產業趨勢 (EV/電池/鎳礦) 2. 供應鏈動態。"
     elif search_mode == "vip":
-        instruction_prompt = f"請分析【{days_label} 泰國重點台商】：1. 個股動態 2. 投資訊號。"
+        instruction_prompt = f"請分析【{days_label} 印尼重點台商】：1. 個股動態 2. 投資訊號。"
 
     output_text = f"""
-請扮演一位資深的「產業分析師」。
+請扮演一位資深的「東南亞產業分析師」。
 {instruction_prompt}
 請用**繁體中文**，並以 **Markdown** 條列式輸出，風格需專業且易讀。
 
@@ -191,7 +192,7 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
             source, feed = future.result()
             
             if feed and len(feed.entries) > 0:
-                output_text += f"\n## 【{source['name']}】\n"
+                output_text += f"\\n## 【{source['name']}】\\n"
                 
                 # 自訂搜尋不設限，預設限制 30 篇
                 limit = len(feed.entries) if search_mode == "custom" else 30
@@ -201,15 +202,15 @@ def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=No
                     seen_titles.add(entry.title)
                     source_name = entry.source.title if 'source' in entry else "Google News"
                     pub_date = entry.published if 'published' in entry else ""
-                    output_text += f"- [{pub_date}] [{source_name}] {entry.title}\n  連結: {entry.link}\n"
+                    output_text += f"- [{pub_date}] [{source_name}] {entry.title}\\n  連結: {entry.link}\\n"
                     news_items_for_json.append({
                         "title": entry.title, "link": entry.link, "date": pub_date,
                         "source": source_name, "category": source['name']
                     })
             else:
-                output_text += f"\n## 【{source['name']}】\n(無相關新聞)\n"
+                output_text += f"\\n## 【{source['name']}】\\n(無相關新聞)\\n"
 
-    output_text += "\n========= 資料結束 ========="
+    output_text += "\\n========= 資料結束 ========="
     
     # 累積歷史資料邏輯
     try:
@@ -271,7 +272,7 @@ def display_results(prompt, news_list):
 
 # ================= 4. 網頁主程式 =================
 
-st.markdown('<div class="big-font">ThaiNews.Ai 🇹🇭 戰情室</div>', unsafe_allow_html=True)
+st.markdown('<div class="big-font">IndoNews.Ai 🇮🇩 戰情室</div>', unsafe_allow_html=True)
 
 tab1, tab2 = st.tabs(["🤖 生成器", "📊 歷史庫"])
 
@@ -353,9 +354,9 @@ with tab1:
             st.markdown("""
             <div style="background:#f8f9fa; padding:15px; border-radius:10px; color:#555;">
                 <strong>💡 系統說明：</strong><br>
-                1. <b>泰國政經</b>：政經局勢與台泰關係。<br>
-                2. <b>電子產業</b>：PCB、伺服器與電子製造。<br>
-                3. <b>重點台商</b>：鎖定 10 大指標台廠動態。
+                1. <b>印尼政經</b>：政經局勢與台印關係 (含新首都進度)。<br>
+                2. <b>電動車與供應鏈</b>：EV、電池、鎳礦與電子製造。<br>
+                3. <b>重點台商</b>：鎖定 10+ 大指標台廠 (Foxconn, Pegatron, etc.) 動態。
             </div>
             """, unsafe_allow_html=True)
         
@@ -367,12 +368,12 @@ with tab1:
                     display_results(prompt, news_list)
                     
             elif s_type == "macro":
-                with st.spinner("正在掃描泰國大選、經貿與台泰新聞..."):
+                with st.spinner("正在掃描印尼大選、經貿與台印新聞..."):
                     prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "macro")
                     display_results(prompt, news_list)
                     
             elif s_type == "industry":
-                with st.spinner("正在掃描 PCB 與電子供應鏈新聞..."):
+                with st.spinner("正在掃描印尼EV與電子產業新聞..."):
                     prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "industry")
                     display_results(prompt, news_list)
                     

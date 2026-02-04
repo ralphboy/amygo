@@ -1,15 +1,12 @@
 import streamlit as st
-import feedparser
-import time
-from datetime import datetime
 import json
 import os
-import concurrent.futures
 import html
+import logic  # Refactored logic module
 
 # ================= 1. 頁面設定 (必須放第一行) =================
 st.set_page_config(
-    page_title="IndoNews.Ai | 印尼戰情室", 
+    page_title="Amy 的印尼研究院 | 印尼戰情室", 
     page_icon="🇮🇩", 
     layout="wide"
 )
@@ -66,186 +63,10 @@ CUSTOM_CSS = """
 </style>
 """
 
-# VIP 公司清單 (印尼重點台商)
-VIP_COMPANIES_EN = [
-    '"Foxconn"', '"Hon Hai"', '"Pegatron"', '"Delta Electronics"', 
-    '"Compal"', '"Gogoro"', '"Kymco"', '"Pou Chen"', 
-    '"Eclat Textile"', '"Cheng Shin"', '"CTBC Bank"'
-]
-
-VIP_COMPANIES_CN = [
-    '"鴻海"', '"富士康"', '"和碩"', '"台達電"', 
-    '"仁寶"', '"Gogoro"', '"光陽"', '"寶成"', 
-    '"儒鴻"', '"正新"', '"中信銀"'
-]
-
-# 預先計算好查詢字串 (避免在函式內重複計算)
-VIP_QUERY_EN = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_EN])
-VIP_QUERY_CN = "+OR+".join([c.replace(" ", "+") for c in VIP_COMPANIES_CN])
-
-# 選項映射
-DATE_MAP = {
-    "1天": 1, "3天": 3, "1週": 7, "2週": 14,
-    "1月": 30, "3月": 90, "6月": 180
-}
-
-TOPIC_MAP = {
-    "印尼政經": "macro",
-    "電動車與供應鏈": "industry",
-    "重點台商": "vip"
-}
-
 # 套用 CSS
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
-# ================= 3. 爬蟲核心邏輯 =================
-
-def get_rss_sources(days, mode="all", custom_keyword=None):
-    """
-    產生 RSS 來源列表
-    :param days: 天數 (int)
-    """
-    sources = []
-    
-    # 自訂搜尋模式
-    if mode == "custom" and custom_keyword:
-        clean_keyword = custom_keyword.strip().replace(" ", "+")
-        sources.append({
-            "name": f"🔍 深度追蹤: {custom_keyword} (中)",
-            "url": f"https://news.google.com/rss/search?q={clean_keyword}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
-        })
-        sources.append({
-            "name": f"🔍 深度追蹤: {custom_keyword} (EN)",
-            "url": f"https://news.google.com/rss/search?q={clean_keyword}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"
-        })
-        return sources
-
-    # 預設模式
-    if mode == "macro":
-        sources.extend([
-            {"name": "🇮🇩 印尼整體 (中)", "url": f"https://news.google.com/rss/search?q=印尼+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇮🇩 印尼整體 (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"},
-            {"name": "🇹🇼 台印關係 (中)", "url": f"https://news.google.com/rss/search?q=印尼+台灣+OR+%22台商%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇹🇼 台印關係 (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+Taiwan+OR+%22Taiwanese+investment%22+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
-        ])
-    elif mode == "industry":
-        # 印尼關鍵字：EV, Battery, Nickel, Electronics
-        sources.extend([
-            {"name": "⚡ EV/電子 (中)", "url": f"https://news.google.com/rss/search?q=印尼+電動車+OR+電池+OR+%22電子製造%22+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "⚡ EV/Electronics (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+EV+OR+Battery+OR+Nickel+OR+Electronics+Manufacturing+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
-        ])
-    elif mode == "vip":
-        # 使用全域變數 VIP_QUERY_CN/EN
-        sources.extend([
-            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q=印尼+OR+{VIP_QUERY_CN}+when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q=Indonesia+OR+{VIP_QUERY_EN}+when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
-        ])
-    
-    return sources
-
-def fetch_feed(source):
-    """Helper function to fetch a single RSS feed."""
-    try:
-        return source, feedparser.parse(source['url'])
-    except Exception as e:
-        return source, None
-
-def generate_chatgpt_prompt(days_label, days_int, search_mode, custom_keyword=None):
-    status_text = st.empty() 
-    progress_bar = st.progress(0)
-    
-    # 呼叫 get_rss_sources，並傳入 days_int 作為 days 參數
-    sources = get_rss_sources(days_int, search_mode, custom_keyword)
-    news_items_for_json = []
-
-    if search_mode == "custom":
-        instruction_prompt = f"針對關鍵字【{custom_keyword}】，請撰寫一份深度分析報告：1. 重點摘要 2. 市場影響 3. 機會與風險。"
-    elif search_mode == "macro":
-        instruction_prompt = f"請分析【{days_label} 印尼整體與台印關係】：1. 印尼政經局勢 (含新首都/政策) 2. 台印雙邊互動。"
-    elif search_mode == "industry":
-        instruction_prompt = f"請分析【{days_label} 印尼電動車與電子產業】：1. 產業趨勢 (EV/電池/鎳礦) 2. 供應鏈動態。"
-    elif search_mode == "vip":
-        instruction_prompt = f"請分析【{days_label} 印尼重點台商】：1. 個股動態 2. 投資訊號。"
-
-    output_text = f"""
-請扮演一位資深的「東南亞產業分析師」。
-{instruction_prompt}
-請用**繁體中文**，並以 **Markdown** 條列式輸出，風格需專業且易讀。
-
-========= 以下是新聞資料庫 ({datetime.now().strftime('%Y-%m-%d')}) =========
-"""
-    
-    seen_titles = set()
-    total_steps = len(sources)
-    
-    # 平行抓取 RSS
-    status_text.text(f"📡 正在平行掃描 {len(sources)} 個來源...")
-    
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_source = {executor.submit(fetch_feed, source): source for source in sources}
-        
-        completed_count = 0
-        for future in concurrent.futures.as_completed(future_to_source):
-            completed_count += 1
-            progress_bar.progress(completed_count / total_steps)
-            
-            source, feed = future.result()
-            
-            if feed and len(feed.entries) > 0:
-                output_text += f"\\n## 【{source['name']}】\\n"
-                
-                # 自訂搜尋不設限，預設限制 30 篇
-                limit = len(feed.entries) if search_mode == "custom" else 30
-                
-                for entry in feed.entries[:limit]: 
-                    if entry.title in seen_titles: continue
-                    seen_titles.add(entry.title)
-                    source_name = entry.source.title if 'source' in entry else "Google News"
-                    pub_date = entry.published if 'published' in entry else ""
-                    output_text += f"- [{pub_date}] [{source_name}] {entry.title}\\n  連結: {entry.link}\\n"
-                    news_items_for_json.append({
-                        "title": entry.title, "link": entry.link, "date": pub_date,
-                        "source": source_name, "category": source['name']
-                    })
-            else:
-                output_text += f"\\n## 【{source['name']}】\\n(無相關新聞)\\n"
-
-    output_text += "\\n========= 資料結束 ========="
-    
-    # 累積歷史資料邏輯
-    try:
-        existing_data = {"news_list": []}
-        if os.path.exists('news_data.json'):
-            with open('news_data.json', 'r', encoding='utf-8') as f:
-                try:
-                    existing_data = json.load(f)
-                except json.JSONDecodeError:
-                    pass # 檔案損毀則使用空列表
-        
-        # 建立現有連結集合以過濾重複
-        existing_links = set(item['link'] for item in existing_data.get('news_list', []))
-        
-        new_items_added = 0
-        for item in news_items_for_json:
-            if item['link'] not in existing_links:
-                existing_data['news_list'].insert(0, item) # 新的放前面
-                existing_links.add(item['link'])
-                new_items_added += 1
-        
-        existing_data['timestamp'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        
-        with open('news_data.json', 'w', encoding='utf-8') as f:
-            json.dump(existing_data, f, ensure_ascii=False, indent=4)
-            
-    except Exception as e:
-        print(f"存檔失敗: {e}")
-
-    status_text.text("✅ 完成！")
-    time.sleep(0.5)
-    status_text.empty()
-    progress_bar.empty()
-    
-    return output_text, news_items_for_json
+# ================= 3. UI 輔助函式 =================
 
 def display_results(prompt, news_list):
     """顯示搜尋結果的共用函數"""
@@ -272,7 +93,7 @@ def display_results(prompt, news_list):
 
 # ================= 4. 網頁主程式 =================
 
-st.markdown('<div class="big-font">IndoNews.Ai 🇮🇩 戰情室</div>', unsafe_allow_html=True)
+st.markdown('<div class="big-font">Amy 的印尼研究院 🇮🇩 戰情室</div>', unsafe_allow_html=True)
 
 tab1, tab2 = st.tabs(["🤖 生成器", "📊 歷史庫"])
 
@@ -298,24 +119,24 @@ with tab1:
         st.caption("1. 時間範圍")
         # 注意: st.pills 需要 Streamlit 1.40.0+
         try:
-            date_selection = st.pills("Time", list(DATE_MAP.keys()), default="1天", label_visibility="collapsed", key="pills_date")
+            date_selection = st.pills("Time", list(logic.DATE_MAP.keys()), default="3天", label_visibility="collapsed", key="pills_date")
         except AttributeError:
             st.error("請更新 Streamlit 版本至 1.40+ 以使用 Pills 元件，或改用 Radio。")
-            date_selection = st.radio("Time", list(DATE_MAP.keys()), horizontal=True, label_visibility="collapsed")
+            date_selection = st.radio("Time", list(logic.DATE_MAP.keys()), horizontal=True, label_visibility="collapsed")
             
         if date_selection:
-            st.session_state['days_int'] = DATE_MAP[date_selection] 
+            st.session_state['days_int'] = logic.DATE_MAP[date_selection] 
 
         # 2. 主題選擇
         st.caption("2. 分析主題")
         try:
-            topic_selection = st.pills("Topic", list(TOPIC_MAP.keys()), label_visibility="collapsed", selection_mode="single", key="pills_topic")
+            topic_selection = st.pills("Topic", list(logic.TOPIC_MAP.keys()), label_visibility="collapsed", selection_mode="single", key="pills_topic")
         except AttributeError:
-            topic_selection = st.radio("Topic", ["(請選擇)"] + list(TOPIC_MAP.keys()), label_visibility="collapsed")
+            topic_selection = st.radio("Topic", ["(請選擇)"] + list(logic.TOPIC_MAP.keys()), label_visibility="collapsed")
             if topic_selection == "(請選擇)": topic_selection = None
         
         if topic_selection:
-            target_mode = TOPIC_MAP[topic_selection]
+            target_mode = logic.TOPIC_MAP[topic_selection]
             if st.session_state.get('last_topic') != topic_selection:
                 st.session_state['last_topic'] = topic_selection 
                 set_search(target_mode)
@@ -343,7 +164,7 @@ with tab1:
     # 右側：顯示結果區域
     with c_right:
         days_int = st.session_state['days_int']
-        selected_label = next((k for k, v in DATE_MAP.items() if v == days_int), f"{days_int}天")
+        selected_label = next((k for k, v in logic.DATE_MAP.items() if v == days_int), f"{days_int}天")
         
         s_type = st.session_state.get('search_type')
         s_kw = st.session_state.get('search_keyword')
@@ -364,22 +185,22 @@ with tab1:
         else:
             if s_type == "custom" and s_kw:
                 with st.spinner(f"正在全網搜索 {s_kw}..."):
-                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
+                    prompt, news_list = logic.generate_chatgpt_prompt(selected_label, days_int, "custom", s_kw)
                     display_results(prompt, news_list)
                     
             elif s_type == "macro":
                 with st.spinner("正在掃描印尼大選、經貿與台印新聞..."):
-                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "macro")
+                    prompt, news_list = logic.generate_chatgpt_prompt(selected_label, days_int, "macro")
                     display_results(prompt, news_list)
                     
             elif s_type == "industry":
                 with st.spinner("正在掃描印尼EV與電子產業新聞..."):
-                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "industry")
+                    prompt, news_list = logic.generate_chatgpt_prompt(selected_label, days_int, "industry")
                     display_results(prompt, news_list)
                     
             elif s_type == "vip":
                 with st.spinner("正在掃描重點台商動態..."):
-                    prompt, news_list = generate_chatgpt_prompt(selected_label, days_int, "vip")
+                    prompt, news_list = logic.generate_chatgpt_prompt(selected_label, days_int, "vip")
                     display_results(prompt, news_list)
 
 with tab2:
@@ -391,7 +212,10 @@ with tab2:
     
     if os.path.exists('news_data.json'):
         with open('news_data.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                data = {}
         
         news_list = data.get('news_list', [])
         st.caption(f"📅 上次更新: {data.get('timestamp', '未知')} (共 {len(news_list)} 則)")

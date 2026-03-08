@@ -82,9 +82,10 @@ def display_results(prompt, news_list):
             safe_title = html.escape(news['title'])
             safe_source = html.escape(news['source'])
             
+            safe_link = news['link'] if news['link'].startswith(('http://', 'https://')) else '#'
             st.markdown(f'''
             <div class="news-card">
-                <a href="{html.escape(news['link'])}" target="_blank" class="news-title">{safe_title}</a>
+                <a href="{safe_link}" target="_blank" class="news-title">{safe_title}</a>
                 <div class="news-meta">{news['date']} • {safe_source} <span class="news-tag">{cat}</span></div>
             </div>
             ''', unsafe_allow_html=True)
@@ -229,7 +230,7 @@ with tab2:
                 cat = news.get('category', '歷史')
                 safe_title = html.escape(news['title'])
                 safe_source = html.escape(news['source'])
-                safe_link = html.escape(news['link'])
+                safe_link = news['link'] if news['link'].startswith(('http://', 'https://')) else '#'
                 st.markdown(f"""
                 <div class="news-card">
                     <a href="{safe_link}" target="_blank" class="news-title">{safe_title}</a>

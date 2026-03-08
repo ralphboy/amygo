@@ -1,7 +1,8 @@
 import streamlit as st
 import feedparser
 import time
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 import json
 import os
 import concurrent.futures
@@ -44,7 +45,26 @@ TOPIC_MAP: Dict[str, str] = {
     "重點台商": "vip"
 }
 
+# 排除聚合轉載平台
+EXCLUDE_SITES = "%20-site:msn.com%20-site:aol.com"
+
 # ================= 2. Helper Functions =================
+
+def _date_filter_query(days: int) -> str:
+    """產生 Google News 日期範圍與排除站台的查詢字串"""
+    today = datetime.now().date()
+    after = today - timedelta(days=days)
+    before = today + timedelta(days=1)
+    return f"after:{after}%20before:{before}{EXCLUDE_SITES}"
+
+def _is_within_range(published: str, days: int) -> bool:
+    """檢查 RSS entry 的 published 日期是否在指定天數範圍內"""
+    try:
+        pub_dt = parsedate_to_datetime(published)
+        cutoff = datetime.now(timezone.utc) - timedelta(days=days)
+        return pub_dt >= cutoff
+    except Exception:
+        return True  # 無法解析時保留該筆
 
 def get_rss_sources(days: int, mode: str = "all", custom_keyword: Optional[str] = None) -> List[Dict[str, str]]:
     """
@@ -57,41 +77,39 @@ def get_rss_sources(days: int, mode: str = "all", custom_keyword: Optional[str] 
     
     # 自訂搜尋模式
     if mode == "custom" and custom_keyword:
-        # Improved URL encoding: use quote() for %20
         clean_keyword = custom_keyword.strip()
         encoded_keyword = urllib.parse.quote(clean_keyword)
-        
+        df = _date_filter_query(days)
+
         sources.append({
             "name": f"🔍 深度追蹤: {clean_keyword} (中)",
-            "url": f"https://news.google.com/rss/search?q={encoded_keyword}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
+            "url": f"https://news.google.com/rss/search?q={encoded_keyword}%20{df}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"
         })
         sources.append({
             "name": f"🔍 深度追蹤: {clean_keyword} (EN)",
-            "url": f"https://news.google.com/rss/search?q={encoded_keyword}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"
+            "url": f"https://news.google.com/rss/search?q={encoded_keyword}%20{df}&hl=en-ID&gl=ID&ceid=ID:en"
         })
         return sources
 
     # 預設模式
+    df = _date_filter_query(days)
+
     if mode == "macro":
         sources.extend([
-            {"name": "🇮🇩 印尼整體 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼')}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇮🇩 印尼整體 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia')}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"},
-            {"name": "🇹🇼 台印關係 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼 台灣 OR "台商"')}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🇹🇼 台印關係 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia Taiwan OR "Taiwanese investment"')}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
+            {"name": "🇮🇩 印尼整體 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼')}%20{df}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🇮🇩 印尼整體 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia')}%20{df}&hl=en-ID&gl=ID&ceid=ID:en"},
+            {"name": "🇹🇼 台印關係 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼 台灣 OR "台商"')}%20{df}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🇹🇼 台印關係 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia Taiwan OR "Taiwanese investment"')}%20{df}&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     elif mode == "industry":
-        # 印尼關鍵字：EV, Battery, Nickel, Electronics
         sources.extend([
-            {"name": "⚡ EV/電子 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼 電動車 OR 電池 OR "電子製造"')}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "⚡ EV/Electronics (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia EV OR Battery OR Nickel OR Electronics Manufacturing')}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
+            {"name": "⚡ EV/電子 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼 電動車 OR 電池 OR "電子製造"')}%20{df}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "⚡ EV/Electronics (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia EV OR Battery OR Nickel OR Electronics Manufacturing')}%20{df}&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     elif mode == "vip":
-        # 使用全域變數 VIP_QUERY_CN/EN
-        # 注意: 這裡的 URL 已經由 VIP_QUERY_* 處理好編碼的一部分 (%20OR%20)
-        # Optimized logic: (Indonesia) AND (Company A OR Company B...)
         sources.extend([
-            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼')}%20{VIP_QUERY_CN}%20when:{days}d&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
-            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia')}%20{VIP_QUERY_EN}%20when:{days}d&hl=en-ID&gl=ID&ceid=ID:en"}
+            {"name": "🏢 台商動態 (中)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('印尼')}%20{VIP_QUERY_CN}%20{df}&hl=zh-TW&gl=TW&ceid=TW:zh-Hant"},
+            {"name": "🏢 台商動態 (EN)", "url": f"https://news.google.com/rss/search?q={urllib.parse.quote('Indonesia')}%20{VIP_QUERY_EN}%20{df}&hl=en-ID&gl=ID&ceid=ID:en"}
         ])
     
     return sources
@@ -99,16 +117,8 @@ def get_rss_sources(days: int, mode: str = "all", custom_keyword: Optional[str] 
 def fetch_feed(source: Dict[str, str]) -> Tuple[Dict[str, str], Any]:
     """Helper function to fetch a single RSS feed."""
     try:
-        # Best practice: Add User-Agent headers
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        }
-        # Note: feedparser allows passing headers or agent, but it's often better to fetch content with requests first
-        # However, to keep it simple and consistent with previous working version, let's use feedparser's built-in http support first.
-        # If google blocks it, we might need requests. But debug script showed logic.fetch_feed working with valid URL.
-        # Let's keep it simple as in Step 22/115 but with correct URLs.
         return source, feedparser.parse(source['url'])
-    except Exception as e:
+    except Exception:
         return source, None
 
 def generate_chatgpt_prompt(days_label: str, days_int: int, search_mode: str, custom_keyword: Optional[str] = None) -> Tuple[str, List[Dict[str, str]]]:
@@ -163,11 +173,13 @@ def generate_chatgpt_prompt(days_label: str, days_int: int, search_mode: str, cu
                 # 自訂搜尋不設限，預設限制 30 篇
                 limit = len(feed.entries) if search_mode == "custom" else 30
                 
-                for entry in feed.entries[:limit]: 
+                for entry in feed.entries[:limit]:
                     if entry.title in seen_titles: continue
-                    seen_titles.add(entry.title)
-                    source_name = entry.source.title if 'source' in entry else "Google News"
                     pub_date = entry.published if 'published' in entry else ""
+                    if pub_date and not _is_within_range(pub_date, days_int):
+                        continue
+                    seen_titles.add(entry.title)
+                    source_name = getattr(entry.get('source', {}), 'title', None) or "Google News"
                     link = entry.link
                     
                     output_text += f"- [{pub_date}] [{source_name}] {entry.title}\\n  連結: {link}\\n"

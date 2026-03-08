@@ -84,7 +84,7 @@ def display_results(prompt, news_list):
             
             st.markdown(f'''
             <div class="news-card">
-                <a href="{news['link']}" target="_blank" class="news-title">{safe_title}</a>
+                <a href="{html.escape(news['link'])}" target="_blank" class="news-title">{safe_title}</a>
                 <div class="news-meta">{news['date']} • {safe_source} <span class="news-tag">{cat}</span></div>
             </div>
             ''', unsafe_allow_html=True)
@@ -149,8 +149,8 @@ with tab1:
             if kw:
                 # 清除主題選取 (如果使用 pills)
                 try:
-                    st.session_state['pills_topic'] = None 
-                except:
+                    st.session_state['pills_topic'] = None
+                except Exception:
                     pass
                 st.session_state['last_topic'] = None
                 set_search("custom", kw)
@@ -227,10 +227,13 @@ with tab2:
         if news_list:
             for news in news_list:
                 cat = news.get('category', '歷史')
+                safe_title = html.escape(news['title'])
+                safe_source = html.escape(news['source'])
+                safe_link = html.escape(news['link'])
                 st.markdown(f"""
                 <div class="news-card">
-                    <a href="{news['link']}" target="_blank" class="news-title">{news['title']}</a>
-                    <div class="news-meta">{news['date']} • {news['source']} <span class="news-tag">{cat}</span></div>
+                    <a href="{safe_link}" target="_blank" class="news-title">{safe_title}</a>
+                    <div class="news-meta">{news['date']} • {safe_source} <span class="news-tag">{cat}</span></div>
                 </div>
                 """, unsafe_allow_html=True)
         else:

@@ -5,7 +5,6 @@ from datetime import datetime
 import json
 import os
 import concurrent.futures
-import html
 import urllib.parse
 from typing import List, Dict, Tuple, Optional, Any
 
